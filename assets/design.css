@@ -956,3 +956,163 @@ html{scroll-padding-top:112px}
   .design-medunit .team-details { padding: 8px 12px 12px; }
   .design-medunit .profile-publications .academic-entry { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Shared spacing for pages that need to be scanned quickly. */
+.design-medunit .page-head {
+  margin-block: 12px 14px;
+  padding: clamp(12px, 2vw, 24px);
+  border-radius: 15px;
+}
+.design-medunit .page-head .breadcrumbs { margin-bottom: 4px; }
+.design-medunit .page-head .eyebrow { display: none; }
+.design-medunit .page-head h1 {
+  max-width: 32ch;
+  margin: 4px 0 6px;
+  font-size: clamp(27px, 3.2vw, 43px);
+  text-wrap: initial;
+}
+.design-medunit .page-head .lead { font-size: clamp(15px, 1.4vw, 17px); line-height: 1.5; }
+.design-medunit .page-actions { margin-top: 10px; gap: 8px 14px; }
+.design-medunit .page-index { margin-bottom: 12px; }
+.design-medunit .page-index summary { min-height: 44px; padding: 8px 14px; }
+.design-medunit .spaced { padding-block: clamp(14px, 2vw, 26px); }
+.design-medunit .sectiontop { margin-bottom: 12px; }
+.design-medunit .page-head + .split.spaced,
+.design-medunit .page-head + section.spaced { padding-top: 8px; }
+.design-medunit .split { gap: clamp(12px, 2.5vw, 28px); }
+.design-medunit .split p,
+.design-medunit .prose { line-height: 1.6; }
+.design-medunit .prose { padding-bottom: 18px; }
+.design-medunit .prose > section { padding-block: 12px; }
+.design-medunit .prose h2,
+.design-medunit .collection-title { margin-bottom: 8px; font-size: clamp(23px, 2.4vw, 31px); }
+.design-medunit .prose p { margin-block: 0 10px; }
+.design-medunit .prose li { margin-bottom: 5px; }
+.design-medunit .prose .button { margin-block: 10px; }
+.design-medunit .prose .back { margin-bottom: 6px; }
+.design-medunit .article-meta { padding-bottom: 8px; margin-bottom: 10px; }
+.design-medunit .question-list { margin-top: 8px; }
+.design-medunit .notice { margin-top: 10px; padding: 12px 14px; line-height: 1.55; }
+.design-medunit .notice strong { margin-bottom: 4px; }
+.design-medunit .cards { gap: 10px; }
+.design-medunit .contactgrid { gap: 10px; }
+.design-medunit .contactgrid > section { padding: 14px; }
+.design-medunit .contactgrid h2 { margin: 4px 0 8px; font-size: clamp(23px, 2.5vw, 30px); }
+.design-medunit .contactgrid p { margin-block: 0 8px; }
+.design-medunit .contactcard .contact-phone { margin: 6px 0 10px; font-size: 16px; }
+.design-medunit .contact-calendar { padding: 10px; }
+
+.design-medunit .academic-page { padding-bottom: 12px; }
+.design-medunit .academic-section { margin-block: 14px; }
+.design-medunit .academic-section .collection-title { margin-bottom: 7px; }
+.design-medunit .academic-list { gap: 8px; margin-top: 8px; }
+.design-medunit .academic-entry { gap: 8px 14px; padding: 11px 13px; border-radius: 10px; }
+.design-medunit .academic-copy h3 { font-size: clamp(18px, 2vw, 24px); margin-bottom: 5px; }
+.design-medunit .academic-copy p { font-size: 14px; line-height: 1.5; margin-bottom: 4px; }
+.design-medunit .academic-copy .textlink { font-size: 14px; }
+.design-medunit .academic-section .card { padding: 12px 14px; }
+.design-medunit .academic-section .card h3 { margin: 0 0 4px; }
+.design-medunit .academic-section .card p { margin: 0; }
+.design-medunit .academic-perspective { padding: 10px 13px; }
+.design-medunit .academic-perspective p { line-height: 1.5; }
+.design-medunit .profile-credentials { margin-top: 12px; }
+
+.design-medunit .column-topics { gap: 8px; }
+.design-medunit .column-topic summary { min-height: 48px; padding: 8px 12px; }
+.design-medunit .column-topic summary h2,
+.design-medunit .column-topic summary .video-topic-title { font-size: clamp(17px, 2vw, 21px); }
+.design-medunit .procedure-card { padding: 10px 12px; gap: 8px; }
+.design-medunit .procedure-card h2 { font-size: clamp(18px, 2vw, 23px); margin: 0 0 4px; }
+.design-medunit .procedure-card p { font-size: 14px; line-height: 1.45; }
+.design-medunit .attention-intro { padding-block: 18px 12px; }
+.design-medunit .attention-intro h1 { margin-block: 6px; }
+.design-medunit .attention-draft { padding-bottom: 16px; }
+.design-medunit .care-choices { margin-bottom: 12px; }
+.design-medunit .attention-cta { margin-top: 14px; }
+
+.design-medunit .hero-slider .herogrid { gap: 12px; min-height: 0; }
+.design-medunit .hero-slider .herocopy { padding: 20px 0; }
+.design-medunit .hero-slider .portrait { width: min(100%, 345px); height: 350px; margin-top: 12px; }
+.design-medunit .hero-slider .portrait::before { width: 100%; height: 100%; }
+.design-medunit .hero-slider h1 { font-size: clamp(33px, 4vw, 50px); margin: 8px 0 10px; }
+.design-medunit .hero-slider #hero-description { line-height: 1.5; }
+.design-medunit .hero-credentials { padding-block: 8px; }
+.design-medunit .hero-credentials h2 { margin-bottom: 5px; }
+.design-medunit .credential-slide { grid-template-columns: 46px minmax(0, 1fr); gap: 8px; }
+.design-medunit .credential-slide img { width: 46px; height: 45px; }
+.design-medunit.is-home .visit-access.visit-compact { padding-block: 12px 4px; }
+.design-medunit.is-home .visit-access + section.spaced { padding-top: 12px; }
+.design-medunit .visit-compact h2 { display: inline; margin: 0 8px 0 0; }
+.design-medunit .visit-option { min-height: 44px; padding: 6px 9px; }
+.design-medunit.is-home .sectiontop.orientation-heading { margin-bottom: 10px; }
+.design-medunit.is-home .sectiontop.orientation-heading h2 { margin: 4px 0; font-size: clamp(23px, 2.8vw, 31px); }
+.design-medunit.is-home .orientation-heading > p { margin: 4px 0 0; }
+.design-medunit .card.orientation-card { border-radius: 12px; }
+.design-medunit .orientation-visual { aspect-ratio: 3/1; }
+.design-medunit .orientation-content { padding: 10px 12px; }
+.design-medunit .orientation-content h3 { font-size: clamp(18px, 2vw, 23px); margin: 3px 0 4px; }
+.design-medunit .orientation-content p { margin: 0 0 4px; font-size: 14px; line-height: 1.45; }
+.design-medunit .orientation-content b { min-height: 0; padding-top: 3px; border: 0; }
+.design-medunit.is-home .patient-reviews { margin-block: 14px 18px; }
+
+.design-medunit .journal-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.design-medunit .card.journal-card {
+  display: grid;
+  grid-template-columns: minmax(78px, 25%) minmax(0, 1fr);
+  min-height: 0;
+  border-radius: 10px;
+}
+.design-medunit .card.journal-card .journal-thumb { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.design-medunit .card.journal-card .journal-thumb img { object-fit: contain; object-position: center; }
+.design-medunit .journal-copy { padding: 8px 10px; }
+.design-medunit .card.journal-card h3 { font-size: clamp(17px, 2vw, 23px); margin: 3px 0 4px; }
+.design-medunit .card.journal-card p { margin-bottom: 4px; font-size: 14px; line-height: 1.45; }
+.design-medunit .card.journal-card b { min-height: 0; padding-top: 2px; border: 0; }
+
+.design-medunit .site-footer { padding: 14px 0 calc(18px + env(safe-area-inset-bottom, 0px)); }
+.design-medunit .site-footer .footer-main { gap: 8px 14px; padding-bottom: 7px; }
+.design-medunit .site-footer .footer-bottom { padding-block: 5px; }
+.design-medunit .site-footer .footer-identity p { margin: 3px 0 0; line-height: 1.45; }
+.design-medunit .site-footer h3 { margin: 3px 0; }
+.design-medunit .site-footer .footer-powered { min-height: 38px; height: 38px; padding: 0; }
+
+@media (max-width: 800px) {
+  .design-medunit .hero-slider .herogrid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .design-medunit .hero-slider .herocopy { padding: 14px 0 8px; }
+  .design-medunit .hero-slider .portrait.slider-photos { width: min(100%, 300px); height: clamp(170px, 54vw, 220px); margin: 0 auto 10px; }
+  .design-medunit .hero-slider h1 { font-size: clamp(26px, 7.5vw, 35px); }
+  .design-medunit .hero-slider #hero-description { font-size: 15px; }
+  .design-medunit .orientation-visual { aspect-ratio: auto; }
+  .design-medunit .card.orientation-card { grid-template-columns: 70px minmax(0, 1fr); }
+  .design-medunit .orientation-visual { width: 70px; }
+  .design-medunit .split .profile-portrait { max-width: 205px; margin-inline: auto; }
+  .design-medunit .site-footer { padding-bottom: calc(55px + env(safe-area-inset-bottom, 0px)); }
+  .design-medunit .site-footer .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .design-medunit .site-footer .footer-identity { grid-column: 1 / -1; }
+  .design-medunit .site-footer .footer-main .brand { min-height: 30px; }
+  .design-medunit .site-footer .footer-main a:not(.brand) { min-height: 36px; padding-block: 3px; }
+  .design-medunit .site-footer .footer-channels { grid-column: 1 / -1; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 14px; }
+  .design-medunit .site-footer .footer-channels h3 { width: 100%; }
+  .design-medunit .site-footer .footer-social { display: flex; gap: 0 14px; }
+  .design-medunit .site-footer .footer-bottom { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0 12px; }
+  .design-medunit .site-footer .footer-powered { align-self: center; }
+}
+@media (max-width: 620px) {
+  .design-medunit .credentials-carousel { display: flex; gap: 4px; }
+  .design-medunit .hero-credentials .review-controls { margin: 0; }
+  .design-medunit .hero-credentials .review-count { display: none; }
+  .design-medunit .credential-slide { grid-template-columns: 37px minmax(0, 1fr); padding: 5px; }
+  .design-medunit .credential-slide img { width: 37px; }
+  .design-medunit .credential-slide strong { font-size: 13px; }
+  .design-medunit .credential-slide small,
+  .design-medunit .credential-link { font-size: 11px; }
+  .design-medunit .credential-link { display: none; }
+  .design-medunit .journal-cards { grid-template-columns: minmax(0, 1fr); }
+  .design-medunit .card.journal-card p,
+  .design-medunit .card.journal-card b,
+  .design-medunit .procedure-card p { display: none; }
+  .design-medunit .card.journal-card .journal-thumb { min-height: 61px; }
+  .design-medunit .procedure-card { display: flex; }
+  .design-medunit .procedure-card h2 { margin: 0; }
+  .design-medunit .procedure-card .column-topic-action { margin: 0; }
+}
