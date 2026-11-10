@@ -185,3 +185,41 @@
     letter-spacing: .04em;
   }
 }
+
+.site-header .header-identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 16px);
+  min-width: 0;
+}
+
+.site-header .header-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  color: var(--accent);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header .header-home:hover,
+.site-header .header-home[aria-current="page"] {
+  background: var(--soft);
+  border-color: var(--accent);
+}
+
+@media (max-width: 420px) {
+  .site-header .header-home {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .site-header .nav { gap: 8px; }
+}
