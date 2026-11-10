@@ -808,3 +808,32 @@ html{scroll-padding-top:112px}
   .design-medunit .visit-options,
   .design-medunit .appointment-form { grid-template-columns: minmax(0, 1fr); }
 }
+
+.design-medunit .care-choices {
+  position: static;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.design-medunit .care-choice {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+}
+
+.design-medunit .care-choice:hover { border-color: var(--accent); }
+.design-medunit .care-choice strong { display: block; font-size: 17px; color: var(--accent); }
+.design-medunit .care-choice span { display: block; margin-top: 3px; color: var(--muted); font-size: 14px; }
+.design-medunit .attention-guide { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); }
+
+@media (max-width: 620px) {
+  .design-medunit .care-choices { grid-template-columns: minmax(0, 1fr); margin-bottom: 18px; }
+}

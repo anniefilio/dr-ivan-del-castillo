@@ -1,13 +1,14 @@
 const toggle=document.querySelector('.menu');
 const navigation=document.querySelector('#navigation');
-const procedureMenu=navigation?.querySelector('.procedure-menu');
+const careMenu=navigation?.querySelector('.care-menu');
+const careMenuGroups=careMenu?.querySelectorAll('.care-menu-group');
 const narrowMenu=window.matchMedia('(max-width: 1100px)');
 const closeMenu=(restoreFocus=false)=>{
  toggle?.setAttribute('aria-expanded','false');
  toggle?.setAttribute('aria-label','Abrir menú de navegación');
  if(toggle)toggle.textContent='Menú';
  navigation?.classList.remove('open');
- if(procedureMenu)procedureMenu.open=false;
+ if(careMenu)careMenu.open=false;
  if(restoreFocus)toggle?.focus();
 };
 toggle?.addEventListener('click',()=>{
@@ -19,21 +20,26 @@ toggle?.addEventListener('click',()=>{
 });
 document.addEventListener('keydown',event=>{
 if(event.key!=='Escape')return;
-if(procedureMenu?.open){
- procedureMenu.open=false;
- procedureMenu.querySelector('summary')?.focus();
+if(careMenu?.open){
+ careMenu.open=false;
+ careMenu.querySelector('summary')?.focus();
 }else if(navigation?.classList.contains('open'))closeMenu(true);
 });
 document.addEventListener('click',event=>{
- if(procedureMenu?.open&&!procedureMenu.contains(event.target))procedureMenu.open=false;
+ if(careMenu?.open&&!careMenu.contains(event.target))careMenu.open=false;
  if(navigation?.classList.contains('open')&&!navigation.contains(event.target)&&!toggle?.contains(event.target))closeMenu();
 });
 navigation?.addEventListener('click',event=>{if(event.target.closest('a')&&narrowMenu.matches)closeMenu();});
 navigation?.addEventListener('focusout',event=>{
- if(procedureMenu?.open&&event.relatedTarget&&!procedureMenu.contains(event.relatedTarget))procedureMenu.open=false;
+ if(careMenu?.open&&event.relatedTarget&&!careMenu.contains(event.relatedTarget))careMenu.open=false;
  if(narrowMenu.matches&&event.relatedTarget&&!navigation.contains(event.relatedTarget)&&!toggle?.contains(event.relatedTarget))closeMenu();
 });
-narrowMenu.addEventListener('change',()=>closeMenu());
+const syncCareMenu=()=>careMenuGroups?.forEach(group=>{group.open=!narrowMenu.matches;});
+syncCareMenu();
+narrowMenu.addEventListener('change',()=>{
+ closeMenu();
+ syncCareMenu();
+});
 
 const slider=document.querySelector('.hero-slider');
 if(slider){
