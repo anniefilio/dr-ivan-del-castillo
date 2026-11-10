@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#f6f8f7"/><stop offset="1" stop-color="#dbe8e4"/></linearGradient>
+    <linearGradient id="bone" x2=".28" y2="1"><stop stop-color="#e3edef"/><stop offset=".58" stop-color="#a9c0ca"/><stop offset="1" stop-color="#6e919e"/></linearGradient>
+    <linearGradient id="accent" x2="0" y2="1"><stop stop-color="#9ec1b3"/><stop offset="1" stop-color="#528577"/></linearGradient>
+    <g id="vertebra"><path d="M-49-14Q-34-28 9-24Q45-24 53-10L50 11Q40 28-5 25Q-42 25-51 12Z" fill="url(#bone)"/><path d="M-41 10Q0 27 43 10" fill="none" stroke="#476b7a" stroke-opacity=".27" stroke-width="2" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="640" height="400" fill="url(#surface)"/>
+  <ellipse cx="320" cy="367" rx="122" ry="11" fill="#527b83" opacity=".08"/>
+  <g transform="rotate(-14 316 199)"><rect x="188" y="89" width="262" height="176" rx="24" fill="#426879"/><rect x="206" y="106" width="226" height="140" rx="14" fill="#dbe9e7"/><path d="M288 137q30-12 63 0m-62 28q30-12 62 0m-61 28q29-12 61 0m-60 27q28-11 59 0" fill="none" stroke="#7697a1" stroke-width="10" stroke-linecap="round"/><path d="M302 266h35v40h46v12H256v-12h46z" fill="url(#bone)"/></g>
+</svg>

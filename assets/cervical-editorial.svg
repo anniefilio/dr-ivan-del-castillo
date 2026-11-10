@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#f6f8f7"/><stop offset="1" stop-color="#dbe8e4"/></linearGradient>
+    <linearGradient id="bone" x2=".28" y2="1"><stop stop-color="#e3edef"/><stop offset=".58" stop-color="#a9c0ca"/><stop offset="1" stop-color="#6e919e"/></linearGradient>
+    <linearGradient id="accent" x2="0" y2="1"><stop stop-color="#9ec1b3"/><stop offset="1" stop-color="#528577"/></linearGradient>
+    <g id="vertebra"><path d="M-49-14Q-34-28 9-24Q45-24 53-10L50 11Q40 28-5 25Q-42 25-51 12Z" fill="url(#bone)"/><path d="M-41 10Q0 27 43 10" fill="none" stroke="#476b7a" stroke-opacity=".27" stroke-width="2" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="640" height="400" fill="url(#surface)"/>
+  <ellipse cx="320" cy="367" rx="122" ry="11" fill="#527b83" opacity=".08"/>
+  <path d="M252 47Q293 22 350 42L378 63Q355 84 314 78L267 73Z" fill="url(#bone)"/><path d="M310 80Q277 181 330 334" fill="none" stroke="#91b4aa" stroke-width="22" stroke-linecap="round"/><use href="#vertebra" transform="translate(315 84) rotate(-14) scale(0.62)"/><use href="#vertebra" transform="translate(305 119) rotate(-10) scale(0.67)"/><use href="#vertebra" transform="translate(299 156) rotate(-6) scale(0.72)"/><use href="#vertebra" transform="translate(298 195) rotate(0) scale(0.76)"/><use href="#vertebra" transform="translate(304 237) rotate(6) scale(0.82)"/><use href="#vertebra" transform="translate(315 283) rotate(11) scale(0.9)"/><use href="#vertebra" transform="translate(330 332) rotate(14) scale(0.98)"/>
+</svg>
