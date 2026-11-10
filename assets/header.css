@@ -231,12 +231,12 @@
 .site-header .care-menu-panel {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  width: min(540px, 85vw);
-  max-height: min(72dvh, 550px);
+  width: min(490px, calc(100vw - 32px));
+  max-height: min(68dvh, 450px);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 10px;
@@ -258,7 +258,10 @@
 .site-header .care-menu-group ul { margin: 4px 0 0; padding: 0; list-style: none; }
 
 .site-header .care-menu-group li a {
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 9px;
   border-radius: 7px;
   white-space: normal;
   font-size: 13px;
@@ -289,5 +292,5 @@
     box-shadow: none;
   }
 
-  .site-header .care-menu-group li a { font-size: 14px; }
+  .site-header .care-menu-group li a { min-height: 44px; font-size: 14px; }
 }

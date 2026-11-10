@@ -124,14 +124,14 @@ if(slider){
  window.addEventListener('resize',queueMeasure);
  if('ResizeObserver' in window){const observer=new ResizeObserver(()=>{if(Math.abs(content.getBoundingClientRect().width-lastWidth)>.5)queueMeasure();});observer.observe(content);}
  slider.addEventListener('keydown',event=>{
-  if(event.target.closest('a,button'))return;let next;
+  if(event.target.closest('a,button,.hero-credentials'))return;let next;
   if(event.key==='ArrowRight'||event.key==='ArrowDown')next=current+1;
   if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=current-1;
   if(event.key==='Home')next=0;if(event.key==='End')next=slides.length-1;
   if(next!==undefined){event.preventDefault();select(next);}
  });
  let gesture;
- slider.addEventListener('pointerdown',event=>{setPlaying(false);if(!event.isPrimary||event.button!==0||event.target.closest('a,button'))return;gesture={id:event.pointerId,x:event.clientX,y:event.clientY};slider.setPointerCapture(event.pointerId);});
+ slider.addEventListener('pointerdown',event=>{setPlaying(false);if(!event.isPrimary||event.button!==0||event.target.closest('a,button,.hero-credentials'))return;gesture={id:event.pointerId,x:event.clientX,y:event.clientY};slider.setPointerCapture(event.pointerId);});
  slider.addEventListener('pointerup',event=>{if(!gesture||gesture.id!==event.pointerId)return;const start=gesture;gesture=null;const dx=event.clientX-start.x,dy=event.clientY-start.y;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4)select(current+(dx<0?1:-1));});
  slider.addEventListener('pointercancel',()=>{gesture=null;});
  slider.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hoverPaused=true;schedule();}});
@@ -150,10 +150,12 @@ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion
  journalCards.forEach(card=>reveal.observe(card));
 }
 
-const reviewTrack=document.querySelector('.review-track');
-const reviewControls=document.querySelector('.review-controls');
-if(reviewTrack&&reviewControls){
- const reviewCards=[...reviewTrack.querySelectorAll('.review-card')];
+document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(carousel=>{
+ const reviewTrack=carousel.querySelector('.review-track, .credentials-track');
+ const reviewControls=carousel.querySelector('.review-controls');
+ if(!reviewTrack||!reviewControls)return;
+ const reviewCards=[...reviewTrack.children];
+ if(reviewCards.length<2)return;
  const [previous,next]=reviewControls.querySelectorAll('button');
  const reviewCount=reviewControls.querySelector('.review-count');
  const activeReview=()=>{
@@ -185,7 +187,7 @@ if(reviewTrack&&reviewControls){
   advanceReview(event.key==='ArrowLeft'?-1:1);
  });
  updateReviews();
-}
+});
 
 const visitOrientation=document.querySelector('.visit-orientation');
 visitOrientation?.addEventListener('change',event=>{
