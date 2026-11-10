@@ -837,3 +837,20 @@ html{scroll-padding-top:112px}
 @media (max-width: 620px) {
   .design-medunit .care-choices { grid-template-columns: minmax(0, 1fr); margin-bottom: 18px; }
 }
+
+.design-medunit .profile-reviews {
+  padding-bottom: 24px;
+}
+
+.design-medunit .profile-reviews h2 { font-size: clamp(23px, 3vw, 29px); margin-bottom: 10px; }
+.design-medunit .profile-reviews .review-track { border: 1px solid var(--line); border-radius: 12px; }
+.design-medunit .profile-reviews .review-card { padding: 14px 16px; border-radius: 0; }
+.design-medunit .profile-reviews .review-card blockquote { margin-bottom: 8px; }
+.design-medunit .profile-reviews .review-card blockquote p { font-size: clamp(18px, 2.2vw, 22px); }
+.design-medunit .profile-reviews .review-card figcaption { font-size: 13px; }
+.design-medunit .profile-reviews .review-card figcaption a { flex-basis: auto; }
+.design-medunit .profile-reviews .review-card figcaption br { display: none; }
+.design-medunit .profile-reviews .review-controls { margin-top: 6px; gap: 6px; }
+.design-medunit .profile-reviews .review-count { color: var(--muted); }
+.design-medunit .profile-reviews .review-controls button { color: var(--accent); border-color: var(--line); }
+.design-medunit .profile-reviews .review-controls button:not(:disabled):hover { background: var(--soft); }
