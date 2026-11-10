@@ -647,3 +647,51 @@ html{scroll-padding-top:112px}
 }
 
 .design-medunit .patient-reviews :focus-visible { outline-color: #fff !important; box-shadow: 0 0 0 5px #151f39; }
+
+.design-medunit .academic-page { padding-bottom: 40px; }
+.design-medunit .academic-section { margin-block: clamp(26px, 4vw, 50px); }
+.design-medunit .academic-section .collection-title { margin-bottom: 16px; }
+.design-medunit .academic-list { display: grid; gap: 12px; margin-top: 18px; }
+
+.design-medunit .academic-entry {
+  display: grid;
+  grid-template-columns: minmax(136px, .24fr) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 36px);
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.design-medunit .academic-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.design-medunit .academic-year { color: var(--ink); font: 30px/1 Georgia, serif; }
+.design-medunit .academic-copy h3 { max-width: 48ch; margin: 0 0 10px; font-size: clamp(21px, 2.4vw, 28px); }
+.design-medunit .academic-copy p { margin: 0 0 6px; color: var(--muted); }
+.design-medunit .academic-copy .textlink { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); }
+.design-medunit .academic-congress { background: var(--soft); }
+
+.design-medunit .academic-perspective {
+  padding: clamp(20px, 3vw, 32px);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 15px 15px 0;
+  background: #edf1fa;
+}
+
+.design-medunit .academic-perspective .collection-title { margin: 6px 0 12px; }
+.design-medunit .academic-perspective p { margin: 0 0 8px; }
+.design-medunit .academic-perspective p:last-child { margin-bottom: 0; color: var(--muted); }
+
+@media (max-width: 620px) {
+  .design-medunit .academic-entry { grid-template-columns: minmax(0, 1fr); }
+  .design-medunit .academic-meta { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; }
+  .design-medunit .academic-year { font-size: 22px; }
+}
