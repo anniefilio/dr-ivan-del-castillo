@@ -131,7 +131,7 @@ if(slider){
   if(next!==undefined){event.preventDefault();select(next);}
  });
  let gesture;
- slider.addEventListener('pointerdown',event=>{setPlaying(false);if(!event.isPrimary||event.button!==0||event.target.closest('a,button,.hero-credentials'))return;gesture={id:event.pointerId,x:event.clientX,y:event.clientY};slider.setPointerCapture(event.pointerId);});
+ slider.addEventListener('pointerdown',event=>{if(event.target.closest('.hero-credentials'))return;setPlaying(false);if(!event.isPrimary||event.button!==0||event.target.closest('a,button'))return;gesture={id:event.pointerId,x:event.clientX,y:event.clientY};slider.setPointerCapture(event.pointerId);});
  slider.addEventListener('pointerup',event=>{if(!gesture||gesture.id!==event.pointerId)return;const start=gesture;gesture=null;const dx=event.clientX-start.x,dy=event.clientY-start.y;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.4)select(current+(dx<0?1:-1));});
  slider.addEventListener('pointercancel',()=>{gesture=null;});
  slider.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hoverPaused=true;schedule();}});
@@ -158,6 +158,11 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
  if(reviewCards.length<2)return;
  const [previous,next]=reviewControls.querySelectorAll('button');
  const reviewCount=reviewControls.querySelector('.review-count');
+ const playback=reviewControls.querySelector('[data-carousel-playback]');
+ const interval=Number(carousel.dataset.carouselInterval);
+ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let playing=false;
+ let timer;
  const activeReview=()=>{
   const trackStart=reviewTrack.getBoundingClientRect().left;
   return reviewCards.reduce((closest,card,index)=>
@@ -168,22 +173,43 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
   const index=activeReview();
   const label=`${index+1} de ${reviewCards.length}`;
   if(reviewCount.textContent!==label)reviewCount.textContent=label;
-  previous.disabled=index===0;
-  next.disabled=index===reviewCards.length-1;
+  previous.disabled=!playback&&index===0;
+  next.disabled=!playback&&index===reviewCards.length-1;
  };
  const advanceReview=step=>{
-  const card=reviewCards[activeReview()+step];
-  if(!card)return;
+  const index=activeReview()+step;
+  const wrap=index<0||index>=reviewCards.length;
+  if(wrap&&!playback)return;
+  const card=reviewCards[(index+reviewCards.length)%reviewCards.length];
   const offset=card.getBoundingClientRect().left-reviewTrack.getBoundingClientRect().left;
-  reviewTrack.scrollBy({left:offset,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  reviewTrack.scrollBy({left:offset,behavior:wrap||reducedMotion.matches?'instant':'smooth'});
+ };
+ const setPlaying=value=>{
+  if(!playback)return;
+  playing=value;
+  window.clearInterval(timer);
+  playback.setAttribute('aria-label',playing?'Pausar avance automático':'Activar avance automático');
+  playback.firstElementChild.textContent=playing?'Ⅱ':'▶';
+  reviewCount.setAttribute('aria-live',playing?'off':'polite');
+  if(playing)timer=window.setInterval(()=>{
+   const bounds=carousel.getBoundingClientRect();
+   if(!document.hidden&&!carousel.matches(':hover, :focus-within')&&bounds.bottom>0&&bounds.top<window.innerHeight)advanceReview(1);
+  },interval);
  };
  reviewControls.hidden=false;
- previous.addEventListener('click',()=>advanceReview(-1));
- next.addEventListener('click',()=>advanceReview(1));
+ previous.addEventListener('click',()=>{setPlaying(false);advanceReview(-1);});
+ next.addEventListener('click',()=>{setPlaying(false);advanceReview(1);});
+ if(playback){
+  playback.addEventListener('click',()=>setPlaying(!playing));
+  reviewTrack.addEventListener('pointerdown',()=>setPlaying(false));
+  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)setPlaying(false);});
+  setPlaying(!reducedMotion.matches);
+ }
  reviewTrack.addEventListener('scroll',updateReviews,{passive:true});
  reviewTrack.addEventListener('keydown',event=>{
   if(event.target!==reviewTrack||!['ArrowLeft','ArrowRight'].includes(event.key))return;
   event.preventDefault();
+  setPlaying(false);
   advanceReview(event.key==='ArrowLeft'?-1:1);
  });
  updateReviews();
