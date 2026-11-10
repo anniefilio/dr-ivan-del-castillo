@@ -180,3 +180,30 @@ if(reviewTrack&&reviewControls){
  });
  updateReviews();
 }
+
+const visitOrientation=document.querySelector('.visit-orientation');
+visitOrientation?.addEventListener('change',event=>{
+ if(!event.target.matches('input[name="orientacion-visita"]'))return;
+ visitOrientation.querySelectorAll('[data-visit-result]').forEach(result=>{
+  result.hidden=result.dataset.visitResult!==event.target.value;
+ });
+});
+
+const appointmentForm=document.querySelector('.appointment-form');
+if(appointmentForm){
+ appointmentForm.querySelector('button[type="submit"]').disabled=false;
+ appointmentForm.addEventListener('submit',event=>{
+  event.preventDefault();
+  const name=appointmentForm.querySelector('#cita-nombre').value.trim();
+  const schedule=appointmentForm.querySelector('#cita-horario').value;
+  const message=[
+   name?`Hola, soy ${name}.`:'Hola.',
+   'Quisiera solicitar una primera consulta con el Dr. Iván del Castillo.',
+   schedule?`De preferencia ${schedule}.`:'',
+   '¿Qué horarios tienen disponibles?'
+  ].filter(Boolean).join(' ');
+  const whatsapp=new URL(appointmentForm.dataset.whatsapp);
+  whatsapp.searchParams.set('text',message);
+  window.location.assign(whatsapp);
+ });
+}
