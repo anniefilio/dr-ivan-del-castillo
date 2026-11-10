@@ -402,56 +402,6 @@ html{scroll-padding-top:112px}
   .design-medunit.is-home .orientation-heading>p{font-size:15px}
 }
 
-.design-medunit .review-track{
-  display:flex;
-  gap:22px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding:4px 4px 20px;
-}
-.design-medunit .review-track:focus-visible{
-  outline:2px solid #365f4e;
-  outline-offset:5px;
-}
-.design-medunit .review-track .review-card{
-  flex:0 0 46%;
-  scroll-snap-align:start;
-  margin:0;
-  min-width:0;
-  min-height:250px;
-}
-.design-medunit .review-card blockquote{margin:0 0 24px}
-.design-medunit .review-card blockquote p{
-  font-family:'DM Serif Display',Georgia,serif;
-  font-size:26px;
-  line-height:1.4;
-  color:#17344b;
-}
-.design-medunit .review-card figcaption{
-  margin-top:auto;
-  font-size:14px;
-  line-height:1.8;
-  color:var(--muted);
-}
-@media(max-width:800px){
-  .design-medunit .review-track .review-card{flex-basis:88%}
-  .design-medunit .review-card blockquote p{font-size:23px}
-}
-
-.design-medunit.is-home .patient-reviews{
-  margin-top:32px;
-  margin-bottom:24px;
-  padding:36px;
-  background:linear-gradient(115deg,#f2f5fb,#e9eef8);
-  border:1px solid #cfddd9;
-  border-radius:22px;
-}
-.design-medunit.is-home .patient-reviews .sectiontop{margin-bottom:20px}
-.design-medunit.is-home .patient-reviews h2{font-size:clamp(28px,3.2vw,38px)}
-@media(max-width:800px){
-  .design-medunit.is-home .patient-reviews{padding:24px 16px;margin-top:24px}
-}
-
 /* Página de Atención aprobada. */
 
 .attention-draft{background:#f7f9fc;padding-bottom:64px}
@@ -523,11 +473,6 @@ html{scroll-padding-top:112px}
  }
  .design-medunit .hero-slider .portrait .hero-note,
  .design-medunit .hero-slider .photo-caption{display:none}
- .design-medunit.is-home .patient-reviews{margin-top:20px;padding:20px 16px}
- .design-medunit .review-track{gap:12px;padding-bottom:12px}
- .design-medunit .review-track .review-card{flex-basis:92%;min-height:0;padding:18px}
- .design-medunit .review-card blockquote{margin-bottom:14px}
- .design-medunit .patient-reviews .page-actions{margin-top:14px}
  .design-medunit.is-home .visit-access{padding-top:24px}
  .design-medunit.is-home .visit-access .card{min-height:0;padding:18px}
  .design-medunit.is-home .visit-access .card p:last-child{margin-bottom:0}
@@ -591,3 +536,114 @@ html{scroll-padding-top:112px}
 .article-table caption{text-align:left;font-weight:600;margin-bottom:8px}
 .article-table th,.article-table td{border:1px solid #c8dcd1;padding:10px;text-align:left;vertical-align:top}
 .article-table thead{background:#eaf3ee}
+
+.design-medunit .procedure-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.design-medunit .procedure-card:hover { border-color: var(--accent); }
+.design-medunit .procedure-card h2 { margin: 0 0 8px; font-size: clamp(21px, 2.4vw, 28px); }
+.design-medunit .procedure-card p { margin: 0; }
+.design-medunit .procedure-card .column-topic-action { align-self: center; }
+
+@media (max-width: 600px) {
+  .design-medunit .procedure-card { display: block; }
+  .design-medunit .procedure-card .column-topic-action { display: inline-block; margin-top: 12px; }
+}
+
+@media (min-width: 801px) {
+  .design-medunit .site-footer .footer-main { grid-template-columns: 1.35fr 1fr .8fr 1.15fr; gap: clamp(18px, 3vw, 42px); }
+}
+
+.design-medunit.is-home .patient-reviews {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 56px);
+  margin-block: 36px 64px;
+  padding: clamp(22px, 4vw, 54px);
+  border-radius: 22px;
+  color: #fff;
+  background: linear-gradient(120deg, #151f39, #263868);
+}
+
+.design-medunit .reviews-intro .eyebrow { color: #d3dbff; }
+.design-medunit .reviews-intro h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; margin: 12px 0; }
+.design-medunit .reviews-intro p { color: #e1e7ff; margin: 0 0 16px; }
+
+.design-medunit .review-platforms {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.design-medunit .review-platforms a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #9baad4;
+  border-radius: 24px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.design-medunit main .patient-reviews .review-platforms a:hover { background: #ffffff18; color: #fff; }
+.design-medunit .reviews-carousel { min-width: 0; }
+
+.design-medunit .review-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: 18px;
+}
+
+.design-medunit .review-track .review-card {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(22px, 3.5vw, 46px);
+  border-radius: 18px;
+  scroll-snap-align: start;
+  background: #f8f9fe;
+  color: var(--ink);
+}
+
+.design-medunit .review-card blockquote { margin: 0 0 16px; }
+.design-medunit .review-card blockquote p { margin: 0; font: clamp(24px, 3vw, 38px)/1.24 Georgia, serif; color: var(--ink); }
+.design-medunit .review-card figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--muted); font-size: 14px; }
+.design-medunit .review-card figcaption a { flex-basis: 100%; color: var(--accent); }
+.design-medunit .review-source { font-weight: 700; color: var(--accent); }
+
+.design-medunit .review-controls { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-top: 12px; }
+.design-medunit .review-controls[hidden] { display: none; }
+.design-medunit .review-count { margin-right: 4px; font-size: 14px; color: #e1e7ff; }
+
+.design-medunit .review-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #9baad4;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.design-medunit .review-controls button:not(:disabled):hover { background: #ffffff20; }
+.design-medunit .review-controls button:disabled { opacity: .42; cursor: default; }
+
+@media (max-width: 800px) {
+  .design-medunit.is-home .patient-reviews { grid-template-columns: minmax(0, 1fr); margin-block: 24px 42px; }
+}
+
+.design-medunit .patient-reviews :focus-visible { outline-color: #fff !important; box-shadow: 0 0 0 5px #151f39; }
