@@ -1583,3 +1583,40 @@ html{scroll-padding-top:112px}
 .design-medunit .thanks-actions .textlink { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; }
 .design-medunit .thanks-actions [hidden] { display: none; }
 .design-medunit .thanks-note { padding: 12px 14px; border-left: 3px solid var(--accent); background: var(--soft); border-radius: 0 8px 8px 0; color: var(--muted); font-size: 15px; }
+
+/* Review iconography: thin line icons in the site's accent, decorative only. */
+.design-medunit .ri { flex-shrink: 0; vertical-align: -3px; }
+.design-medunit .reviews-intro h2 { display: flex; align-items: center; gap: 12px; }
+.design-medunit .reviews-mark {
+ display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ width: 42px; height: 42px; border-radius: 50%;
+ background: #ffffff14; border: 1px solid #ffffff33; color: #d3dbff;
+}
+.design-medunit .review-platforms a { display: inline-flex; align-items: center; gap: 7px; }
+.design-medunit .review-platforms a .ri { color: #c3ccff; transition: transform .18s ease; }
+.design-medunit .review-platforms a:hover .ri { transform: scale(1.12); }
+.design-medunit .review-card { position: relative; }
+.design-medunit .review-card blockquote { padding-right: 44px; }
+.design-medunit .review-card::after {
+ content: '';
+ position: absolute; top: 12px; right: 14px;
+ width: 30px; height: 30px;
+ background: var(--accent); opacity: .14;
+ -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 18.5V13c0-4.1 2.3-6.9 6-8l.9 1.7C8.6 7.6 7.5 9.2 7.4 11H10v7.5H4Zm10 0V13c0-4.1 2.3-6.9 6-8l.9 1.7c-2.3.9-3.4 2.5-3.5 4.3H20v7.5h-6Z'/%3E%3C/svg%3E") center / contain no-repeat;
+         mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 18.5V13c0-4.1 2.3-6.9 6-8l.9 1.7C8.6 7.6 7.5 9.2 7.4 11H10v7.5H4Zm10 0V13c0-4.1 2.3-6.9 6-8l.9 1.7c-2.3.9-3.4 2.5-3.5 4.3H20v7.5h-6Z'/%3E%3C/svg%3E") center / contain no-repeat;
+ pointer-events: none;
+}
+.design-medunit .review-card figcaption { align-items: center; }
+.design-medunit .review-source,
+.design-medunit .review-card time { display: inline-flex; align-items: center; gap: 6px; }
+.design-medunit .review-card time .ri { color: var(--muted); }
+.design-medunit .review-stars { display: inline-flex; align-items: center; gap: 2px; color: #d9a21b; }
+@media (prefers-reduced-motion: reduce) {
+ .design-medunit .review-platforms a .ri { transition: none; transform: none !important; }
+}
+@media (max-width: 620px) {
+ .design-medunit .reviews-mark { width: 36px; height: 36px; }
+ .design-medunit .reviews-mark .ri { width: 19px; height: 19px; }
+ .design-medunit .review-card::after { width: 24px; height: 24px; top: 10px; right: 10px; }
+ .design-medunit .review-card blockquote { padding-right: 32px; }
+}
