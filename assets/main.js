@@ -205,15 +205,13 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
  const interval = Number(carousel.dataset.carouselInterval) || 4000;
  let playing = !reducedMotion.matches;
 
- const pauseButton = document.createElement('button');
- pauseButton.type = 'button';
- pauseButton.className = 'carousel-playback sr-only';
- pauseButton.setAttribute('aria-controls', track.id);
- const updatePlayback = () => {
-  pauseButton.textContent = playing ? 'Pausar avance automático' : 'Activar avance automático';
- };
- updatePlayback();
- carousel.append(pauseButton);
+ const instructions = document.createElement('span');
+ instructions.id = `${track.id}-instructions`;
+ instructions.className = 'sr-only';
+ instructions.textContent = 'Avance automático cada cuatro segundos. Se detiene al enfocar el carrusel. Usa las teclas de dirección para recorrerlo y la barra espaciadora para desactivar o reactivar el avance automático al salir.';
+ track.setAttribute('aria-describedby', instructions.id);
+ track.setAttribute('aria-keyshortcuts', 'Space ArrowLeft ArrowRight');
+ carousel.append(instructions);
 
  const activeCard = () => {
   const start = track.getBoundingClientRect().left;
@@ -232,20 +230,14 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
   });
  };
 
- pauseButton.addEventListener('click', () => {
-  playing = !playing;
-  updatePlayback();
- });
  reducedMotion.addEventListener('change', () => {
-  if (reducedMotion.matches) {
-   playing = false;
-   updatePlayback();
-  }
+  if (reducedMotion.matches) playing = false;
  });
  track.addEventListener('keydown', event => {
-  if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  if (event.target !== track || !['ArrowLeft', 'ArrowRight', ' '].includes(event.key)) return;
   event.preventDefault();
-  advance(event.key === 'ArrowLeft' ? -1 : 1);
+  if (event.key === ' ') playing = !playing;
+  else advance(event.key === 'ArrowLeft' ? -1 : 1);
  });
 
  const timer = window.setInterval(() => {

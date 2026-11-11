@@ -1379,3 +1379,21 @@ html{scroll-padding-top:112px}
  .design-medunit .site-footer a.footer-powered { margin-left: auto; }
  .design-medunit .visit-question { max-height: var(--visit-panel-height, min(58dvh, 380px)); }
 }
+
+/* Carousels have no button bars, counters, arrows, or visible scroll rails. */
+.design-medunit .review-controls,
+.design-medunit .review-count,
+.design-medunit .hero-controls,
+.design-medunit .credential-controls,
+.design-medunit .carousel-playback { display: none !important; }
+.design-medunit .review-track,
+.design-medunit .credentials-track { scrollbar-width: none; -ms-overflow-style: none; }
+.design-medunit .review-track::-webkit-scrollbar,
+.design-medunit .credentials-track::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.design-medunit .review-platforms { gap: 0 18px; }
+.design-medunit .review-platforms a {
+ border: 0; border-radius: 0; background: transparent;
+ padding: 4px 0; min-height: 36px;
+ text-decoration: underline; text-underline-offset: 4px;
+}
+.design-medunit main .patient-reviews .review-platforms a:hover { background: transparent; color: #fff; }
