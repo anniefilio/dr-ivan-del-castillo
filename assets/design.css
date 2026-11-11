@@ -1241,3 +1241,74 @@ html{scroll-padding-top:112px}
 @media (max-width: 620px) {
  .design-medunit .calendar-disclosure .calendar-embed iframe { min-height: 780px; }
 }
+
+/* Keep useful text legible and remove decorative labels. */
+.design-medunit .hero-slider #hero-eyebrow,
+.design-medunit .hero-slider .portrait .hero-note,
+.design-medunit .hero-slider #hero-caption-label { display: none; }
+.design-medunit .small,
+.design-medunit small,
+.design-medunit .article-meta,
+.design-medunit .academic-meta,
+.design-medunit .academic-copy p,
+.design-medunit .academic-copy .textlink,
+.design-medunit .opinion-content,
+.design-medunit .opinion-content .textlink,
+.design-medunit .medical-opinion > summary > span,
+.design-medunit .sources,
+.design-medunit .visit-disclaimer,
+.design-medunit .visit-urgent,
+.design-medunit .visit-choices label,
+.design-medunit .visit-results p,
+.design-medunit .appointment-form p,
+.design-medunit .visit-calendar,
+.design-medunit .calendar-fallback,
+.design-medunit .calendar-disclosure > summary,
+.design-medunit .team-member small,
+.design-medunit .credential-slide small,
+.design-medunit .contact-details p,
+.design-medunit .attention-hint,
+.design-medunit .attention-cta p,
+.design-medunit .attention-book { font-size: 16px; line-height: 1.5; }
+.design-medunit .academic-meta .eyebrow { font-size: 14px; letter-spacing: .03em; }
+.design-medunit .credential-slide strong,
+.design-medunit .visit-option strong { font-size: 18px; line-height: 1.3; }
+.design-medunit .patient-reviews .review-card figcaption,
+.design-medunit .profile-reviews .review-card figcaption { font-size: 16px; line-height: 1.4; }
+.design-medunit .orientation-content p,
+.design-medunit .card.journal-card p,
+.design-medunit .orientation-content b,
+.design-medunit .card.journal-card b,
+.design-medunit .column-topic-action { font-size: 16px; }
+.design-medunit .card.journal-card h3 { font-size: clamp(19px, 2vw, 23px); }
+.design-medunit .breadcrumbs ol { font-size: 16px; }
+.design-medunit .site-footer .footer-main a:not(.brand),
+.design-medunit .site-footer h3,
+.design-medunit .site-footer p,
+.design-medunit .footer-meta,
+.design-medunit .site-footer .footer-meta a { font-size: 14px !important; line-height: 1.45; }
+.design-medunit .site-header .brand { font-size: 17px; }
+.design-medunit .site-header .brand small { font-size: 14px; letter-spacing: .02em; }
+.design-medunit .site-header nav a,
+.design-medunit .site-header .care-menu > summary,
+.design-medunit .site-header .care-menu-group > summary,
+.design-medunit .site-header .care-menu-group li a { font-size: 14px; }
+.design-medunit .site-header .menu { font-size: 16px; }
+.design-medunit .visit-question {
+ max-height: min(60dvh, 420px);
+ overflow-y: auto;
+ overscroll-behavior-y: contain;
+ scrollbar-gutter: stable;
+ scroll-padding-block: 12px;
+}
+.design-medunit .visit-question:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 800px) {
+ .design-medunit .site-header .brand small { display: none; }
+ .design-medunit .site-header .brand { font-size: 15px; }
+ .design-medunit .site-header .brand > span { white-space: normal; line-height: 1.2; }
+ .design-medunit .visit-question { max-height: min(58dvh, 380px); }
+ .design-medunit .site-header nav a,
+ .design-medunit .site-header .care-menu > summary,
+ .design-medunit .site-header .care-menu-group > summary,
+ .design-medunit .site-header .care-menu-group li a { font-size: 16px; }
+}
