@@ -1785,3 +1785,68 @@ html{scroll-padding-top:112px}
 .design-medunit .prose .medical-disclaimer p:last-child { margin-bottom: 0; }
 .design-medunit .prose .medical-disclaimer .medical-disclaimer-title { display: flex; align-items: center; gap: 8px; color: #6b4b0c; font-weight: 700; font-size: 16px; }
 .design-medunit .medical-disclaimer .ico { color: #c98a14; }
+
+/* Columna: each condition gets an icon, a one-line hint and icon rows inside. */
+.design-medunit .column-topic summary { gap: 14px; }
+.design-medunit .topic-ico {
+ display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ width: 46px; height: 46px; border-radius: 12px; background: var(--soft); border: 1px solid var(--line); color: var(--accent);
+}
+.design-medunit .topic-head { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.design-medunit .topic-hint { color: var(--muted); font-size: 15px; line-height: 1.35; }
+.design-medunit .column-topic[open] .topic-ico { background: var(--accent); border-color: var(--accent); color: #fff; }
+.design-medunit .column-topic-body { display: grid; gap: 12px; padding: 4px 16px 18px 76px; }
+.design-medunit .column-topic-body .topic-row { display: flex; align-items: flex-start; gap: 10px; }
+.design-medunit .topic-row-ico { display: inline-flex; flex-shrink: 0; margin-top: 3px; color: var(--accent); }
+.design-medunit .column-topic-body .topic-row p { margin: 0; }
+.design-medunit .column-topic-body .topic-row strong { display: block; margin-bottom: 2px; color: var(--ink); }
+.design-medunit .column-topic-body p + p { margin-top: 0; }
+.design-medunit .notice-alert strong { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 620px) {
+ .design-medunit .topic-ico { width: 40px; height: 40px; border-radius: 10px; }
+ .design-medunit .topic-hint { font-size: 14px; }
+ .design-medunit .column-topic-body { padding: 4px 12px 16px; }
+}
+
+/* Procedures list and second-opinion blocks reuse the topic icons. */
+.design-medunit .procedure-card { gap: 14px; }
+.design-medunit .procedure-card > div { flex: 1; min-width: 0; }
+.design-medunit .procedure-card:hover .topic-ico { background: var(--accent); border-color: var(--accent); color: #fff; }
+.design-medunit .always-open.column-topic .topic-ico { background: var(--accent); border-color: var(--accent); color: #fff; }
+.design-medunit .question-list { list-style: none; padding-left: 0; }
+.design-medunit .question-list li { display: flex; align-items: flex-start; gap: 10px; }
+.design-medunit .question-list li .ico { margin-top: 3px; color: var(--accent); }
+@media (max-width: 620px) { .design-medunit .procedure-card .topic-ico { align-self: flex-start; } }
+
+/* Contact: one card per location, each with its own kind label, address and large buttons. */
+.design-medunit .contact-details .loc-card { margin: 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.design-medunit .contact-details .loc-rehab { background: #f7faf8; border-color: #d6e6dd; }
+.design-medunit .contact-details .loc-kind {
+ display: inline-flex; align-items: center; gap: 6px; margin: 0 0 8px; padding: 4px 10px; border-radius: 20px;
+ background: var(--soft); color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+}
+.design-medunit .contact-details .loc-rehab .loc-kind { background: #e5f1ea; color: #2f6b52; }
+.design-medunit .contact-details .loc-card h2 { margin: 0 0 8px; font-size: clamp(20px, 2.2vw, 24px); }
+.design-medunit .contact-details .loc-addr { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 14px; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.design-medunit .contact-details .loc-addr .ico { margin-top: 2px; color: var(--accent); }
+.design-medunit .contact-details .loc-rehab .loc-addr .ico { color: #2f6b52; }
+.design-medunit .loc-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.design-medunit .loc-btn {
+ display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+ min-height: 48px; padding: 10px 18px; border-radius: 26px;
+ font-size: 16px; font-weight: 600; text-decoration: none; transition: background-color .15s, border-color .15s;
+}
+.design-medunit .loc-call { background: var(--accent); color: #fff; }
+.design-medunit .loc-call:hover { background: var(--accent-hover); color: #fff; }
+.design-medunit .loc-rehab .loc-call { background: #2f6b52; }
+.design-medunit .loc-rehab .loc-call:hover { background: #24543f; }
+.design-medunit .loc-map { border: 1px solid var(--line); background: #fff; color: var(--accent); }
+.design-medunit .loc-map:hover { border-color: var(--accent); background: var(--soft); color: var(--accent); }
+.design-medunit .loc-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 520px) {
+ .design-medunit .loc-actions { display: grid; grid-template-columns: 1fr; }
+ .design-medunit .loc-rehab .loc-actions { grid-template-columns: 1fr 1fr; }
+ .design-medunit .loc-rehab .loc-map { grid-column: 1 / -1; }
+}
+.design-medunit .loc-btn span { white-space: nowrap; }
+@media (max-width: 520px) { .design-medunit .loc-rehab .loc-actions { grid-template-columns: 1fr; } }
