@@ -1660,3 +1660,77 @@ html{scroll-padding-top:112px}
 .design-medunit .contact-details .rehab-card h2 { margin: 0 0 6px; font-size: clamp(19px, 2.1vw, 22px); }
 .design-medunit .rehab-card .textlink { display: inline-flex; align-items: center; min-height: 44px; }
 .design-medunit .rehab-card p .textlink { display: inline; min-height: 0; }
+
+/* "Distintos motivos de consulta": heading and subtitle share one left edge, like the rest of the page. */
+.design-medunit.is-home .sectiontop.orientation-heading { text-align: left; padding: 0; }
+.design-medunit.is-home .sectiontop.orientation-heading h2 { max-width: none; margin-inline: 0; }
+.design-medunit.is-home .orientation-heading > p { margin-inline: 0; }
+
+/* Shared line icons. */
+.design-medunit .ico { flex-shrink: 0; vertical-align: -3px; }
+
+/* Forms: icon beside each label and the WhatsApp mark on the send button. */
+.design-medunit .field-label { display: inline-flex; align-items: center; gap: 7px; }
+.design-medunit .field-ico { display: inline-flex; color: var(--accent); }
+.design-medunit .button-wa { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+.design-medunit .visit-form-intro strong { display: inline-flex; align-items: center; gap: 7px; vertical-align: -2px; }
+.design-medunit .intro-ico { display: inline-flex; color: var(--accent); }
+.design-medunit .visit-calendar { gap: 7px; }
+.design-medunit .visit-calendar .ico { color: var(--accent); }
+
+/* Blog articles: illustrated header, reading meta, key points, icon headings and a booking card. */
+.design-medunit .post-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 15px; }
+.design-medunit .post-meta li { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.design-medunit .post-meta .ico { color: var(--accent); }
+.design-medunit .post-note { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+.design-medunit .post-hero { margin-top: 4px; margin-bottom: 24px; }
+.design-medunit .post-hero img {
+ display: block; width: 100%; max-width: 72ch; height: auto; max-height: 300px;
+ object-fit: contain; border: 1px solid var(--line); border-radius: 16px; background: var(--soft);
+}
+.design-medunit .post-keys { margin: 0 0 26px; padding: 18px 20px; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; background: var(--soft); }
+.design-medunit .post-keys-title { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; color: var(--ink); font: 700 17px/1.3 'DM Sans', Arial, sans-serif; }
+.design-medunit .post-keys-title .ico { color: var(--accent); }
+.design-medunit .post-keys ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.design-medunit .post-keys li { display: flex; align-items: flex-start; gap: 10px; margin: 0; color: var(--ink); font-size: 16px; line-height: 1.55; }
+.design-medunit .post-keys li .ico { margin-top: 2px; color: var(--accent); }
+.design-medunit .prose h2 { display: flex; align-items: center; gap: 12px; }
+.design-medunit .h-ico {
+ display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+ width: 38px; height: 38px; border-radius: 50%; background: var(--soft); border: 1px solid var(--line); color: var(--accent);
+}
+.design-medunit .compact-disclosure > summary h2 { display: flex; align-items: center; gap: 10px; }
+.design-medunit .compact-disclosure > summary .h-ico { width: 32px; height: 32px; }
+.design-medunit .post-cta {
+ display: flex; align-items: flex-start; gap: 16px; margin: 28px 0 12px; padding: 22px;
+ border-radius: 16px; background: linear-gradient(135deg, #1b2747, #2b3770); color: #fff;
+}
+.design-medunit .post-cta-ico { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: #ffffff1c; color: #d3dbff; }
+.design-medunit .post-cta-title { margin: 0 0 4px; color: #fff !important; font: 400 clamp(21px, 2.4vw, 26px)/1.25 Georgia, serif; }
+.design-medunit .post-cta p { margin: 0 0 14px; color: #d5deec !important; font-size: 16px; line-height: 1.5; }
+.design-medunit .post-cta .button { display: inline-flex; align-items: center; gap: 8px; margin: 0; background: #fff; color: var(--accent); }
+.design-medunit .post-cta .button:hover { background: #e9ecfb; color: var(--accent-hover); }
+@media (max-width: 620px) {
+ .design-medunit .prose h2 { gap: 10px; }
+ .design-medunit .h-ico { width: 32px; height: 32px; }
+ .design-medunit .h-ico .ico { width: 17px; height: 17px; }
+ .design-medunit .post-hero img { max-height: 210px; }
+ .design-medunit .post-keys { padding: 14px 16px; }
+ .design-medunit .post-cta { flex-direction: column; gap: 10px; padding: 18px; }
+ .design-medunit .post-cta-ico { width: 44px; height: 44px; }
+ .design-medunit .post-cta .button { width: 100%; justify-content: center; }
+}
+.design-medunit .post-hero img { width: auto; max-width: 100%; max-height: 230px; border: 0; background: transparent; }
+@media (max-width: 620px) { .design-medunit .post-hero img { max-height: 180px; } }
+/* Article header: copy on the left, topic illustration on the right. */
+.design-medunit .page-head.has-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 300px); column-gap: 32px; align-items: start; }
+.design-medunit .page-head.has-hero > * { grid-column: 1; }
+.design-medunit .page-head.has-hero > .post-hero { grid-column: 2; grid-row: 1 / span 8; align-self: center; margin: 0; }
+.design-medunit .page-head.has-hero .post-hero img { width: 100%; max-height: none; border-radius: 16px; }
+@media (max-width: 760px) {
+ .design-medunit .page-head.has-hero { grid-template-columns: minmax(0, 1fr); }
+ .design-medunit .page-head.has-hero > .post-hero { grid-column: 1; grid-row: auto; margin-top: 16px; }
+ .design-medunit .page-head.has-hero .post-hero img { max-height: 180px; width: auto; max-width: 100%; }
+}
+.design-medunit .prose .post-cta .post-cta-title { font: 400 clamp(21px, 2.4vw, 26px)/1.25 Georgia, serif; margin-bottom: 6px; }
+.design-medunit .prose .post-cta p:not(.post-cta-title) { font-size: 16px; }
