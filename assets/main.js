@@ -235,7 +235,7 @@ if (calendar) {
    widget.src = 'https://platform.docplanner.com/js/widget.js';
    widget.async = true;
    widget.addEventListener('error', () => { calendar.hidden = true; });
-   document.head.append(widget);
+   window.requestAnimationFrame(() => document.head.append(widget));
   };
   calendarPanel?.addEventListener('toggle', loadCalendar);
   loadCalendar();
