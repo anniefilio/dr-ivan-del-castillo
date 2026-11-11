@@ -1778,3 +1778,10 @@ html{scroll-padding-top:112px}
 .design-medunit details.always-open > summary > span:last-child:not(:first-child):is(.opinion-toggle) { display: none !important; }
 .design-medunit details.always-open.team-member summary { grid-template-columns: 74px minmax(0, 1fr); background: var(--soft); }
 .design-medunit .medical-opinion.always-open > summary > span { display: none; }
+
+/* Medical disclaimer shown on every blog article. */
+.design-medunit .medical-disclaimer { margin: 28px 0 0; padding: 16px 18px; border: 1px solid #e7d3a6; border-left: 4px solid #c98a14; border-radius: 12px; background: #fdf8ec; }
+.design-medunit .prose .medical-disclaimer p { margin: 0 0 8px; color: #4a3d1f; font-size: 15px; line-height: 1.55; }
+.design-medunit .prose .medical-disclaimer p:last-child { margin-bottom: 0; }
+.design-medunit .prose .medical-disclaimer .medical-disclaimer-title { display: flex; align-items: center; gap: 8px; color: #6b4b0c; font-weight: 700; font-size: 16px; }
+.design-medunit .medical-disclaimer .ico { color: #c98a14; }
