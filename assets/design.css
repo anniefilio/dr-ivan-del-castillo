@@ -1398,159 +1398,18 @@ html{scroll-padding-top:112px}
 }
 .design-medunit main .patient-reviews .review-platforms a:hover { background: transparent; color: #fff; }
 
-/* Orientation questionnaire opens as a non-modal dropdown anchored to its trigger:
-   it never pushes the page, flips up or down with the available space and keeps its own scroll. */
-.design-medunit .visit-orientation { position: relative; }
-.design-medunit .visit-orientation[open] { z-index: 15; }
-.design-medunit .visit-orientation > .visit-question {
- position: absolute;
- top: calc(100% + 6px);
- left: 0;
- right: 0;
- margin: 0;
- background: var(--paper);
- box-shadow: 0 14px 32px #19254024, 0 2px 6px #1925401a;
- transform-origin: top center;
+/* All six credentials stay visible, without a carousel or horizontal scrolling. */
+.design-medunit .credentials-strip {
+ display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+ gap: 12px; padding: 12px; border: 1px solid #ffffff45;
+ border-radius: 10px; background: #ffffff12;
 }
-.design-medunit .visit-orientation.opens-up > .visit-question {
- top: auto;
- bottom: calc(100% + 6px);
- transform-origin: bottom center;
-}
-@media (prefers-reduced-motion: no-preference) {
- .design-medunit .visit-orientation[open] > .visit-question { animation: visit-drop .16s ease-out; }
-}
-@keyframes visit-drop { from { opacity: 0; transform: translateY(-4px) scale(.99); } }
-
-/* Footer: four balanced columns (identity, Atención, Recursos, Contacto) over a slim legal bar.
-   A fresh class keeps the layered legacy .site-footer rules from leaking in. */
-.design-medunit .site-foot {
- --foot-text: #d5deec;
- --foot-muted: #a9b6cb;
- --foot-line: #ffffff24;
- padding: 0;
- margin: 0;
- background: #142341;
- color: var(--foot-text);
- font: 400 15px/1.5 'DM Sans', Arial, sans-serif;
-}
-.design-medunit .site-foot a { color: var(--foot-text); font-size: 15px; line-height: 1.5; margin: 0; text-decoration: none; scroll-margin-bottom: 96px; }
-.design-medunit .site-foot a:hover { color: #fff; }
-.design-medunit .site-foot a:focus-visible,
-.design-medunit .site-foot summary:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 3px; }
-.design-medunit .site-foot p { margin: 0; color: var(--foot-muted); font-size: 15px; line-height: 1.6; }
-
-.design-medunit .foot-main {
- display: grid;
- grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
- gap: 24px clamp(20px, 4vw, 56px);
- padding: 44px 0 32px;
-}
-.design-medunit .foot-logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 14px; color: #fff !important; }
-.design-medunit .foot-logo img { width: 46px; height: 40px; object-fit: contain; border-radius: 50%; background: #fff; padding: 3px; }
-.design-medunit .foot-logo span { font: 800 16px/1.25 Manrope, Arial, sans-serif; letter-spacing: .02em; text-transform: uppercase; }
-.design-medunit .foot-logo small { display: block; margin-top: 3px; color: var(--foot-muted); font: 500 12px/1.3 'DM Sans', Arial, sans-serif; letter-spacing: .04em; text-transform: none; }
-.design-medunit .foot-brand p { max-width: 300px; }
-
-.design-medunit .foot-col summary,
-.design-medunit .foot-title {
- position: relative;
- display: block;
- margin: 0 0 16px;
- padding: 0 0 12px;
- color: #fff;
- font: 700 17px/1.3 Manrope, Arial, sans-serif;
- letter-spacing: 0;
- list-style: none;
-}
-.design-medunit .foot-col summary::before,
-.design-medunit .foot-title::before {
- content: '';
- position: absolute;
- left: 0;
- bottom: 0;
- width: 32px;
- height: 2px;
- border-radius: 2px;
- background: #7f8be0;
-}
-.design-medunit .foot-col summary { pointer-events: none; }
-.design-medunit .foot-col nav,
-.design-medunit .foot-contact { display: grid; justify-items: start; gap: 2px; }
-.design-medunit .foot-col nav a,
-.design-medunit .foot-contact > a {
- display: inline-flex;
- align-items: center;
- min-height: 34px;
- padding: 3px 0;
- transition: color .18s ease, transform .18s ease;
-}
-.design-medunit .foot-col nav a:hover,
-.design-medunit .foot-contact > a:hover { transform: translateX(3px); }
-.design-medunit .foot-contact .foot-phone { color: #fff; font: 700 19px/1.3 Manrope, Arial, sans-serif; letter-spacing: .01em; }
-.design-medunit .foot-social { display: flex; gap: 10px; margin-top: 10px; }
-.design-medunit .foot-social a {
- display: inline-flex;
- align-items: center;
- justify-content: center;
- width: 40px;
- height: 40px;
- border: 1px solid #ffffff5c;
- border-radius: 50%;
- transition: background-color .18s ease, border-color .18s ease, color .18s ease;
-}
-.design-medunit .foot-social a:hover { background: #fff; border-color: #fff; color: #142341; }
-
-.design-medunit .foot-bottom {
- display: flex;
- align-items: center;
- flex-wrap: wrap;
- gap: 4px 22px;
- padding: 12px 72px calc(12px + env(safe-area-inset-bottom, 0px)) 0;
- border-top: 1px solid var(--foot-line);
-}
-.design-medunit .foot-bottom p,
-.design-medunit .foot-bottom > a:not(.foot-powered) { font-size: 14px; color: var(--foot-muted); }
-.design-medunit .foot-bottom > a:not(.foot-powered) { display: inline-flex; align-items: center; min-height: 36px; }
-.design-medunit .foot-bottom > a:not(.foot-powered):hover { color: #fff; }
-.design-medunit .foot-bottom .foot-powered { display: block; width: 150px; height: 32px; margin-left: auto; overflow: hidden; flex-shrink: 0; }
-.design-medunit .foot-powered img { display: block; width: 222px; max-width: none; height: auto; margin: -17px 0 0 -36px; }
-
-@media (prefers-reduced-motion: reduce) {
- .design-medunit .site-foot * { transition: none !important; transform: none !important; }
-}
-
+.design-medunit .credential-item { margin: 0; min-width: 0; text-align: center; }
+.design-medunit .credential-item img { display: block; width: 100%; height: 90px; object-fit: contain; margin: 0 auto 8px; }
+.design-medunit .credential-item figcaption { font: 600 16px/1.3 'DM Sans', Arial, sans-serif; color: #fff; }
+.design-medunit .visit-options.visit-single { grid-template-columns: minmax(0, 1fr); }
 @media (max-width: 800px) {
- .design-medunit .foot-main { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 28px 0 12px; }
- .design-medunit .foot-brand { padding-bottom: 18px; }
- .design-medunit .foot-col { border-top: 1px solid var(--foot-line); }
- .design-medunit .foot-col summary {
-  display: flex; align-items: center; justify-content: space-between;
-  min-height: 48px; margin: 0; padding: 0; font-size: 16px;
-  pointer-events: auto; cursor: pointer;
- }
- .design-medunit .foot-col summary::before { display: none; }
- .design-medunit .foot-col summary::after { content: 'Ver'; color: var(--foot-muted); font: 600 14px/1.4 'DM Sans', Arial, sans-serif; }
- .design-medunit .foot-col[open] summary::after { content: 'Cerrar'; }
- .design-medunit .foot-col nav { padding-bottom: 10px; }
- .design-medunit .foot-col nav a,
- .design-medunit .foot-contact > a { min-height: 44px; }
- .design-medunit .foot-contact { padding-top: 18px; border-top: 1px solid var(--foot-line); }
- .design-medunit .foot-title { margin-bottom: 8px; }
- .design-medunit .foot-social a { width: 44px; height: 44px; }
- .design-medunit .foot-bottom { padding: 8px 0 calc(84px + env(safe-area-inset-bottom, 0px)); gap: 0 18px; }
- .design-medunit .foot-bottom > a:not(.foot-powered) { min-height: 44px; }
- .design-medunit .foot-bottom .foot-powered { margin-left: 0; }
-}
-@media (max-width: 800px) {
- .design-medunit .foot-main { padding-top: 22px; }
- .design-medunit .foot-logo { margin-bottom: 8px; }
- .design-medunit .foot-brand { padding-bottom: 12px; }
- .design-medunit .foot-brand p { font-size: 14px; line-height: 1.5; }
- .design-medunit .foot-contact { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 12px; padding-top: 14px; }
- .design-medunit .foot-contact > .foot-title,
- .design-medunit .foot-contact > a:not(.foot-phone) { grid-column: 1 / -1; }
- .design-medunit .foot-contact > a:not(.foot-phone) { min-height: 40px; }
- .design-medunit .foot-contact .foot-social { grid-column: 2; grid-row: 2; margin: 0; }
- .design-medunit .foot-bottom { padding: 6px 72px calc(14px + env(safe-area-inset-bottom, 0px)) 0; }
+ .design-medunit .credentials-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 8px; padding: 10px 8px; }
+ .design-medunit .credential-item img { height: 72px; margin-bottom: 6px; }
+ .design-medunit .credential-item figcaption { font-size: 16px; }
 }

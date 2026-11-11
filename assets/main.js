@@ -37,10 +37,8 @@ new MutationObserver(records => {
 }).observe(document.body, { childList: true, subtree: true });
 
 const footerMobile = window.matchMedia('(max-width: 800px)');
-// Footer columns are always open on wide screens and collapse into accordions on phones.
-const syncFooter = () => document.querySelectorAll('.foot-col').forEach(group => {
+const syncFooter = () => document.querySelectorAll('.footer-group').forEach(group => {
  group.open = !footerMobile.matches;
- group.querySelector('summary').tabIndex = footerMobile.matches ? 0 : -1;
 });
 syncFooter();
 footerMobile.addEventListener('change', syncFooter);
@@ -197,8 +195,8 @@ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion
  journalCards.forEach(card=>reveal.observe(card));
 }
 
-document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(carousel => {
- const track = carousel.querySelector('.review-track, .credentials-track');
+document.querySelectorAll('.reviews-carousel').forEach(carousel => {
+ const track = carousel.querySelector('.review-track');
  if (!track) return;
  const cards = [...track.children];
  if (cards.length < 2) return;
@@ -250,84 +248,6 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
   }
  }, interval);
  window.addEventListener('pagehide', () => window.clearInterval(timer), { once: true });
-});
-
-const visitOrientation = document.querySelector('.visit-orientation');
-// The questionnaire is a non-modal dropdown: it floats from its trigger without moving the page,
-// opens toward the side with more room and follows the trigger while the visitor scrolls.
-const fitVisitPanel = () => {
- if (!visitOrientation?.open) {
-  visitOrientation?.classList.remove('opens-up');
-  return;
- }
- const panel = visitOrientation.querySelector('.visit-question');
- const trigger = visitOrientation.querySelector('summary').getBoundingClientRect();
- const viewport = window.visualViewport?.height || window.innerHeight;
- const headerBottom = Math.max(0, document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0);
- // Close once the trigger has scrolled out of sight so the panel never lingers over other content.
- if (trigger.bottom < headerBottom || trigger.top > viewport) {
-  visitOrientation.open = false;
-  return;
- }
- const gap = 18;
- const below = viewport - trigger.bottom - gap;
- const above = trigger.top - headerBottom - gap;
- const natural = Math.min(panel.scrollHeight, 420);
- const opensUp = below < Math.min(natural, 260) && above > below;
- visitOrientation.classList.toggle('opens-up', opensUp);
- panel.style.setProperty('--visit-panel-height', `${Math.round(Math.max(160, Math.min(420, opensUp ? above : below)))}px`);
-};
-let visitFitFrame;
-const queueVisitFit = () => {
- window.cancelAnimationFrame(visitFitFrame);
- visitFitFrame = window.requestAnimationFrame(fitVisitPanel);
-};
-visitOrientation?.addEventListener('toggle', queueVisitFit);
-window.addEventListener('resize', queueVisitFit);
-window.addEventListener('scroll', queueVisitFit, { passive: true });
-window.visualViewport?.addEventListener('resize', queueVisitFit);
-document.addEventListener('pointerdown', event => {
- if (visitOrientation?.open && !visitOrientation.contains(event.target)) visitOrientation.open = false;
-});
-visitOrientation?.addEventListener('keydown', event => {
- if (event.key !== 'Escape' || !visitOrientation.open) return;
- visitOrientation.open = false;
- visitOrientation.querySelector('summary').focus();
-});
-visitOrientation?.addEventListener('focusout', event => {
- if (event.relatedTarget && !visitOrientation.contains(event.relatedTarget)) visitOrientation.open = false;
-});
-visitOrientation?.querySelector('.visit-question')?.addEventListener('keydown', event => {
- if (event.target !== event.currentTarget) return;
- const panel = event.currentTarget;
- const steps = { PageDown: panel.clientHeight * .8, PageUp: -panel.clientHeight * .8, ArrowDown: 40, ArrowUp: -40 };
- if (event.key in steps) {
-  event.preventDefault();
-  panel.scrollBy({ top: steps[event.key], behavior: 'instant' });
- } else if (event.key === 'Home' || event.key === 'End') {
-  event.preventDefault();
-  panel.scrollTo({ top: event.key === 'Home' ? 0 : panel.scrollHeight, behavior: 'instant' });
- }
-});
-visitOrientation?.addEventListener('change', event => {
- if (!event.target.matches('input[name="orientacion-visita"]')) return;
- visitOrientation.querySelectorAll('[data-visit-result]').forEach(result => {
-  result.hidden = result.dataset.visitResult !== event.target.value;
- });
- window.requestAnimationFrame(() => {
-  const panel = visitOrientation.querySelector('.visit-question');
-  const result = visitOrientation.querySelector('[data-visit-result]:not([hidden])');
-  if (!panel || !result) return;
-  const panelBounds = panel.getBoundingClientRect();
-  const resultBounds = result.getBoundingClientRect();
-  const overflow = resultBounds.bottom - panelBounds.bottom + 12;
-  if (overflow > 0) {
-   panel.scrollBy({
-    top: overflow,
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
-   });
-  }
- });
 });
 
 const calendar = document.querySelector('[data-doctoralia-calendar]');
