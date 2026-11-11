@@ -1397,3 +1397,27 @@ html{scroll-padding-top:112px}
  text-decoration: underline; text-underline-offset: 4px;
 }
 .design-medunit main .patient-reviews .review-platforms a:hover { background: transparent; color: #fff; }
+
+/* Orientation questionnaire opens as a non-modal dropdown anchored to its trigger:
+   it never pushes the page, flips up or down with the available space and keeps its own scroll. */
+.design-medunit .visit-orientation { position: relative; }
+.design-medunit .visit-orientation[open] { z-index: 15; }
+.design-medunit .visit-orientation > .visit-question {
+ position: absolute;
+ top: calc(100% + 6px);
+ left: 0;
+ right: 0;
+ margin: 0;
+ background: var(--paper);
+ box-shadow: 0 14px 32px #19254024, 0 2px 6px #1925401a;
+ transform-origin: top center;
+}
+.design-medunit .visit-orientation.opens-up > .visit-question {
+ top: auto;
+ bottom: calc(100% + 6px);
+ transform-origin: bottom center;
+}
+@media (prefers-reduced-motion: no-preference) {
+ .design-medunit .visit-orientation[open] > .visit-question { animation: visit-drop .16s ease-out; }
+}
+@keyframes visit-drop { from { opacity: 0; transform: translateY(-4px) scale(.99); } }

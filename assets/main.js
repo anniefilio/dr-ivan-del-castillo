@@ -251,14 +251,29 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
 });
 
 const visitOrientation = document.querySelector('.visit-orientation');
+// The questionnaire is a non-modal dropdown: it floats from its trigger without moving the page,
+// opens toward the side with more room and follows the trigger while the visitor scrolls.
 const fitVisitPanel = () => {
- if (!visitOrientation?.open) return;
+ if (!visitOrientation?.open) {
+  visitOrientation?.classList.remove('opens-up');
+  return;
+ }
  const panel = visitOrientation.querySelector('.visit-question');
- const top = panel.getBoundingClientRect().top;
+ const trigger = visitOrientation.querySelector('summary').getBoundingClientRect();
  const viewport = window.visualViewport?.height || window.innerHeight;
- const available = viewport - Math.max(top, 0) - 20;
- // Never move the document to reveal an answer or float over adjacent content.
- panel.style.setProperty('--visit-panel-height', `${Math.max(180, Math.min(420, viewport * .58, available))}px`);
+ const headerBottom = Math.max(0, document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0);
+ // Close once the trigger has scrolled out of sight so the panel never lingers over other content.
+ if (trigger.bottom < headerBottom || trigger.top > viewport) {
+  visitOrientation.open = false;
+  return;
+ }
+ const gap = 18;
+ const below = viewport - trigger.bottom - gap;
+ const above = trigger.top - headerBottom - gap;
+ const natural = Math.min(panel.scrollHeight, 420);
+ const opensUp = below < Math.min(natural, 260) && above > below;
+ visitOrientation.classList.toggle('opens-up', opensUp);
+ panel.style.setProperty('--visit-panel-height', `${Math.round(Math.max(160, Math.min(420, opensUp ? above : below)))}px`);
 };
 let visitFitFrame;
 const queueVisitFit = () => {
@@ -267,7 +282,19 @@ const queueVisitFit = () => {
 };
 visitOrientation?.addEventListener('toggle', queueVisitFit);
 window.addEventListener('resize', queueVisitFit);
+window.addEventListener('scroll', queueVisitFit, { passive: true });
 window.visualViewport?.addEventListener('resize', queueVisitFit);
+document.addEventListener('pointerdown', event => {
+ if (visitOrientation?.open && !visitOrientation.contains(event.target)) visitOrientation.open = false;
+});
+visitOrientation?.addEventListener('keydown', event => {
+ if (event.key !== 'Escape' || !visitOrientation.open) return;
+ visitOrientation.open = false;
+ visitOrientation.querySelector('summary').focus();
+});
+visitOrientation?.addEventListener('focusout', event => {
+ if (event.relatedTarget && !visitOrientation.contains(event.relatedTarget)) visitOrientation.open = false;
+});
 visitOrientation?.querySelector('.visit-question')?.addEventListener('keydown', event => {
  if (event.target !== event.currentTarget) return;
  const panel = event.currentTarget;
