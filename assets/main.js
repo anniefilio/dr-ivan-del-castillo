@@ -37,8 +37,10 @@ new MutationObserver(records => {
 }).observe(document.body, { childList: true, subtree: true });
 
 const footerMobile = window.matchMedia('(max-width: 800px)');
-const syncFooter = () => document.querySelectorAll('.footer-group').forEach(group => {
+// Footer columns are always open on wide screens and collapse into accordions on phones.
+const syncFooter = () => document.querySelectorAll('.foot-col').forEach(group => {
  group.open = !footerMobile.matches;
+ group.querySelector('summary').tabIndex = footerMobile.matches ? 0 : -1;
 });
 syncFooter();
 footerMobile.addEventListener('change', syncFooter);
