@@ -1768,3 +1768,4 @@ html{scroll-padding-top:112px}
 .design-medunit .hero .visit-form label,
 .design-medunit .hero .visit-form .field-label { color: var(--ink); }
 .design-medunit .hero .visit-form p { color: var(--muted); }
+.design-medunit .post-reviewed { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; font-size: 14px; }
