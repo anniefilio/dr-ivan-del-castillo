@@ -305,6 +305,20 @@ if (appointmentForm) {
   ].filter(Boolean).join(' ');
   const whatsapp = new URL(appointmentForm.dataset.whatsapp);
   whatsapp.searchParams.set('text', message);
+  // Only this form sends the prepared message. WhatsApp opens as a third party in its own
+  // tab while this tab moves to the internal thank-you page.
+  try { sessionStorage.setItem('cita-whatsapp', whatsapp.href); } catch {}
   window.open(whatsapp.href, '_blank', 'noopener,noreferrer');
+  window.location.assign(new URL('primera-consulta/gracias/', siteRoot).href);
  });
+}
+
+const thanksRetry = document.querySelector('[data-thanks-retry]');
+if (thanksRetry) {
+ let prepared = null;
+ try { prepared = sessionStorage.getItem('cita-whatsapp'); } catch {}
+ if (prepared && new URL(prepared).hostname === 'wa.me') {
+  thanksRetry.href = prepared;
+  thanksRetry.hidden = false;
+ }
 }
