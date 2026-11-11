@@ -1769,3 +1769,12 @@ html{scroll-padding-top:112px}
 .design-medunit .hero .visit-form .field-label { color: var(--ink); }
 .design-medunit .hero .visit-form p { color: var(--muted); }
 .design-medunit .post-reviewed { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; font-size: 14px; }
+
+/* Blocks chosen to stay open: content shows without a click and the toggle labels disappear. */
+.design-medunit details.always-open > summary { cursor: default; pointer-events: none; }
+.design-medunit details.always-open > summary::after,
+.design-medunit details.always-open .column-topic-action,
+.design-medunit details.always-open .team-expand,
+.design-medunit details.always-open > summary > span:last-child:not(:first-child):is(.opinion-toggle) { display: none !important; }
+.design-medunit details.always-open.team-member summary { grid-template-columns: 74px minmax(0, 1fr); background: var(--soft); }
+.design-medunit .medical-opinion.always-open > summary > span { display: none; }

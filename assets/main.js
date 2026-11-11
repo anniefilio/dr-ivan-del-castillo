@@ -378,3 +378,9 @@ if (whatsappFab) {
  chat.searchParams.set('text', message);
  whatsappFab.href = chat.href;
 }
+
+// Blocks marked always-open stay expanded even if a keyboard toggle reaches their summary.
+document.querySelectorAll('details.always-open').forEach(block => {
+ block.querySelector(':scope > summary')?.setAttribute('tabindex', '-1');
+ block.addEventListener('toggle', () => { if (!block.open) block.open = true; });
+});
