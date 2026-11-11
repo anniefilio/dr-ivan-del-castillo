@@ -1734,3 +1734,37 @@ html{scroll-padding-top:112px}
 }
 .design-medunit .prose .post-cta .post-cta-title { font: 400 clamp(21px, 2.4vw, 26px)/1.25 Georgia, serif; margin-bottom: 6px; }
 .design-medunit .prose .post-cta p:not(.post-cta-title) { font-size: 16px; }
+
+/* Practical details beside the first-consultation form. */
+.design-medunit .visit-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 16px; margin: 0 0 14px; padding: 0; list-style: none; }
+.design-medunit .visit-facts li { display: flex; align-items: flex-start; gap: 8px; margin: 0; color: var(--ink); font-size: 14px; line-height: 1.45; }
+.design-medunit .visit-facts .ico { margin-top: 1px; color: var(--accent); }
+@media (max-width: 1000px) { .design-medunit .visit-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .design-medunit .visit-facts { grid-template-columns: minmax(0, 1fr); gap: 6px; } }
+.design-medunit .opinion-author { display: flex; align-items: center; gap: 8px; }
+.design-medunit .opinion-author .ico { color: var(--accent); }
+
+/* Merged rating from Doctoralia and Google. */
+.design-medunit .rating-summary { display: flex; align-items: center; gap: 12px; margin: 10px 0 8px; }
+.design-medunit .rating-score { font: 400 44px/1 Georgia, serif; color: #fff; }
+.design-medunit .rating-detail { display: grid; gap: 2px; font-size: 14px; color: #d5deec; }
+.design-medunit .rating-detail .review-stars .ri,
+.design-medunit .rating-detail .review-stars svg { width: 19px; height: 19px; }
+.design-medunit .review-platforms a b { color: #fff; font-weight: 700; }
+.design-medunit .review-platforms a span { color: #c3ccff; font-size: 13px; }
+.design-medunit .profile-reviews .rating-score { color: var(--ink); }
+.design-medunit .profile-reviews .rating-detail { color: var(--muted); }
+.design-medunit .profile-reviews .review-platforms { display: flex; flex-wrap: wrap; gap: 0 18px; margin-bottom: 12px; }
+.design-medunit .profile-reviews .review-platforms a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; color: var(--accent); }
+.design-medunit .profile-reviews .review-platforms a b { color: var(--ink); }
+.design-medunit .profile-reviews .review-platforms a span { color: var(--muted); }
+.design-medunit .review-card figcaption .review-stars { margin-right: 4px; }
+
+/* The booking form sits inside the dark hero band: keep the card's text dark and readable. */
+.design-medunit .hero .visit-access { color: #fff; padding-block: 8px 18px; }
+.design-medunit .hero .visit-access .visit-calendar { color: #fff; border-color: #ffffff80; }
+.design-medunit .hero .visit-access .visit-calendar .ico { color: #c3ccff; }
+.design-medunit .hero .visit-form { color: var(--ink); box-shadow: 0 14px 34px #0b14302e; }
+.design-medunit .hero .visit-form label,
+.design-medunit .hero .visit-form .field-label { color: var(--ink); }
+.design-medunit .hero .visit-form p { color: var(--muted); }

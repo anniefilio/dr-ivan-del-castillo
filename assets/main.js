@@ -364,3 +364,17 @@ if (thanksRetry) {
   thanksRetry.hidden = false;
  }
 }
+
+// Floating WhatsApp button: opens the chat with a short message about the page being read.
+// The first-consultation form keeps its own detailed message.
+const whatsappFab = document.querySelector('.whatsapp-fab');
+if (whatsappFab) {
+ const page = (document.querySelector('main h1')?.textContent || '').replace(/\s+/g, ' ').trim().replace(/[.]+$/, '');
+ const home = window.location.pathname === siteRoot.pathname;
+ const message = home || !page
+  ? 'Hola, me gustaría información para agendar una consulta con el Dr. Iván del Castillo.'
+  : `Hola, estoy leyendo «${page}» en el sitio del Dr. Iván del Castillo y me gustaría información para agendar una consulta.`;
+ const chat = new URL(whatsappFab.href);
+ chat.searchParams.set('text', message);
+ whatsappFab.href = chat.href;
+}
