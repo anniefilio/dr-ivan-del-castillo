@@ -275,8 +275,19 @@ const queueVisitFit = () => {
 };
 visitOrientation?.addEventListener('toggle', queueVisitFit);
 window.addEventListener('resize', queueVisitFit);
-window.addEventListener('scroll', queueVisitFit, { passive: true });
 window.visualViewport?.addEventListener('resize', queueVisitFit);
+visitOrientation?.querySelector('.visit-question')?.addEventListener('keydown', event => {
+ if (event.target !== event.currentTarget) return;
+ const panel = event.currentTarget;
+ const steps = { PageDown: panel.clientHeight * .8, PageUp: -panel.clientHeight * .8, ArrowDown: 40, ArrowUp: -40 };
+ if (event.key in steps) {
+  event.preventDefault();
+  panel.scrollBy({ top: steps[event.key], behavior: 'instant' });
+ } else if (event.key === 'Home' || event.key === 'End') {
+  event.preventDefault();
+  panel.scrollTo({ top: event.key === 'Home' ? 0 : panel.scrollHeight, behavior: 'instant' });
+ }
+});
 visitOrientation?.addEventListener('change', event => {
  if (!event.target.matches('input[name="orientacion-visita"]')) return;
  visitOrientation.querySelectorAll('[data-visit-result]').forEach(result => {
