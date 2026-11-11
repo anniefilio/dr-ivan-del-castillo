@@ -1850,3 +1850,34 @@ html{scroll-padding-top:112px}
 }
 .design-medunit .loc-btn span { white-space: nowrap; }
 @media (max-width: 520px) { .design-medunit .loc-rehab .loc-actions { grid-template-columns: 1fr; } }
+
+/* Booking card: wide and low. Icon, copy and button sit on one row on wide screens. */
+.design-medunit .post-cta { align-items: center; gap: 18px; padding: 16px 22px; }
+.design-medunit .post-cta > div {
+ flex: 1; min-width: 0;
+ display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 24px;
+}
+.design-medunit .post-cta > div > p { grid-column: 1; }
+.design-medunit .post-cta > div > .button { grid-column: 2; grid-row: 1 / span 2; align-self: center; white-space: nowrap; }
+.design-medunit .post-cta-ico { width: 48px; height: 48px; }
+.design-medunit .post-cta .post-cta-title,
+.design-medunit .prose .post-cta .post-cta-title { margin: 0 0 2px; font-size: clamp(20px, 2vw, 23px); }
+.design-medunit .post-cta p:not(.post-cta-title),
+.design-medunit .prose .post-cta p:not(.post-cta-title) { margin: 0; font-size: 15px; line-height: 1.45; }
+@media (max-width: 760px) {
+ .design-medunit .post-cta { align-items: flex-start; }
+ .design-medunit .post-cta > div { grid-template-columns: minmax(0, 1fr); row-gap: 12px; }
+ .design-medunit .post-cta > div > .button { grid-column: 1; grid-row: auto; justify-self: start; }
+}
+@media (max-width: 620px) {
+ .design-medunit .post-cta { flex-direction: row; gap: 12px; padding: 16px; }
+ .design-medunit .post-cta-ico { width: 40px; height: 40px; }
+ .design-medunit .post-cta > div > .button { justify-self: stretch; }
+}
+/* Let the booking card span wider than the reading column so it stays low. */
+.design-medunit .prose > .post-cta {
+ width: min(1040px, calc(100vw - 48px));
+ max-width: none;
+ margin-inline: calc(50% - min(520px, 50vw - 24px));
+}
+@media (max-width: 760px) { .design-medunit .prose > .post-cta { width: auto; margin-inline: 0; } }
