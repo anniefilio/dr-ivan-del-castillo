@@ -266,6 +266,6 @@ if (appointmentForm) {
   ].filter(Boolean).join(' ');
   const whatsapp = new URL(appointmentForm.dataset.whatsapp);
   whatsapp.searchParams.set('text', message);
-  window.location.assign(whatsapp);
+  window.open(whatsapp.href, '_blank', 'noopener,noreferrer');
  });
 }
