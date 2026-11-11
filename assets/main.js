@@ -150,69 +150,67 @@ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion
  journalCards.forEach(card=>reveal.observe(card));
 }
 
-document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(carousel=>{
- const reviewTrack=carousel.querySelector('.review-track, .credentials-track');
- const reviewControls=carousel.querySelector('.review-controls');
- if(!reviewTrack||!reviewControls)return;
- const reviewCards=[...reviewTrack.children];
- if(reviewCards.length<2)return;
- const [previous,next]=reviewControls.querySelectorAll('button');
- const reviewCount=reviewControls.querySelector('.review-count');
- const playback=reviewControls.querySelector('[data-carousel-playback]');
- const interval=Number(carousel.dataset.carouselInterval);
- const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- let playing=false;
- let timer;
- const activeReview=()=>{
-  const trackStart=reviewTrack.getBoundingClientRect().left;
-  return reviewCards.reduce((closest,card,index)=>
-   Math.abs(card.getBoundingClientRect().left-trackStart)<Math.abs(reviewCards[closest].getBoundingClientRect().left-trackStart)
-    ?index:closest,0);
+document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(carousel => {
+ const track = carousel.querySelector('.review-track, .credentials-track');
+ if (!track) return;
+ const cards = [...track.children];
+ if (cards.length < 2) return;
+
+ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+ const interval = Number(carousel.dataset.carouselInterval) || 4000;
+ let playing = !reducedMotion.matches;
+
+ const pauseButton = document.createElement('button');
+ pauseButton.type = 'button';
+ pauseButton.className = 'carousel-playback sr-only';
+ pauseButton.setAttribute('aria-controls', track.id);
+ const updatePlayback = () => {
+  pauseButton.textContent = playing ? 'Pausar avance automático' : 'Activar avance automático';
  };
- const updateReviews=()=>{
-  const index=activeReview();
-  const label=`${index+1} de ${reviewCards.length}`;
-  if(reviewCount.textContent!==label)reviewCount.textContent=label;
-  previous.disabled=!playback&&index===0;
-  next.disabled=!playback&&index===reviewCards.length-1;
+ updatePlayback();
+ carousel.append(pauseButton);
+
+ const activeCard = () => {
+  const start = track.getBoundingClientRect().left;
+  return cards.reduce((closest, card, index) =>
+   Math.abs(card.getBoundingClientRect().left - start) <
+   Math.abs(cards[closest].getBoundingClientRect().left - start) ? index : closest, 0);
  };
- const advanceReview=step=>{
-  const index=activeReview()+step;
-  const wrap=index<0||index>=reviewCards.length;
-  if(wrap&&!playback)return;
-  const card=reviewCards[(index+reviewCards.length)%reviewCards.length];
-  const offset=card.getBoundingClientRect().left-reviewTrack.getBoundingClientRect().left;
-  reviewTrack.scrollBy({left:offset,behavior:wrap||reducedMotion.matches?'instant':'smooth'});
+ const advance = step => {
+  const index = activeCard() + step;
+  const wrapping = index < 0 || index >= cards.length;
+  const card = cards[(index + cards.length) % cards.length];
+  const offset = card.getBoundingClientRect().left - track.getBoundingClientRect().left;
+  track.scrollBy({
+   left: offset,
+   behavior: wrapping || reducedMotion.matches ? 'instant' : 'smooth'
+  });
  };
- const setPlaying=value=>{
-  if(!playback)return;
-  playing=value;
-  window.clearInterval(timer);
-  playback.setAttribute('aria-label',playing?'Pausar avance automático':'Activar avance automático');
-  playback.firstElementChild.textContent=playing?'Ⅱ':'▶';
-  reviewCount.setAttribute('aria-live',playing?'off':'polite');
-  if(playing)timer=window.setInterval(()=>{
-   const bounds=carousel.getBoundingClientRect();
-   if(!document.hidden&&!carousel.matches(':hover, :focus-within')&&bounds.bottom>0&&bounds.top<window.innerHeight)advanceReview(1);
-  },interval);
- };
- reviewControls.hidden=false;
- previous.addEventListener('click',()=>{setPlaying(false);advanceReview(-1);});
- next.addEventListener('click',()=>{setPlaying(false);advanceReview(1);});
- if(playback){
-  playback.addEventListener('click',()=>setPlaying(!playing));
-  reviewTrack.addEventListener('pointerdown',()=>setPlaying(false));
-  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)setPlaying(false);});
-  setPlaying(!reducedMotion.matches);
- }
- reviewTrack.addEventListener('scroll',updateReviews,{passive:true});
- reviewTrack.addEventListener('keydown',event=>{
-  if(event.target!==reviewTrack||!['ArrowLeft','ArrowRight'].includes(event.key))return;
-  event.preventDefault();
-  setPlaying(false);
-  advanceReview(event.key==='ArrowLeft'?-1:1);
+
+ pauseButton.addEventListener('click', () => {
+  playing = !playing;
+  updatePlayback();
  });
- updateReviews();
+ reducedMotion.addEventListener('change', () => {
+  if (reducedMotion.matches) {
+   playing = false;
+   updatePlayback();
+  }
+ });
+ track.addEventListener('keydown', event => {
+  if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  advance(event.key === 'ArrowLeft' ? -1 : 1);
+ });
+
+ const timer = window.setInterval(() => {
+  const bounds = carousel.getBoundingClientRect();
+  if (playing && !document.hidden && !carousel.matches(':hover, :focus-within') &&
+      bounds.bottom > 0 && bounds.top < window.innerHeight) {
+   advance(1);
+  }
+ }, interval);
+ window.addEventListener('pagehide', () => window.clearInterval(timer), { once: true });
 });
 
 const visitOrientation=document.querySelector('.visit-orientation');

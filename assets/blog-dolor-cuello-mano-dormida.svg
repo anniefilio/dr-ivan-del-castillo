@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#f4f8f7"/><stop offset="1" stop-color="#d5e6e1"/></linearGradient>
+    <linearGradient id="paper" x2=".35" y2="1"><stop stop-color="#fbfdfc"/><stop offset="1" stop-color="#a0bcc8"/></linearGradient>
+    <linearGradient id="green" x2="0" y2="1"><stop stop-color="#91bbad"/><stop offset="1" stop-color="#4b8175"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#background)"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+<g transform="translate(151 100) rotate(-9 80 100)">
+  <rect width="162" height="199" rx="23" fill="#244b62"/>
+  <rect x="12" y="12" width="138" height="175" rx="16" fill="#376478"/>
+  <path d="M60 36q21-9 46 0l-2 14q-23 7-46-2zm-4 31q24-8 49 0l1 15q-26 7-51-1zm1 32q26-7 53 1l2 15q-26 8-54 1zm6 33q27-6 54 1l3 16q-25 10-54 3z" fill="url(#paper)"/>
+</g>
+<g transform="translate(342 85) rotate(10 68 110)">
+  <path d="M34 222v-39c0-12-6-24-15-37L4 125c-7-11 3-24 14-16l21 19V61c0-15 18-15 18 0v43h6V32c0-15 18-15 18 0v72h6V47c0-14 18-14 18 0v60h6V70c0-13 17-13 17 0v64c0 29-12 42-13 59v29z" fill="url(#paper)" stroke="#7296a2" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M34 183q41-12 83 0v17q-42-9-83 1z" fill="url(#green)"/>
+</g>
+</svg>
