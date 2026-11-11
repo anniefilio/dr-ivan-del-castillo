@@ -1881,3 +1881,11 @@ html{scroll-padding-top:112px}
  margin-inline: calc(50% - min(520px, 50vw - 24px));
 }
 @media (max-width: 760px) { .design-medunit .prose > .post-cta { width: auto; margin-inline: 0; } }
+
+/* Doctor profile reuses the home page reviews band. */
+.design-medunit .patient-reviews.reviews-shared {
+ display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); align-items: center;
+ gap: clamp(8px, 2vw, 20px); margin-block: 24px 38px; padding: clamp(12px, 2.2vw, 24px);
+ border-radius: 22px; color: #fff; background: linear-gradient(120deg, #151f39, #263868);
+}
+@media (max-width: 800px) { .design-medunit .patient-reviews.reviews-shared { grid-template-columns: minmax(0, 1fr); margin-block: 18px 28px; } }
