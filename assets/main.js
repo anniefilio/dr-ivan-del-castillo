@@ -1,3 +1,48 @@
+// Internal navigation uses ordinary browser navigation in this tab, including
+// links added later. Only HTTP(S) references to third parties open a new tab.
+const siteScript = document.querySelector('script[src*="assets/main.js"]');
+const siteRoot = new URL('../', siteScript?.src || window.location.href);
+const normalizeSiteLink = link => {
+ const raw = link.getAttribute('href');
+ if (!raw) return;
+ let destination;
+ try { destination = new URL(raw, window.location.href); } catch { return; }
+ const oldSite = destination.hostname === 'dr-ivan-del-castillo-columna.guillermo937720.chatgpt.site';
+ const publicSite = destination.hostname === 'anniefilio.github.io' && destination.pathname.startsWith('/dr-ivan-del-castillo/');
+ const sameSite = destination.origin === window.location.origin &&
+  (destination.hostname !== 'anniefilio.github.io' || destination.pathname.startsWith(siteRoot.pathname));
+ if (oldSite || publicSite) {
+  const route = destination.pathname.replace(/^\/dr-ivan-del-castillo\//, '/');
+  link.href = new URL(route.replace(/^\//, '') + destination.search + destination.hash, siteRoot).href;
+ }
+ if (sameSite || oldSite || publicSite || !/^https?:$/.test(destination.protocol)) {
+  link.removeAttribute('target');
+  link.relList.remove('noopener', 'noreferrer', 'external');
+ } else {
+  link.target = '_blank';
+  link.relList.add('noopener', 'noreferrer');
+ }
+};
+document.querySelectorAll('a[href]').forEach(normalizeSiteLink);
+document.addEventListener('click', event => {
+ const link = event.target.closest?.('a[href]');
+ if (link) normalizeSiteLink(link);
+}, true);
+new MutationObserver(records => {
+ for (const record of records) for (const node of record.addedNodes) {
+  if (node.nodeType !== Node.ELEMENT_NODE) continue;
+  if (node.matches('a[href]')) normalizeSiteLink(node);
+  node.querySelectorAll('a[href]').forEach(normalizeSiteLink);
+ }
+}).observe(document.body, { childList: true, subtree: true });
+
+const footerMobile = window.matchMedia('(max-width: 800px)');
+const syncFooter = () => document.querySelectorAll('.footer-group').forEach(group => {
+ group.open = !footerMobile.matches;
+});
+syncFooter();
+footerMobile.addEventListener('change', syncFooter);
+
 const toggle=document.querySelector('.menu');
 const navigation=document.querySelector('#navigation');
 const careMenu=navigation?.querySelector('.care-menu');
@@ -214,6 +259,24 @@ document.querySelectorAll('.reviews-carousel, .credentials-carousel').forEach(ca
 });
 
 const visitOrientation = document.querySelector('.visit-orientation');
+const fitVisitPanel = () => {
+ if (!visitOrientation?.open) return;
+ const panel = visitOrientation.querySelector('.visit-question');
+ const top = panel.getBoundingClientRect().top;
+ const viewport = window.visualViewport?.height || window.innerHeight;
+ const available = viewport - Math.max(top, 0) - 20;
+ // Never move the document to reveal an answer or float over adjacent content.
+ panel.style.setProperty('--visit-panel-height', `${Math.max(180, Math.min(420, viewport * .58, available))}px`);
+};
+let visitFitFrame;
+const queueVisitFit = () => {
+ window.cancelAnimationFrame(visitFitFrame);
+ visitFitFrame = window.requestAnimationFrame(fitVisitPanel);
+};
+visitOrientation?.addEventListener('toggle', queueVisitFit);
+window.addEventListener('resize', queueVisitFit);
+window.addEventListener('scroll', queueVisitFit, { passive: true });
+window.visualViewport?.addEventListener('resize', queueVisitFit);
 visitOrientation?.addEventListener('change', event => {
  if (!event.target.matches('input[name="orientacion-visita"]')) return;
  visitOrientation.querySelectorAll('[data-visit-result]').forEach(result => {
