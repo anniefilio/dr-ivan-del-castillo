@@ -1198,3 +1198,37 @@ html{scroll-padding-top:112px}
   .design-medunit .medical-opinion > summary { display: block; }
   .design-medunit .medical-opinion > summary > span { display: inline-block; margin-top: 3px; }
 }
+
+.design-medunit .contact-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); }
+.design-medunit .contact-details { display: grid; gap: 10px; margin-top: 12px; }
+.design-medunit .contact-details .contactcard { padding: 0; border: 0; background: transparent; }
+.design-medunit .contact-details .contact-phone { margin: 4px 0; font-size: 15px; }
+.design-medunit .contact-details h2 { margin: 0 0 4px; font-size: 21px; }
+.design-medunit .contact-details p { margin: 0 0 5px; font-size: 14px; line-height: 1.5; }
+.design-medunit .contact-details .contact-rehabilitation { margin: 0; }
+.design-medunit .contact-details .contact-rehabilitation h2 { font-size: 17px; }
+.design-medunit .contact-calendar h2 { margin-bottom: 6px; font-size: 21px; }
+.design-medunit .calendar-disclosure > summary {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 10px;
+ min-height: 44px;
+ padding: 6px 10px;
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ background: var(--soft);
+ color: var(--accent);
+ font-size: 15px;
+ cursor: pointer;
+ list-style: none;
+}
+.design-medunit .calendar-disclosure > summary::-webkit-details-marker { display: none; }
+.design-medunit .calendar-disclosure > summary::after { content: '+'; font-size: 21px; }
+.design-medunit .calendar-disclosure[open] > summary::after { content: '−'; }
+.design-medunit .calendar-disclosure[open] .calendar-embed { margin-top: 8px; }
+.design-medunit .calendar-fallback { display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px; font-size: 13px; }
+@media (max-width: 800px) {
+ .design-medunit .contact-intro-grid { grid-template-columns: minmax(0, 1fr); }
+ .design-medunit .contact-calendar { width: 100%; }
+}

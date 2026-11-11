@@ -223,14 +223,22 @@ visitOrientation?.addEventListener('change',event=>{
 
 const calendar = document.querySelector('[data-doctoralia-calendar]');
 if (calendar) {
+ const calendarPanel = calendar.closest('.calendar-disclosure');
  if (window.location.protocol === 'file:') {
-  calendar.hidden = true;
+  (calendarPanel || calendar).hidden = true;
  } else {
-  const widget = document.createElement('script');
-  widget.src = 'https://platform.docplanner.com/js/widget.js';
-  widget.async = true;
-  widget.addEventListener('error', () => { calendar.hidden = true; });
-  document.head.append(widget);
+  let calendarRequested = false;
+  const loadCalendar = () => {
+   if (calendarRequested || (calendarPanel && !calendarPanel.open)) return;
+   calendarRequested = true;
+   const widget = document.createElement('script');
+   widget.src = 'https://platform.docplanner.com/js/widget.js';
+   widget.async = true;
+   widget.addEventListener('error', () => { calendar.hidden = true; });
+   document.head.append(widget);
+  };
+  calendarPanel?.addEventListener('toggle', loadCalendar);
+  loadCalendar();
  }
 }
 
