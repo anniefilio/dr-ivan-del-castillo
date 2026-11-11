@@ -221,21 +221,51 @@ visitOrientation?.addEventListener('change',event=>{
  });
 });
 
-const appointmentForm=document.querySelector('.appointment-form');
-if(appointmentForm){
- appointmentForm.querySelector('button[type="submit"]').disabled=false;
- appointmentForm.addEventListener('submit',event=>{
+const calendar = document.querySelector('[data-doctoralia-calendar]');
+if (calendar) {
+ if (window.location.protocol === 'file:') {
+  calendar.hidden = true;
+ } else {
+  const widget = document.createElement('script');
+  widget.src = 'https://platform.docplanner.com/js/widget.js';
+  widget.async = true;
+  widget.addEventListener('error', () => { calendar.hidden = true; });
+  document.head.append(widget);
+ }
+}
+
+const appointmentForm = document.querySelector('.appointment-form');
+if (appointmentForm) {
+ const nameInput = appointmentForm.querySelector('#cita-nombre');
+ const phoneInput = appointmentForm.querySelector('#cita-telefono');
+ const validateContact = () => {
+  const digits = phoneInput.value.replace(/\D/g, '');
+  nameInput.setCustomValidity(nameInput.value.trim() ? '' : 'Escribe tu nombre.');
+  phoneInput.setCustomValidity(
+   digits.length >= 10 && digits.length <= 15 ? '' :
+   'Escribe un teléfono de 10 a 15 dígitos, con lada si corresponde.'
+  );
+ };
+ nameInput.addEventListener('input', validateContact);
+ phoneInput.addEventListener('input', validateContact);
+ appointmentForm.querySelector('button[type="submit"]').disabled = false;
+ appointmentForm.addEventListener('submit', event => {
   event.preventDefault();
-  const name=appointmentForm.querySelector('#cita-nombre').value.trim();
-  const schedule=appointmentForm.querySelector('#cita-horario').value;
-  const message=[
-   name?`Hola, soy ${name}.`:'Hola.',
+  validateContact();
+  if (!appointmentForm.reportValidity()) return;
+
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const schedule = appointmentForm.querySelector('#cita-horario').value;
+  const message = [
+   `Hola, soy ${name}.`,
    'Quisiera solicitar una primera consulta con el Dr. Iván del Castillo.',
-   schedule?`De preferencia ${schedule}.`:'',
+   `Mi teléfono de contacto es ${phone}.`,
+   schedule ? `De preferencia ${schedule}.` : '',
    '¿Qué horarios tienen disponibles?'
   ].filter(Boolean).join(' ');
-  const whatsapp=new URL(appointmentForm.dataset.whatsapp);
-  whatsapp.searchParams.set('text',message);
+  const whatsapp = new URL(appointmentForm.dataset.whatsapp);
+  whatsapp.searchParams.set('text', message);
   window.location.assign(whatsapp);
  });
 }
