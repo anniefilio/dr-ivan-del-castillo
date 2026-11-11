@@ -36,6 +36,48 @@ new MutationObserver(records => {
  }
 }).observe(document.body, { childList: true, subtree: true });
 
+// Clean addresses: sections are reached by scrolling, never by writing "#" into the URL.
+// Cross-page links carry the section in data-section; same-page links keep href="#id" as
+// a no-JavaScript fallback but are handled here without changing the address.
+const sectionKey = 'ir-a-seccion';
+const revealSection = (id, behavior) => {
+ const target = id && document.getElementById(id);
+ if (!target) return false;
+ target.closest('details:not([open])')?.setAttribute('open', '');
+ target.scrollIntoView(behavior ? { block: 'start', behavior } : { block: 'start' });
+ if (!target.matches('a[href], button, input, select, textarea, summary, [tabindex]')) target.setAttribute('tabindex', '-1');
+ target.focus({ preventScroll: true });
+ return true;
+};
+document.addEventListener('click', event => {
+ if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+ const link = event.target.closest?.('a[href]');
+ if (!link || link.target === '_blank') return;
+ const raw = link.getAttribute('href');
+ if (raw.startsWith('#')) {
+  if (raw.length > 1 && revealSection(decodeURIComponent(raw.slice(1)))) event.preventDefault();
+  return;
+ }
+ const section = link.dataset.section;
+ if (!section) return;
+ if (link.pathname === window.location.pathname && revealSection(section)) {
+  event.preventDefault();
+  return;
+ }
+ try { sessionStorage.setItem(sectionKey, section); } catch {}
+});
+{
+ let pending = null;
+ if (window.location.hash.length > 1) {
+  try { pending = decodeURIComponent(window.location.hash.slice(1)); } catch {}
+  history.replaceState(history.state, '', window.location.pathname + window.location.search);
+ } else {
+  try { pending = sessionStorage.getItem(sectionKey); } catch {}
+ }
+ try { sessionStorage.removeItem(sectionKey); } catch {}
+ if (pending) window.addEventListener('load', () => revealSection(pending, 'instant'), { once: true });
+}
+
 const footerMobile = window.matchMedia('(max-width: 800px)');
 // Footer columns are always open on wide screens and collapse into accordions on phones.
 const syncFooter = () => document.querySelectorAll('.foot-col').forEach(group => {
