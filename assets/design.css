@@ -1620,3 +1620,43 @@ html{scroll-padding-top:112px}
  .design-medunit .review-card::after { width: 24px; height: 24px; top: 10px; right: 10px; }
  .design-medunit .review-card blockquote { padding-right: 32px; }
 }
+
+/* Home: the first-consultation form sits directly in "Prepara tu visita". */
+.design-medunit .visit-form {
+ margin-top: 10px;
+ padding: 16px 18px;
+ border: 1px solid var(--line);
+ border-radius: 12px;
+ background: var(--soft);
+ scroll-margin-top: 110px;
+}
+.design-medunit .visit-form-intro { margin: 0 0 10px; color: var(--muted); font-size: 16px; line-height: 1.45; }
+.design-medunit .visit-form-intro strong { margin-right: 6px; color: var(--accent); font-size: 18px; }
+.design-medunit .appointment-form.visit-inline-form {
+ grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .85fr) auto;
+ align-items: end;
+ gap: 10px 12px;
+ max-width: none;
+}
+.design-medunit .visit-inline-form .button { grid-column: auto; align-self: end; min-height: 44px; white-space: nowrap; }
+.design-medunit .visit-inline-form p { font-size: 14px; line-height: 1.45; }
+@media (max-width: 900px) {
+ .design-medunit .appointment-form.visit-inline-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .design-medunit .visit-inline-form .button { justify-self: start; }
+}
+@media (max-width: 620px) {
+ .design-medunit .visit-form { padding: 14px; }
+ .design-medunit .appointment-form.visit-inline-form { grid-template-columns: minmax(0, 1fr); }
+ .design-medunit .visit-inline-form .button { width: 100%; }
+}
+
+/* Contact: the rehabilitation centre is shown open, without an extra click. */
+.design-medunit .rehab-card {
+ margin-block: 8px;
+ padding: 12px 14px;
+ border: 1px solid var(--line);
+ border-radius: 10px;
+}
+.design-medunit .contact-details .rehab-card h2 { margin: 0 0 6px; font-size: clamp(19px, 2.1vw, 22px); }
+.design-medunit .rehab-card .textlink { display: inline-flex; align-items: center; min-height: 44px; }
+.design-medunit .rehab-card p .textlink { display: inline; min-height: 0; }
