@@ -2211,3 +2211,10 @@ html{scroll-padding-top:112px}
  .design-medunit .anim-op .op-wave { opacity: 1; }
 }
 @media (max-width: 620px) { .design-medunit .spine-hint { line-height: 1.35; } }
+.design-medunit .attention-procedures { margin-top: 28px; }
+.design-medunit .attention-procedures .column-topics { margin-top: 10px; }
+/* Contact location buttons: a size smaller. */
+.design-medunit .loc-btn { min-height: 40px; padding: 7px 14px; gap: 6px; font-size: 14px; }
+.design-medunit .loc-btn .ico { width: 16px; height: 16px; }
+.design-medunit .loc-actions { gap: 6px; }
+@media (max-width: 520px) { .design-medunit .loc-btn { min-height: 44px; } }
