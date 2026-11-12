@@ -2358,13 +2358,13 @@ html{scroll-padding-top:112px}
 }
 
 /* Legal pages and notices. */
-.design-medunit .legal-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 22px; }
+.design-medunit nav.legal-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 22px; position: static; padding: 0; background: none; border: 0; }
 .design-medunit .legal-tabs a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 22px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; }
 .design-medunit .legal-tabs a:hover { border-color: var(--blue); }
 .design-medunit .legal-tabs a[aria-current] { background: var(--blue); border-color: var(--blue); color: #fff; }
 .design-medunit .legal-doc ul { padding-left: 20px; }
 .design-medunit .legal-doc li { margin-bottom: 6px; color: var(--muted); }
-.design-medunit .foot-legal { display: flex; flex-wrap: wrap; gap: 0 16px; }
+.design-medunit .site-foot nav.foot-legal { display: flex; flex-wrap: wrap; gap: 0 16px; position: static; padding: 0; background: none; border: 0; }
 .design-medunit .foot-bottom .foot-legal a { display: inline-flex; align-items: center; min-height: 30px; font-size: 13px; color: var(--foot-muted); }
 .design-medunit .foot-bottom .foot-legal a:hover { color: #fff; }
 .design-medunit .form-privacy { grid-column: 1 / -1; margin: 0; font-size: 12px !important; line-height: 1.45; color: var(--muted); }
@@ -2392,3 +2392,5 @@ html{scroll-padding-top:112px}
  .design-medunit .orientation-visual.motion-visual{width:100%;height:auto;aspect-ratio:16/9}
 }
 @media(prefers-reduced-motion:reduce){.design-medunit .mv-stage{animation:none;transform:translateY(-50%) scale(1.04)}.design-medunit .mv-glow,.design-medunit .mv-scan{animation:none;display:none}}
+/* El menú móvil usa nav genérico: los demás nav del sitio siempre quedan en su lugar */
+@media(max-width:800px){.design-medunit nav:not(#navigation){position:static}}
