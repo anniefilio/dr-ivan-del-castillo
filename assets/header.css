@@ -328,3 +328,11 @@
   .site-header .about-menu > summary { justify-content: space-between; min-height: 48px; padding: 10px 12px; border-radius: 8px; background: var(--soft); font-size: 15px; }
   .site-header .about-menu .care-menu-panel { width: auto; }
 }
+
+/* Atención menu: both lists always open, every topic visible without scrolling inside the panel. */
+.site-header .care-main-menu .care-menu-panel { width: min(560px, calc(100vw - 32px)); max-height: none; overflow: visible; }
+.site-header .care-main-menu .column-group li a { min-height: 32px; padding: 4px 10px; font-size: 13px; }
+@media (max-width: 1100px) {
+  .site-header .care-main-menu .care-menu-panel { width: auto; }
+  .site-header .care-main-menu .column-group li a { min-height: 44px; font-size: 14px; }
+}
