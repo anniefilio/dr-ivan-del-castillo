@@ -2042,3 +2042,80 @@ html{scroll-padding-top:112px}
  .design-medunit .foot-bottom .foot-powered { width: 130px; height: 28px; }
  .design-medunit .foot-bottom .foot-powered img { width: 192px; margin: -15px 0 0 -31px; }
 }
+
+/* Second opinion v2: photo + situations, tinted cards, conversation-style questions. */
+.design-medunit .so-page { gap: 40px; }
+.design-medunit .so-when { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.6fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
+.design-medunit .so-when-photo { position: relative; margin: 0; height: 100%; min-height: 340px; max-height: 460px; border-radius: 24px; overflow: hidden; box-shadow: 0 18px 36px #1925402b; }
+.design-medunit .so-when-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.design-medunit .so-when-photo figcaption {
+ position: absolute; left: 14px; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px;
+ padding: 10px 14px; border-radius: 14px; background: #ffffffeb; color: var(--ink); font: 400 17px/1.3 Georgia, serif;
+}
+.design-medunit .so-when-photo figcaption .ico { color: var(--accent); }
+.design-medunit .so-situations { display: grid; gap: 12px; margin: 14px 0 0; padding: 0; list-style: none; }
+.design-medunit .so-situations li { display: flex; align-items: center; gap: 16px; margin: 0; padding: 16px 18px; border-radius: 18px; transition: transform .18s ease; }
+.design-medunit .so-situations li:hover { transform: translateX(6px); }
+.design-medunit .so-situations strong { display: block; font: 400 clamp(19px, 2vw, 22px)/1.25 Georgia, serif; color: var(--ink); }
+.design-medunit .so-situations li > span:last-child > span { color: var(--muted); font-size: 15px; }
+.design-medunit .so-big-ico { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 54px; height: 54px; border-radius: 16px; background: #fff; box-shadow: 0 6px 14px #19254014; }
+.design-medunit .tone-1 { background: #eef0fb; } .design-medunit .tone-1 .so-big-ico { color: #3d4598; }
+.design-medunit .tone-2 { background: #e8f3ee; } .design-medunit .tone-2 .so-big-ico { color: #2f6b52; }
+.design-medunit .tone-3 { background: #fbf2e3; } .design-medunit .tone-3 .so-big-ico { color: #a46a12; }
+.design-medunit .so-bring { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.design-medunit .so-bring-card { position: relative; padding: 22px; border-radius: 20px; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease; }
+.design-medunit .so-bring-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px #1925401c; }
+.design-medunit .so-bring-num { position: absolute; top: 8px; right: 16px; font: 400 64px/1 Georgia, serif; color: #19254012; }
+.design-medunit .so-bring-card h3 { margin: 14px 0 4px; font: 400 21px/1.25 Georgia, serif; color: var(--ink); }
+.design-medunit .so-bring-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.design-medunit .so-steps li { padding: 16px 18px; }
+.design-medunit .so-steps h3 { margin-top: 10px; }
+.design-medunit .so-chat { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; max-width: 860px; }
+.design-medunit .so-chat li { display: flex; align-items: flex-end; gap: 10px; margin: 0; }
+.design-medunit .so-chat li.me { flex-direction: row-reverse; margin-left: auto; }
+.design-medunit .so-chat-avatar { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--soft); border: 1px solid var(--line); color: var(--accent); }
+.design-medunit .so-bubble { max-width: 560px; padding: 12px 16px; border-radius: 18px 18px 18px 4px; background: #fff; border: 1px solid var(--line); color: var(--ink); font-size: 16px; line-height: 1.5; box-shadow: 0 4px 12px #1925400d; }
+.design-medunit .so-chat li.me .so-bubble { border-radius: 18px 18px 4px 18px; background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-reduced-motion: reduce) { .design-medunit .so-situations li, .design-medunit .so-bring-card { transition: none; transform: none !important; } }
+@media (max-width: 900px) {
+ .design-medunit .so-when { grid-template-columns: minmax(0, 1fr); }
+ .design-medunit .so-when-photo { min-height: 0; height: 240px; }
+ .design-medunit .so-bring { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+ .design-medunit .so-page { gap: 28px; }
+ .design-medunit .so-when-photo { height: 210px; }
+ .design-medunit .so-situations li { padding: 12px 14px; gap: 12px; }
+ .design-medunit .so-big-ico { width: 44px; height: 44px; border-radius: 12px; }
+ .design-medunit .so-bring-card { padding: 16px 18px; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: center; }
+ .design-medunit .so-bring-card h3 { margin: 0; font-size: 19px; }
+ .design-medunit .so-bring-card p { grid-column: 2; }
+ .design-medunit .so-bring-card .so-big-ico { grid-row: 1 / span 2; }
+ .design-medunit .so-bring-num { font-size: 44px; }
+ .design-medunit .so-bubble { font-size: 15px; }
+}
+
+/* Home "Distintos motivos de consulta": each card has its own tint and a clear call to read. */
+.design-medunit .card.orientation-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.design-medunit .card.orientation-card.orientation-consulta { background: #eef0fb; border-color: #d7dbf3; }
+.design-medunit .card.orientation-card.orientation-columna { background: #e8f3ee; border-color: #cfe3d8; }
+.design-medunit .card.orientation-card.orientation-procedimientos { background: #fbf2e3; border-color: #efdcbb; }
+.design-medunit .orientation-consulta .orientation-visual { background: #dfe3f7; }
+.design-medunit .orientation-columna .orientation-visual { background: #d7ebe1; }
+.design-medunit .orientation-procedimientos .orientation-visual { background: #f6e6c9; }
+.design-medunit .orientation-visual img { transition: transform .35s ease; }
+.design-medunit .card.orientation-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px #19254024; }
+.design-medunit .card.orientation-card:hover .orientation-visual img { transform: scale(1.05); }
+.design-medunit .orientation-content b {
+ align-self: flex-start; display: inline-flex; align-items: center; min-height: 40px; margin-top: auto; padding: 8px 20px;
+ border: 0; border-radius: 22px; background: var(--accent); color: #fff !important; font-size: 15px; font-weight: 600;
+ text-decoration: none; transition: background-color .2s ease;
+}
+.design-medunit .orientation-columna .orientation-content b { background: #2f6b52; }
+.design-medunit .orientation-procedimientos .orientation-content b { background: #a46a12; }
+.design-medunit .card.orientation-card:hover .orientation-content b { background: var(--ink); }
+@media (prefers-reduced-motion: reduce) {
+ .design-medunit .card.orientation-card:hover { transform: none; }
+ .design-medunit .card.orientation-card:hover .orientation-visual img { transform: none; }
+}
+.design-medunit .orientation-content b { width: fit-content; flex: 0 0 auto; }
