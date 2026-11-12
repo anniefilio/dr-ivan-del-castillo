@@ -2119,3 +2119,19 @@ html{scroll-padding-top:112px}
  .design-medunit .card.orientation-card:hover .orientation-visual img { transform: none; }
 }
 .design-medunit .orientation-content b { width: fit-content; flex: 0 0 auto; }
+/* WhatsApp inside the Ángeles Metropolitano card. */
+.design-medunit .loc-wa { background: #1f7a55; color: #fff; }
+.design-medunit .loc-wa:hover { background: #18623f; color: #fff; }
+.design-medunit .loc-wa .ico { width: 18px; height: 18px; }
+
+/* Doctor profile without a portrait: description and an education card side by side. */
+.design-medunit .doctor-profile { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: clamp(20px, 4vw, 48px); align-items: start; }
+.design-medunit .doctor-profile-copy h2 { margin-top: 0; }
+.design-medunit .doctor-profile-copy p { color: var(--muted); }
+.design-medunit .doctor-education { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--soft); }
+.design-medunit .doctor-education h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 22px; }
+.design-medunit .doctor-education h3 .ico { color: var(--accent); }
+.design-medunit .doctor-education ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.design-medunit .doctor-education li { display: flex; align-items: flex-start; gap: 10px; margin: 0; padding: 10px 12px; border-radius: 12px; background: #fff; color: var(--ink); font-size: 16px; }
+.design-medunit .edu-ico { display: inline-flex; color: var(--accent); margin-top: 2px; }
+@media (max-width: 800px) { .design-medunit .doctor-profile { grid-template-columns: minmax(0, 1fr); } }

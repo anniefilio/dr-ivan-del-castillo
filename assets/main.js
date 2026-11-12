@@ -431,3 +431,12 @@ document.querySelectorAll('[data-cred-mosaic]').forEach(mosaic => {
   tile.classList.toggle('is-revealed');
  });
 });
+
+// Contacto: the request form at the top shows the day picked in the calendar below it.
+const bookingDate = document.querySelector('[data-booking-date]');
+const bookingMirror = document.querySelector('[data-booking-date-mirror]');
+if (bookingDate && bookingMirror) {
+ const mirror = () => { const text = bookingDate.textContent.trim(); if (text) bookingMirror.textContent = text; };
+ mirror();
+ new MutationObserver(mirror).observe(bookingDate, { childList: true, characterData: true, subtree: true });
+}
