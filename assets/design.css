@@ -1909,3 +1909,59 @@ html{scroll-padding-top:112px}
 /* One hover color everywhere: the site's blue, never green. */
 .design-medunit .column-topic summary:hover { background: var(--soft); }
 .design-medunit .procedure-card:hover { border-color: var(--accent); background: #fff; }
+
+/* Team: cards on the doctor page and individual profile pages. */
+.design-medunit .team-card {
+ display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; align-items: center; gap: 16px;
+ padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: var(--ink); text-decoration: none;
+ transition: border-color .15s, box-shadow .15s;
+}
+.design-medunit .team-card + .team-card { margin-top: 10px; }
+.design-medunit .team-card:hover { border-color: var(--accent); box-shadow: 0 10px 24px #19254014; }
+.design-medunit .team-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; }
+.design-medunit .team-card-copy { display: grid; gap: 3px; min-width: 0; }
+.design-medunit .team-spec { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.design-medunit .team-card strong { font: 400 clamp(19px, 2.2vw, 24px)/1.2 Georgia, serif; }
+.design-medunit .team-card-copy > span { color: var(--muted); font-size: 15px; line-height: 1.45; }
+.design-medunit .team-card-go { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 22px; background: var(--soft); color: var(--accent); font-weight: 600; font-size: 14px; white-space: nowrap; }
+.design-medunit .team-card:hover .team-card-go { background: var(--accent); color: #fff; }
+.design-medunit .team-photo img { width: 100%; max-width: 260px; aspect-ratio: 1; height: auto; object-fit: cover; border-radius: 20px; }
+.design-medunit .team-links { list-style: none; padding: 0; display: grid; gap: 8px; }
+.design-medunit .team-links a { display: grid; gap: 2px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); }
+.design-medunit .team-links a strong { color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: .02em; }
+.design-medunit .team-links a:hover { border-color: var(--accent); }
+@media (max-width: 620px) {
+ .design-medunit .team-card { grid-template-columns: 64px minmax(0, 1fr); }
+ .design-medunit .team-card img { width: 64px; height: 64px; }
+ .design-medunit .team-card-go { grid-column: 1 / -1; justify-content: center; }
+}
+
+/* Second opinion: situation cards, steps, checklist and question grid. */
+.design-medunit .so-page { display: grid; gap: 34px; padding-bottom: 12px; }
+.design-medunit .so-title { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; font-size: clamp(24px, 2.8vw, 31px); }
+.design-medunit .so-intro { margin: 0 0 16px; color: var(--muted); font-size: 17px; max-width: 70ch; }
+.design-medunit .so-grid { display: grid; gap: 14px; }
+.design-medunit .so-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.design-medunit .so-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: border-color .15s, transform .15s, box-shadow .15s; }
+.design-medunit .so-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 26px #1925401a; }
+.design-medunit .so-card h3 { margin: 14px 0 6px; font: 400 21px/1.25 Georgia, serif; color: var(--ink); }
+.design-medunit .so-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.design-medunit .so-card:hover .topic-ico { background: var(--accent); border-color: var(--accent); color: #fff; }
+.design-medunit .so-steps-block { padding: 26px; border-radius: 22px; background: linear-gradient(120deg, #151f39, #263868); color: #fff; }
+.design-medunit .so-steps-block .so-title { color: #fff; }
+.design-medunit .so-steps-block .h-ico { background: #ffffff1c; border-color: #ffffff33; color: #d3dbff; }
+.design-medunit .so-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 8px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.design-medunit .so-steps li { position: relative; margin: 0; padding: 18px; border-radius: 16px; background: #ffffff12; border: 1px solid #ffffff26; }
+.design-medunit .so-step-num { position: absolute; top: 14px; right: 16px; font: 400 34px/1 Georgia, serif; color: #ffffff40; }
+.design-medunit .so-step-ico { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #fff; color: var(--accent); }
+.design-medunit .so-steps h3 { margin: 12px 0 4px; font: 400 20px/1.25 Georgia, serif; color: #fff; }
+.design-medunit .so-steps p { margin: 0; color: #d5deec; font-size: 15px; line-height: 1.5; }
+.design-medunit .so-check-top { display: flex; align-items: center; justify-content: space-between; }
+.design-medunit .so-check-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--soft); color: var(--accent); font-weight: 700; }
+.design-medunit .so-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.design-medunit .so-questions li { display: flex; align-items: flex-start; gap: 12px; margin: 0; padding: 14px 16px; border-radius: 14px; background: var(--soft); border: 1px solid var(--line); color: var(--ink); font-size: 16px; line-height: 1.5; }
+.design-medunit .so-questions li .ico { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+.design-medunit .so-questions li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (prefers-reduced-motion: reduce) { .design-medunit .so-card { transition: none; } .design-medunit .so-card:hover { transform: none; } }
+@media (max-width: 900px) { .design-medunit .so-grid-3, .design-medunit .so-steps { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 620px) { .design-medunit .so-questions { grid-template-columns: minmax(0, 1fr); } .design-medunit .so-steps-block { padding: 18px; } .design-medunit .so-page { gap: 26px; } }
