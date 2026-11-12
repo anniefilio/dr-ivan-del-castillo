@@ -2503,8 +2503,8 @@ html{scroll-padding-top:112px}
  .design-medunit .site-foot .foot-contact .foot-phone { font-size: 16px; min-height: 32px; }
  .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { min-height: 32px; font-size: 12.5px; }
  .design-medunit .site-foot .foot-contact .foot-social { position: absolute; top: 14px; right: 0; margin: 0; gap: 6px; }
- .design-medunit .site-foot .foot-social a { width: 32px; height: 32px; }
- .design-medunit .site-foot .foot-social a svg { width: 15px; height: 15px; }
+ .design-medunit .site-foot .foot-social a { width: 36px; height: 36px; min-width: 36px; min-height: 36px; padding: 0; flex: 0 0 36px; aspect-ratio: 1; border-radius: 50%; justify-content: center; align-items: center; }
+ .design-medunit .site-foot .foot-social a svg { width: 16px; height: 16px; }
  .design-medunit .site-foot .foot-bottom { padding: 4px 60px calc(8px + env(safe-area-inset-bottom, 0px)) 0; gap: 0 10px; }
  .design-medunit .site-foot .foot-bottom p,
  .design-medunit .site-foot .foot-bottom .foot-legal a { min-height: 26px; font-size: 11.5px; }
