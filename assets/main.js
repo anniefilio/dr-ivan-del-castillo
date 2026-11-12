@@ -89,17 +89,20 @@ footerMobile.addEventListener('change', syncFooter);
 
 const toggle=document.querySelector('.menu');
 const navigation=document.querySelector('#navigation');
-const careMenu=navigation?.querySelector('.care-menu');
-const careMenuGroups=careMenu?.querySelectorAll('.care-menu-group');
+const careMenus=[...(navigation?.querySelectorAll('.care-menu')||[])];
+const careMenuGroups=navigation?.querySelectorAll('.care-menu-group');
 const narrowMenu=window.matchMedia('(max-width: 1100px)');
+const closeCareMenus=(except=null)=>careMenus.forEach(menu=>{if(menu!==except)menu.open=false;});
 const closeMenu=(restoreFocus=false)=>{
  toggle?.setAttribute('aria-expanded','false');
  toggle?.setAttribute('aria-label','Abrir menú de navegación');
  if(toggle)toggle.textContent='Menú';
  navigation?.classList.remove('open');
- if(careMenu)careMenu.open=false;
+ closeCareMenus();
  if(restoreFocus)toggle?.focus();
 };
+// Opening one dropdown (Columna or Atención) closes the other.
+careMenus.forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)closeCareMenus(menu);}));
 toggle?.addEventListener('click',()=>{
  const expanded=toggle.getAttribute('aria-expanded')==='true';
  toggle.setAttribute('aria-expanded',String(!expanded));
@@ -109,18 +112,19 @@ toggle?.addEventListener('click',()=>{
 });
 document.addEventListener('keydown',event=>{
 if(event.key!=='Escape')return;
-if(careMenu?.open){
- careMenu.open=false;
- careMenu.querySelector('summary')?.focus();
+const openMenu=careMenus.find(menu=>menu.open);
+if(openMenu){
+ openMenu.open=false;
+ openMenu.querySelector('summary')?.focus();
 }else if(navigation?.classList.contains('open'))closeMenu(true);
 });
 document.addEventListener('click',event=>{
- if(careMenu?.open&&!careMenu.contains(event.target))careMenu.open=false;
+ careMenus.forEach(menu=>{if(menu.open&&!menu.contains(event.target))menu.open=false;});
  if(navigation?.classList.contains('open')&&!navigation.contains(event.target)&&!toggle?.contains(event.target))closeMenu();
 });
 navigation?.addEventListener('click',event=>{if(event.target.closest('a')&&narrowMenu.matches)closeMenu();});
 navigation?.addEventListener('focusout',event=>{
- if(careMenu?.open&&event.relatedTarget&&!careMenu.contains(event.relatedTarget))careMenu.open=false;
+ careMenus.forEach(menu=>{if(menu.open&&event.relatedTarget&&!menu.contains(event.relatedTarget))menu.open=false;});
  if(narrowMenu.matches&&event.relatedTarget&&!navigation.contains(event.relatedTarget)&&!toggle?.contains(event.relatedTarget))closeMenu();
 });
 const syncCareMenu=()=>careMenuGroups?.forEach(group=>{group.open=!narrowMenu.matches;});

@@ -1889,3 +1889,23 @@ html{scroll-padding-top:112px}
  border-radius: 22px; color: #fff; background: linear-gradient(120deg, #151f39, #263868);
 }
 @media (max-width: 800px) { .design-medunit .patient-reviews.reviews-shared { grid-template-columns: minmax(0, 1fr); margin-block: 18px 28px; } }
+
+/* Whole cards are links; no separate "Leer guía" label. */
+.design-medunit .attention-card { position: relative; }
+.design-medunit .attention-card .card-link { color: inherit; text-decoration: none; }
+.design-medunit .attention-card .card-link::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.design-medunit .attention-card:hover h2,
+.design-medunit .attention-card .card-link:focus-visible { color: var(--accent); }
+.design-medunit .attention-card:has(.card-link:focus-visible) { outline: 3px solid var(--accent); outline-offset: 3px; }
+.design-medunit .procedure-card { text-decoration: none; }
+.design-medunit .procedure-card h2 { color: var(--ink); }
+.design-medunit .procedure-card p { color: var(--muted); }
+.design-medunit .procedure-card:hover h2 { color: var(--accent); }
+
+/* Spine condition pages: small label above the title. */
+.design-medunit .topic-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 8px 0 0; color: var(--accent); font-weight: 600; font-size: 15px; }
+.design-medunit .topic-kicker .topic-ico { width: 40px; height: 40px; }
+
+/* One hover color everywhere: the site's blue, never green. */
+.design-medunit .column-topic summary:hover { background: var(--soft); }
+.design-medunit .procedure-card:hover { border-color: var(--accent); background: #fff; }
