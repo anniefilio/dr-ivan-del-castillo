@@ -388,3 +388,41 @@ document.querySelectorAll('details.always-open').forEach(block => {
  block.querySelector(':scope > summary')?.setAttribute('tabindex', '-1');
  block.addEventListener('toggle', () => { if (!block.open) block.open = true; });
 });
+
+// Credentials mosaic: every tile shows its own slice of one shared photo, and a tap reveals
+// the credential on touch screens (hover and keyboard focus reveal it with CSS).
+document.querySelectorAll('[data-cred-mosaic]').forEach(mosaic => {
+ const tiles = [...mosaic.querySelectorAll('.cred-tile')];
+ const ratio = 1500 / 2000;
+ const focusY = .5; // vertical point of the photo kept at the centre of the mosaic (the doctor's face)
+ const layout = () => {
+  const box = mosaic.getBoundingClientRect();
+  if (!box.width || !box.height) return;
+  let width = box.width, height = box.width / ratio;
+  if (height < box.height) { height = box.height; width = height * ratio; }
+  const offsetX = (box.width - width) / 2;
+  const offsetY = Math.min(0, Math.max(box.height - height, box.height / 2 - height * focusY));
+  tiles.forEach(tile => {
+   const r = tile.getBoundingClientRect();
+   tile.style.backgroundSize = `${width}px ${height}px`;
+   tile.style.backgroundPosition = `${offsetX - (r.left - box.left)}px ${offsetY - (r.top - box.top)}px`;
+  });
+ };
+ layout();
+ new ResizeObserver(layout).observe(mosaic);
+ mosaic.addEventListener('click', event => {
+  if (event.target.closest('a')) return;
+  const tile = event.target.closest('.cred-tile');
+  if (!tile) return;
+  const open = !tile.classList.contains('is-revealed');
+  tiles.forEach(t => t.classList.remove('is-revealed'));
+  if (open) tile.classList.add('is-revealed');
+ });
+ mosaic.addEventListener('keydown', event => {
+  const tile = event.target.closest('.cred-tile');
+  if (!tile || (event.key !== 'Enter' && event.key !== ' ')) return;
+  if (event.target.closest('a')) return;
+  event.preventDefault();
+  tile.classList.toggle('is-revealed');
+ });
+});

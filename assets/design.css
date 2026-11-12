@@ -1965,3 +1965,57 @@ html{scroll-padding-top:112px}
 @media (prefers-reduced-motion: reduce) { .design-medunit .so-card { transition: none; } .design-medunit .so-card:hover { transform: none; } }
 @media (max-width: 900px) { .design-medunit .so-grid-3, .design-medunit .so-steps { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 620px) { .design-medunit .so-questions { grid-template-columns: minmax(0, 1fr); } .design-medunit .so-steps-block { padding: 18px; } .design-medunit .so-page { gap: 26px; } }
+
+/* Doctor page: one operating-room photo split into tiles; each tile reveals a credential. */
+.design-medunit .cred-mosaic-section { padding-block: 8px 34px; }
+.design-medunit .cred-mosaic-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px; margin-bottom: 14px; }
+.design-medunit .cred-mosaic-head h2 { display: flex; align-items: center; gap: 12px; margin: 0; font-size: clamp(24px, 2.8vw, 31px); }
+.design-medunit .cred-mosaic-head p { margin: 0; color: var(--muted); font-size: 15px; }
+.design-medunit .cred-mosaic {
+ display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: repeat(6, minmax(0, 1fr));
+ gap: 12px; height: clamp(420px, 46vw, 600px);
+}
+.design-medunit .cred-tile {
+ position: relative; margin: 0; overflow: hidden; border-radius: 22px; cursor: pointer;
+ background-color: #1d3557; background-image: var(--mosaic-img); background-repeat: no-repeat;
+ background-size: cover; background-position: center 40%;
+ box-shadow: 0 10px 24px #19254026; outline: none;
+}
+.design-medunit .cred-tile.t1 { grid-column: 1; grid-row: 1 / span 3; }
+.design-medunit .cred-tile.t2 { grid-column: 1; grid-row: 4 / span 3; }
+.design-medunit .cred-tile.t3 { grid-column: 2; grid-row: 1 / span 4; }
+.design-medunit .cred-tile.t4 { grid-column: 3; grid-row: 1 / span 4; }
+.design-medunit .cred-tile.t5 { grid-column: 2; grid-row: 5 / span 2; }
+.design-medunit .cred-tile.t6 { grid-column: 3; grid-row: 5 / span 2; }
+.design-medunit .cred-tile::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px #ffffff40; pointer-events: none; }
+.design-medunit .cred-reveal {
+ position: absolute; inset: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; padding: 14px;
+ background: #f6f8fdf2; backdrop-filter: blur(6px);
+ opacity: 0; transform: scale(.97); transition: opacity .28s ease, transform .28s ease;
+}
+.design-medunit .cred-reveal img { width: 100%; height: 100%; min-height: 0; object-fit: contain; border-radius: 8px; }
+.design-medunit .cred-reveal figcaption { display: grid; gap: 2px; color: var(--ink); }
+.design-medunit .cred-reveal strong { font: 400 clamp(17px, 1.7vw, 21px)/1.2 Georgia, serif; }
+.design-medunit .cred-reveal span { color: var(--muted); font-size: 14px; }
+.design-medunit .cred-reveal a { justify-self: start; margin-top: 4px; color: var(--accent); font-size: 14px; font-weight: 600; text-underline-offset: 4px; }
+.design-medunit .cred-tile:hover .cred-reveal,
+.design-medunit .cred-tile:focus-visible .cred-reveal,
+.design-medunit .cred-tile:has(a:focus-visible) .cred-reveal,
+.design-medunit .cred-tile.is-revealed .cred-reveal { opacity: 1; transform: none; }
+.design-medunit .cred-tile:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--accent); }
+.design-medunit .cred-tile.t5 .cred-reveal,
+.design-medunit .cred-tile.t6 .cred-reveal { grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); align-items: center; }
+@media (prefers-reduced-motion: reduce) { .design-medunit .cred-reveal { transition: none; transform: none; } }
+@media (max-width: 760px) {
+ .design-medunit .cred-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; height: min(92vw, 380px); }
+ .design-medunit .cred-tile { border-radius: 14px; }
+ .design-medunit .cred-tile[class*=" t"] { grid-column: auto; grid-row: auto; }
+ .design-medunit .cred-reveal,
+ .design-medunit .cred-tile.t5 .cred-reveal,
+ .design-medunit .cred-tile.t6 .cred-reveal { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; padding: 8px; gap: 6px; }
+ .design-medunit .cred-reveal strong { font-size: 14px; }
+ .design-medunit .cred-reveal span,
+ .design-medunit .cred-reveal a { font-size: 12px; }
+ .design-medunit .cred-reveal span { display: none; }
+ .design-medunit .cred-mosaic-head p { font-size: 14px; }
+}
