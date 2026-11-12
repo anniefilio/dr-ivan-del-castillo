@@ -74,3 +74,15 @@
 .design-medunit .booking-request-top .button { width: 100%; min-height: 48px; justify-content: center; }
 .design-medunit .booking-request-top > p:last-child { margin: 0; font-size: 13px; color: var(--muted); }
 
+
+/* Compact version of the top request form. */
+.design-medunit .booking-request.booking-request-top { gap: 7px; padding: 14px 16px; }
+.design-medunit .booking-request-top h2 { font-size: 20px; }
+.design-medunit .booking-request-top h2 .ico { width: 18px; height: 18px; }
+.design-medunit .booking-request-top .booking-request-day { padding: 6px 10px; font-size: 13px; }
+.design-medunit .booking-request-top label { font-size: 13px; gap: 3px; }
+.design-medunit .booking-request-top .field-ico .ico { width: 15px; height: 15px; }
+.design-medunit .booking-request-top input,
+.design-medunit .booking-request-top select { min-height: 38px; padding: 6px 10px; font-size: 15px; }
+.design-medunit .booking-request-top .button { min-height: 42px; font-size: 14px; }
+.design-medunit .booking-request-top > p:last-child { font-size: 12px; }

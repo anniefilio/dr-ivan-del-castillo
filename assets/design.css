@@ -2135,3 +2135,79 @@ html{scroll-padding-top:112px}
 .design-medunit .doctor-education li { display: flex; align-items: flex-start; gap: 10px; margin: 0; padding: 10px 12px; border-radius: 12px; background: #fff; color: var(--ink); font-size: 16px; }
 .design-medunit .edu-ico { display: inline-flex; color: var(--accent); margin-top: 2px; }
 @media (max-width: 800px) { .design-medunit .doctor-profile { grid-template-columns: minmax(0, 1fr); } }
+
+/* Second opinion: a slowly turning spine; each vertebra shows one question in a chat bubble. */
+.design-medunit .spine-qa { position: relative; display: grid; grid-template-columns: minmax(170px, 240px) minmax(0, 1fr); gap: clamp(16px, 4vw, 48px); align-items: stretch; margin-top: 14px; padding: 22px clamp(16px, 3vw, 32px); border-radius: 24px; background: radial-gradient(circle at 20% 30%, #eef0fb, #f7f8fc 60%); border: 1px solid var(--line); }
+.design-medunit .spine-stage { perspective: 700px; display: flex; justify-content: center; }
+.design-medunit .spine-model { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 6px 0; transform-style: preserve-3d; animation: spine-sway 9s ease-in-out infinite; }
+.design-medunit .spine-qa:hover .spine-model,
+.design-medunit .spine-qa:focus-within .spine-model { animation-play-state: paused; }
+@keyframes spine-sway { 0%, 100% { transform: rotateY(-28deg) rotateZ(-2deg); } 50% { transform: rotateY(28deg) rotateZ(2deg); } }
+.design-medunit .vertebra {
+ position: relative; display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0;
+ border: 0; border-radius: 46% 46% 40% 40% / 60% 60% 40% 40%; cursor: pointer;
+ background: linear-gradient(180deg, #f4f6fd 0%, #cfd7ee 55%, #b5c0e2 100%);
+ box-shadow: inset 0 -6px 10px #8e9bc840, 0 6px 12px #19254022; transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.design-medunit .vertebra::before,
+.design-medunit .vertebra::after { content: ''; position: absolute; top: 14px; width: 26%; height: 14px; border-radius: 10px; background: linear-gradient(180deg, #e7ebf8, #b9c4e4); box-shadow: 0 3px 6px #19254018; }
+.design-medunit .vertebra::before { left: -18%; transform: rotate(-12deg); }
+.design-medunit .vertebra::after { right: -18%; transform: rotate(12deg); }
+.design-medunit .vertebra.v1 { width: 92px; } .design-medunit .vertebra.v2 { width: 108px; } .design-medunit .vertebra.v3 { width: 122px; }
+.design-medunit .vertebra.v4 { width: 134px; } .design-medunit .vertebra.v5 { width: 144px; }
+.design-medunit .vertebra + .vertebra { margin-top: 0; }
+.design-medunit .spine-model .vertebra:not(:last-child) { box-shadow: inset 0 -6px 10px #8e9bc840, 0 6px 12px #19254022, 0 13px 0 -8px #8fb3a3; }
+.design-medunit .vertebra-num { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #ffffffd9; color: var(--accent); font-weight: 700; font-size: 14px; }
+.design-medunit .vertebra:hover,
+.design-medunit .vertebra[aria-pressed="true"] { transform: scale(1.08) translateZ(18px); background: linear-gradient(180deg, #8f97d8, #3d4598); }
+.design-medunit .vertebra[aria-pressed="true"]::before,
+.design-medunit .vertebra[aria-pressed="true"]::after,
+.design-medunit .vertebra:hover::before,
+.design-medunit .vertebra:hover::after { background: linear-gradient(180deg, #a9afe2, #4e57ad); }
+.design-medunit .vertebra[aria-pressed="true"] .vertebra-num { background: #fff; }
+.design-medunit .vertebra:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.design-medunit .spine-talk { position: relative; min-height: 100%; }
+.design-medunit .spine-bubble-row { position: absolute; left: 0; right: 0; top: var(--qa-y, 0px); display: flex; align-items: flex-end; gap: 10px; transition: top .3s ease; }
+.design-medunit .spine-bubble-row .so-bubble { position: relative; display: grid; gap: 4px; max-width: 620px; padding: 14px 18px; border-radius: 18px 18px 18px 4px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 24px #1925401a; font-size: 17px; line-height: 1.5; animation: bubble-in .28s ease; }
+.design-medunit .spine-bubble-row .so-bubble::before { content: ''; position: absolute; left: -9px; bottom: 10px; width: 16px; height: 16px; background: #fff; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); transform: rotate(45deg); }
+.design-medunit .spine-count { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.design-medunit .spine-hint { position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 6px; margin: 0; color: var(--muted); font-size: 13px; }
+.design-medunit .spine-hint .ico { color: var(--accent); }
+@keyframes bubble-in { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) {
+ .design-medunit .spine-model { animation: none; }
+ .design-medunit .spine-bubble-row, .design-medunit .vertebra { transition: none; }
+ .design-medunit .spine-bubble-row .so-bubble { animation: none; }
+}
+@media (max-width: 620px) {
+ .design-medunit .spine-qa { grid-template-columns: 116px minmax(0, 1fr); gap: 12px; padding: 16px 12px; }
+ .design-medunit .spine-model { gap: 9px; }
+ .design-medunit .vertebra { height: 40px; }
+ .design-medunit .vertebra.v1 { width: 60px; } .design-medunit .vertebra.v2 { width: 68px; } .design-medunit .vertebra.v3 { width: 76px; }
+ .design-medunit .vertebra.v4 { width: 82px; } .design-medunit .vertebra.v5 { width: 88px; }
+ .design-medunit .vertebra::before, .design-medunit .vertebra::after { top: 12px; height: 11px; }
+ .design-medunit .spine-bubble-row .so-avatar, .design-medunit .spine-bubble-row .so-chat-avatar { display: none; }
+ .design-medunit .spine-bubble-row .so-bubble { font-size: 15px; padding: 12px 14px; }
+ .design-medunit .spine-hint { font-size: 12px; }
+}
+
+/* Home card illustrations in motion: the tick draws, the spine turns, the waves appear. */
+.design-medunit .orientation-visual .anim-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.design-medunit .anim-oc .oc-line { fill: none; stroke: #8eabb3; stroke-width: 7; stroke-linecap: round; }
+.design-medunit .anim-oc .oc-check { fill: none; stroke: #528577; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: oc-check 4s ease-in-out infinite; }
+@keyframes oc-check { 0%, 12% { stroke-dashoffset: 1; } 38%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+.design-medunit .anim-os .os-spine { transform-box: fill-box; transform-origin: 50% 100%; animation: os-turn 6s ease-in-out infinite; }
+@keyframes os-turn { 0%, 100% { transform: rotate(-4deg) scaleX(.96); } 50% { transform: rotate(4deg) scaleX(1.04); } }
+.design-medunit .anim-os .os-v { transform-box: fill-box; transform-origin: center; animation: os-v 6s ease-in-out infinite; animation-delay: calc(var(--i) * -.25s); }
+@keyframes os-v { 0%, 100% { transform: translateX(-3px) scaleX(.94); } 50% { transform: translateX(3px) scaleX(1.06); } }
+.design-medunit .anim-op .op-wave { fill: none; stroke: #7697a1; stroke-width: 10; stroke-linecap: round; opacity: 0; animation: op-wave 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * .35s); }
+@keyframes op-wave { 0% { opacity: 0; transform: translateX(-8px); } 18%, 70% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+.design-medunit .card.orientation-card:hover .anim-svg * { animation-duration: 2.2s; }
+.design-medunit .card.orientation-card:hover .anim-os .os-spine,
+.design-medunit .card.orientation-card:hover .anim-os .os-v { animation-duration: 3s; }
+@media (prefers-reduced-motion: reduce) {
+ .design-medunit .anim-svg * { animation: none !important; }
+ .design-medunit .anim-oc .oc-check { stroke-dashoffset: 0; }
+ .design-medunit .anim-op .op-wave { opacity: 1; }
+}
+@media (max-width: 620px) { .design-medunit .spine-hint { line-height: 1.35; } }

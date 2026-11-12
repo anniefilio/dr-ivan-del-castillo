@@ -440,3 +440,44 @@ if (bookingDate && bookingMirror) {
  mirror();
  new MutationObserver(mirror).observe(bookingDate, { childList: true, characterData: true, subtree: true });
 }
+
+// Second opinion spine: hovering, focusing or tapping a vertebra shows its question in the bubble,
+// which moves to the height of that vertebra.
+document.querySelectorAll('[data-spine-qa]').forEach(box => {
+ let questions = [];
+ try { questions = JSON.parse(box.querySelector('[data-spine-questions]').textContent); } catch {}
+ const verts = [...box.querySelectorAll('.vertebra')];
+ const row = box.querySelector('[data-spine-bubble]');
+ const text = box.querySelector('[data-spine-text]');
+ const count = box.querySelector('[data-spine-count]');
+ const talk = box.querySelector('.spine-talk');
+ if (!questions.length || !row || !text) return;
+ let current = -1;
+ const place = vert => {
+  const t = talk.getBoundingClientRect(), v = vert.getBoundingClientRect();
+  const y = v.top + v.height / 2 - t.top - row.offsetHeight / 2;
+  const hint = box.querySelector('.spine-hint');
+  const max = Math.max(0, talk.clientHeight - row.offsetHeight - (hint ? hint.offsetHeight + 10 : 26));
+  row.style.setProperty('--qa-y', `${Math.round(Math.min(Math.max(y, 0), max))}px`);
+ };
+ const show = index => {
+  const vert = verts[index];
+  if (!vert) return;
+  verts.forEach((v, i) => v.setAttribute('aria-pressed', String(i === index)));
+  if (index !== current) {
+   current = index;
+   text.textContent = questions[index];
+   if (count) count.textContent = `Pregunta ${index + 1} de ${questions.length}`;
+   const bubble = row.querySelector('.so-bubble');
+   bubble.style.animation = 'none'; void bubble.offsetWidth; bubble.style.animation = '';
+  }
+  place(vert);
+ };
+ verts.forEach((vert, i) => {
+  vert.addEventListener('mouseenter', () => show(i));
+  vert.addEventListener('focus', () => show(i));
+  vert.addEventListener('click', () => show(i));
+ });
+ show(0);
+ new ResizeObserver(() => current >= 0 && place(verts[current])).observe(box);
+});
