@@ -2330,3 +2330,29 @@ html{scroll-padding-top:112px}
 .design-medunit .patient-reviews .rating-summary .review-stars { color: var(--pale); }
 /* Medical disclaimer uses the brand warning tone. */
 .design-medunit .medical-disclaimer { border-left-color: var(--warn); }
+
+/* Second opinion spine v3: one side-view illustration, bone vertebrae and blue discs (brand palette). */
+.design-medunit .spine-svg { width: 230px; height: auto; display: block; overflow: visible; }
+.design-medunit .spine-model { display: block; animation: spine-sway 10s ease-in-out infinite; }
+@keyframes spine-sway { 0%, 100% { transform: rotateY(-22deg) rotateZ(-1.5deg); } 50% { transform: rotateY(22deg) rotateZ(1.5deg); } }
+.design-medunit .spine-svg .vertebra { cursor: pointer; outline: none; transform-box: fill-box; transform-origin: 35% 50%; transition: transform .22s ease; filter: none; width: auto; height: auto; }
+.design-medunit .spine-svg .sv-body { fill: url(#sv-bone); stroke: #a9c4d4; stroke-width: 1.4; transition: fill .2s; }
+.design-medunit .spine-svg .sv-post { fill: url(#sv-bone-side); stroke: #a9c4d4; stroke-width: 1.2; }
+.design-medunit .spine-svg .sv-disc { fill: url(#sv-disc); }
+.design-medunit .spine-svg .sv-num { font: 700 15px/1 'DM Sans', Arial, sans-serif; fill: #245779; }
+.design-medunit .spine-svg .vertebra:hover,
+.design-medunit .spine-svg .vertebra[aria-pressed="true"] { transform: scale(1.06); }
+.design-medunit .spine-svg .vertebra:hover .sv-body,
+.design-medunit .spine-svg .vertebra[aria-pressed="true"] .sv-body { fill: url(#sv-bone-on); stroke: #245779; stroke-width: 2; }
+.design-medunit .spine-svg .vertebra:hover .sv-post,
+.design-medunit .spine-svg .vertebra[aria-pressed="true"] .sv-post { stroke: #245779; }
+.design-medunit .spine-svg .vertebra[aria-pressed="true"] .sv-num { fill: #123451; }
+.design-medunit .spine-svg .vertebra:focus-visible .sv-body { stroke: #123451; stroke-width: 3; }
+.design-medunit .spine-svg .sv-disc { transform-box: fill-box; transform-origin: center; animation: sv-disc 5s ease-in-out infinite; }
+@keyframes sv-disc { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.82); } }
+.design-medunit .spine-qa { background: radial-gradient(circle at 20% 30%, #e8f0f4, #f8f8f5 65%); }
+@media (prefers-reduced-motion: reduce) { .design-medunit .spine-model, .design-medunit .spine-svg .sv-disc { animation: none; } .design-medunit .spine-svg .vertebra { transition: none; } }
+@media (max-width: 620px) {
+ .design-medunit .spine-svg { width: 130px; }
+ .design-medunit .spine-qa { grid-template-columns: 136px minmax(0, 1fr); }
+}
