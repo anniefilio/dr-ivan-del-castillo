@@ -2388,3 +2388,101 @@ html{scroll-padding-top:112px}
 @media(prefers-reduced-motion:reduce){.design-medunit .mv-stage{animation:none;transform:translateY(-50%) scale(1.04)}.design-medunit .mv-glow,.design-medunit .mv-scan{animation:none;display:none}}
 /* El menú móvil usa nav genérico: los demás nav del sitio siempre quedan en su lugar */
 @media(max-width:800px){.design-medunit nav:not(#navigation){position:static}}
+
+/* ===== Móvil compacto: footer, opiniones, menú, encabezados con ilustración y Segunda opinión ===== */
+@media (max-width: 800px) {
+ /* Footer */
+ .design-medunit .site-foot .foot-main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 14px; padding: 18px 0 6px; }
+ .design-medunit .site-foot .foot-brand { grid-column: 1 / -1; padding-bottom: 10px; }
+ .design-medunit .site-foot .foot-logo { margin-bottom: 0; gap: 10px; }
+ .design-medunit .site-foot .foot-logo img { width: 34px; height: 30px; }
+ .design-medunit .site-foot .foot-logo span { font-size: 14px; }
+ .design-medunit .site-foot .foot-logo small { font-size: 11px; }
+ .design-medunit .site-foot .foot-brand p { display: none; }
+ .design-medunit .site-foot .foot-col summary { min-height: 40px; padding: 8px 0; font-size: 15px; }
+ .design-medunit .site-foot .foot-col summary::after { font-size: 12px; }
+ .design-medunit .site-foot .foot-col nav a { min-height: 36px; font-size: 14px; }
+ .design-medunit .site-foot .foot-contact { grid-column: 1 / -1; padding-top: 10px; row-gap: 0; }
+ .design-medunit .site-foot .foot-contact > .foot-title,
+ .design-medunit .site-foot .foot-contact > a[data-section="agenda"] { display: none; }
+ .design-medunit .site-foot .foot-contact .foot-phone { grid-row: 1; font-size: 17px; min-height: 40px; }
+ .design-medunit .site-foot .foot-contact .foot-social { grid-row: 1; grid-column: 2; }
+ .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { min-height: 34px; font-size: 13px; }
+ .design-medunit .site-foot .foot-social a { width: 36px; height: 36px; }
+ .design-medunit .site-foot .foot-social a svg { width: 16px; height: 16px; }
+ .design-medunit .site-foot .foot-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; padding: 6px 64px calc(10px + env(safe-area-inset-bottom, 0px)) 0; }
+ .design-medunit .site-foot .foot-bottom p { font-size: 12px; min-height: 30px; display: flex; align-items: center; margin: 0; }
+ .design-medunit .site-foot nav.foot-legal { gap: 0 12px; }
+ .design-medunit .site-foot .foot-bottom .foot-legal a { min-height: 30px; font-size: 12px; }
+ .design-medunit .site-foot .foot-bottom .foot-powered { width: 110px; height: 24px; margin: 4px 0 0; }
+ .design-medunit .site-foot .foot-bottom .foot-powered img { width: 163px; margin: -13px 0 0 -26px; }
+
+ /* Opiniones */
+ .design-medunit .patient-reviews { padding: 16px !important; gap: 10px !important; border-radius: 18px; }
+ .design-medunit .patient-reviews h2 { font-size: 21px !important; gap: 8px; margin: 0 0 6px; }
+ .design-medunit .patient-reviews .reviews-mark { width: 28px; height: 28px; }
+ .design-medunit .patient-reviews .rating-summary { gap: 10px; margin: 0 0 6px; align-items: center; }
+ .design-medunit .patient-reviews .rating-score { font-size: 34px; line-height: 1; }
+ .design-medunit .patient-reviews .rating-detail { font-size: 12px; line-height: 1.35; }
+ .design-medunit .patient-reviews .review-platforms { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; }
+ .design-medunit .patient-reviews .review-platforms a { min-height: 30px; padding: 0; font-size: 12px; }
+ .design-medunit .patient-reviews .review-card { padding: 10px 12px; }
+ .design-medunit .patient-reviews .review-card blockquote { margin-bottom: 4px; }
+ .design-medunit .patient-reviews .review-card blockquote p { font-size: 16px; line-height: 1.3; }
+ .design-medunit .patient-reviews .review-card figcaption { font-size: 11.5px; gap: 0 8px; }
+ .design-medunit .patient-reviews .review-card figcaption a { min-height: 0; }
+
+ /* Menú: todos los enlaces con el mismo formato de recuadro */
+ .design-medunit .site-header #navigation > a:not(.nav-cta) { grid-column: 1 / -1; width: 100%; box-sizing: border-box; display: flex; align-items: center; min-height: 52px; padding: 6px 12px 6px 24px; border-radius: 8px; background: var(--soft); color: var(--ink); text-decoration: none; }
+ .design-medunit .site-header #navigation .care-menu > summary { min-height: 52px; padding-block: 4px; }
+ .design-medunit .site-header #navigation > a:not(.nav-cta)[aria-current] { color: var(--accent); font-weight: 600; }
+
+ /* Encabezados con ilustración (Columna, Atención, Segunda opinión, artículos…) */
+ .design-medunit .page-head.has-hero { padding: 18px 18px 16px; }
+ .design-medunit .page-head.has-hero h1 { font-size: 27px; line-height: 1.15; margin: 8px 0 6px; }
+ .design-medunit .page-head.has-hero .lead { font-size: 14.5px; line-height: 1.5; margin: 0; }
+ .design-medunit .page-head.has-hero > .post-hero { margin-top: 10px; }
+ .design-medunit .page-head.has-hero .post-hero img { max-height: 80px; }
+ .design-medunit .page-head.has-hero > .breadcrumbs { min-height: 0; }
+ .design-medunit .page-head.has-hero > .breadcrumbs a { min-height: 30px; }
+ .design-medunit .page-head.has-hero h1 { font-size: 25px; }
+ .design-medunit .page-head.so-head > .post-hero { display: none; }
+
+ /* Segunda opinión */
+ .design-medunit .so-page { gap: 18px; }
+ .design-medunit .so-title { font-size: 21px; gap: 8px; margin-bottom: 4px; }
+ .design-medunit .so-title .h-ico { width: 30px; height: 30px; }
+ .design-medunit .so-when { gap: 10px; }
+ .design-medunit .so-when-photo { height: 150px; min-height: 0; border-radius: 16px; }
+ .design-medunit .so-when-photo img { object-position: center 24%; }
+ .design-medunit .so-when-photo figcaption { font-size: 12px; padding: 5px 10px; left: auto; right: 8px; bottom: 8px; }
+ .design-medunit .so-situations { gap: 6px; margin-top: 8px; }
+ .design-medunit .so-situations li { padding: 9px 12px; gap: 10px; border-radius: 12px; }
+ .design-medunit .so-situations strong { font-size: 16px; }
+ .design-medunit .so-situations li > span:last-child > span { font-size: 13px; line-height: 1.4; display: block; }
+ .design-medunit .so-big-ico { width: 34px; height: 34px; border-radius: 10px; }
+ .design-medunit .so-big-ico svg { width: 18px; height: 18px; }
+ .design-medunit .so-steps-block { padding: 14px; border-radius: 16px; }
+ .design-medunit .so-steps { gap: 6px; margin-top: 6px; }
+ .design-medunit .so-steps li { display: grid; grid-template-columns: 34px minmax(0, 1fr); column-gap: 10px; align-items: center; padding: 9px 12px; border-radius: 12px; }
+ .design-medunit .so-step-ico { grid-row: 1 / span 2; width: 34px; height: 34px; border-radius: 10px; }
+ .design-medunit .so-step-ico svg { width: 18px; height: 18px; }
+ .design-medunit .so-step-num { top: 50%; right: 12px; translate: 0 -50%; font-size: 22px; }
+ .design-medunit .so-steps h3 { margin: 0; font-size: 16px; }
+ .design-medunit .so-steps p { font-size: 13px; line-height: 1.4; padding-right: 22px; }
+ .design-medunit .so-bring { gap: 6px; margin-top: 8px; }
+ .design-medunit .so-bring-card { padding: 9px 12px; border-radius: 12px; column-gap: 10px; }
+ .design-medunit .so-bring-card h3 { font-size: 16px; }
+ .design-medunit .so-bring-card p { font-size: 13px; line-height: 1.4; }
+ .design-medunit .so-bring-num { display: none; }
+ .design-medunit .spine-qa { padding: 10px; margin-top: 8px; }
+ .design-medunit .spine-qa .spine-svg { max-height: 230px; }
+ .design-medunit .spine-bubble-row .so-bubble { font-size: 14px; padding: 10px 12px; }
+ .design-medunit .spine-hint { font-size: 12px; }
+ .design-medunit .prose .post-cta { padding: 14px; gap: 10px; }
+ .design-medunit .prose .post-cta .post-cta-title { font-size: 18px; }
+ .design-medunit .prose .post-cta p:not(.post-cta-title) { font-size: 14px; }
+ .design-medunit .prose .post-cta .button { min-height: 44px; }
+ .design-medunit .notice.notice-alert { padding: 12px 14px; }
+ .design-medunit .notice.notice-alert p { font-size: 14px; line-height: 1.5; margin: 4px 0 0; }
+}
