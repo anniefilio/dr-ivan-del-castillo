@@ -2285,25 +2285,19 @@ html{scroll-padding-top:112px}
 .design-medunit .doctor-pillar:nth-child(4) h3 { color: #fff; }
 .design-medunit .doctor-pillar:nth-child(4) p { color: #c5d4dc; }
 .design-medunit .doctor-pillar:nth-child(4) .topic-ico { background: #ffffff1c; border-color: #ffffff33; color: #c5d4dc; }
-.design-medunit .doctor-profile { grid-template-columns: minmax(0, 1.9fr) minmax(250px, 1fr); }
+@media (min-width: 801px) { .design-medunit .doctor-profile { grid-template-columns: minmax(0, 1.9fr) minmax(250px, 1fr); } }
 @media (max-width: 760px) { .design-medunit .doctor-pillars { grid-template-columns: minmax(0, 1fr); } }
-
-/* Doctor profile: lead paragraph plus four pillars (consultation, clinic, experience, vision). */
-.design-medunit .doctor-lead { font-size: 18px; line-height: 1.6; color: var(--ink) !important; }
-.design-medunit .doctor-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0 18px; }
-.design-medunit .doctor-pillar { padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: border-color .15s, box-shadow .15s; }
-.design-medunit .doctor-pillar:hover { border-color: var(--accent); box-shadow: 0 10px 22px #1234511a; }
-.design-medunit .doctor-pillar h3 { margin: 10px 0 4px; font: 400 20px/1.25 Georgia, serif; color: var(--ink); }
-.design-medunit .doctor-pillar p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
-.design-medunit .doctor-pillar a { color: var(--accent); text-underline-offset: 3px; }
-.design-medunit .doctor-pillar:nth-child(2) .topic-ico { color: #123451; }
-.design-medunit .doctor-pillar:nth-child(3) .topic-ico { color: #123451; }
-.design-medunit .doctor-pillar:nth-child(4) { background: linear-gradient(135deg, #123451, #245779); border-color: transparent; }
-.design-medunit .doctor-pillar:nth-child(4) h3 { color: #fff; }
-.design-medunit .doctor-pillar:nth-child(4) p { color: #c5d4dc; }
-.design-medunit .doctor-pillar:nth-child(4) .topic-ico { background: #ffffff1c; border-color: #ffffff33; color: #c5d4dc; }
-.design-medunit .doctor-profile { grid-template-columns: minmax(0, 1.9fr) minmax(250px, 1fr); }
-@media (max-width: 760px) { .design-medunit .doctor-pillars { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 800px) {
+ .design-medunit .doctor-profile { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+ .design-medunit .doctor-profile-copy h2 { font-size: 32px; margin-bottom: 10px; }
+ .design-medunit .doctor-lead { font-size: 16px; line-height: 1.6; }
+ .design-medunit .doctor-pillars { gap: 10px; margin: 14px 0 6px; }
+ .design-medunit .doctor-pillar { padding: 14px 16px; }
+ .design-medunit .doctor-pillar h3 { font-size: 19px; margin-top: 8px; }
+ .design-medunit .doctor-education { padding: 18px; }
+ .design-medunit .doctor-education h3 { font-size: 20px; }
+ .design-medunit .doctor-education li { font-size: 15px; padding: 9px 12px; }
+}
 
 /* Brand book palette (Azul profundo, Azul médico, Niebla, Salvia, Marfil). */
 .design-medunit {
