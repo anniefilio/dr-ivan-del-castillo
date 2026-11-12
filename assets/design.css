@@ -2218,3 +2218,89 @@ html{scroll-padding-top:112px}
 .design-medunit .loc-btn .ico { width: 16px; height: 16px; }
 .design-medunit .loc-actions { gap: 6px; }
 @media (max-width: 520px) { .design-medunit .loc-btn { min-height: 44px; } }
+
+/* Spine questions: anatomical vertebrae drawn in SVG, with intervertebral discs. */
+.design-medunit .vb-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.design-medunit .spine-model { gap: 0; }
+.design-medunit .vertebra,
+.design-medunit .spine-model .vertebra:not(:last-child) {
+ --vb-body: url(#vb-bone); --vb-wing: url(#vb-wing);
+ position: relative; display: grid; place-items: center; height: auto; aspect-ratio: 220 / 84;
+ padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none;
+ filter: drop-shadow(0 6px 8px #1925402a);
+ transition: transform .22s ease, filter .22s ease;
+}
+.design-medunit .vertebra::before,
+.design-medunit .vertebra::after,
+.design-medunit .vertebra[aria-pressed="true"]::before,
+.design-medunit .vertebra[aria-pressed="true"]::after,
+.design-medunit .vertebra:hover::before,
+.design-medunit .vertebra:hover::after { content: none; display: none; }
+.design-medunit .vb-art { grid-area: 1 / 1; width: 100%; height: 100%; display: block; overflow: visible; }
+.design-medunit .vertebra-num { grid-area: 1 / 1; width: 24px; height: 24px; font-size: 13px; background: #ffffffe6; box-shadow: 0 2px 6px #19254026; }
+.design-medunit .vertebra.v1 { width: 128px; } .design-medunit .vertebra.v2 { width: 142px; } .design-medunit .vertebra.v3 { width: 156px; }
+.design-medunit .vertebra.v4 { width: 170px; } .design-medunit .vertebra.v5 { width: 184px; }
+.design-medunit .vertebra:hover,
+.design-medunit .vertebra[aria-pressed="true"] {
+ --vb-body: url(#vb-bone-on); --vb-wing: url(#vb-wing-on);
+ background: none; transform: scale(1.07) translateZ(18px);
+ filter: drop-shadow(0 8px 14px #3d459866) drop-shadow(0 0 10px #8f97d866);
+}
+.design-medunit .vertebra[aria-pressed="true"] .vertebra-num { background: #fff; color: var(--accent); }
+.design-medunit .vb-disc {
+ display: block; width: 46%; height: 9px; margin: -3px 0; border-radius: 50%;
+ background: radial-gradient(ellipse at 50% 35%, #e3f1f3 0%, #a9cdd6 55%, #6f9fae 100%);
+ box-shadow: 0 2px 3px #19254022, inset 0 1px 1px #ffffffb0;
+}
+.design-medunit .vertebra.v1 + .vb-disc { width: 40%; }
+.design-medunit .vertebra.v4 + .vb-disc { width: 52%; }
+@media (max-width: 620px) {
+ .design-medunit .vertebra.v1 { width: 84px; } .design-medunit .vertebra.v2 { width: 92px; } .design-medunit .vertebra.v3 { width: 100px; }
+ .design-medunit .vertebra.v4 { width: 108px; } .design-medunit .vertebra.v5 { width: 116px; }
+ .design-medunit .vertebra { height: auto; }
+ .design-medunit .vertebra-num { width: 20px; height: 20px; font-size: 11px; }
+ .design-medunit .vb-disc { height: 7px; }
+ .design-medunit .spine-qa { grid-template-columns: 124px minmax(0, 1fr); }
+}
+/* Vertebra paint: classes on the inline drawing, so the active colour switches reliably. */
+.design-medunit .vb-art .vb-body { fill: url(#vb-bone); stroke: #8592bd; stroke-width: 1.5; }
+.design-medunit .vb-art .vb-wing { fill: url(#vb-wing); stroke: #8f9bc3; stroke-width: 1.2; }
+.design-medunit .vertebra:hover .vb-body,
+.design-medunit .vertebra[aria-pressed="true"] .vb-body { fill: url(#vb-bone-on); stroke: #262d6e; }
+.design-medunit .vertebra:hover .vb-wing,
+.design-medunit .vertebra[aria-pressed="true"] .vb-wing { fill: url(#vb-wing-on); stroke: #2d347c; }
+.design-medunit .vertebra { filter: drop-shadow(0 5px 7px #19254033); }
+
+/* Doctor profile: lead paragraph plus four pillars (consultation, clinic, experience, vision). */
+.design-medunit .doctor-lead { font-size: 18px; line-height: 1.6; color: var(--ink) !important; }
+.design-medunit .doctor-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0 18px; }
+.design-medunit .doctor-pillar { padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: border-color .15s, box-shadow .15s; }
+.design-medunit .doctor-pillar:hover { border-color: var(--accent); box-shadow: 0 10px 22px #1925401a; }
+.design-medunit .doctor-pillar h3 { margin: 10px 0 4px; font: 400 20px/1.25 Georgia, serif; color: var(--ink); }
+.design-medunit .doctor-pillar p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.design-medunit .doctor-pillar a { color: var(--accent); text-underline-offset: 3px; }
+.design-medunit .doctor-pillar:nth-child(2) .topic-ico { color: #2f6b52; }
+.design-medunit .doctor-pillar:nth-child(3) .topic-ico { color: #a46a12; }
+.design-medunit .doctor-pillar:nth-child(4) { background: linear-gradient(135deg, #1b2747, #2b3770); border-color: transparent; }
+.design-medunit .doctor-pillar:nth-child(4) h3 { color: #fff; }
+.design-medunit .doctor-pillar:nth-child(4) p { color: #d5deec; }
+.design-medunit .doctor-pillar:nth-child(4) .topic-ico { background: #ffffff1c; border-color: #ffffff33; color: #d3dbff; }
+.design-medunit .doctor-profile { grid-template-columns: minmax(0, 1.9fr) minmax(250px, 1fr); }
+@media (max-width: 760px) { .design-medunit .doctor-pillars { grid-template-columns: minmax(0, 1fr); } }
+
+/* Doctor profile: lead paragraph plus four pillars (consultation, clinic, experience, vision). */
+.design-medunit .doctor-lead { font-size: 18px; line-height: 1.6; color: var(--ink) !important; }
+.design-medunit .doctor-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0 18px; }
+.design-medunit .doctor-pillar { padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: border-color .15s, box-shadow .15s; }
+.design-medunit .doctor-pillar:hover { border-color: var(--accent); box-shadow: 0 10px 22px #1925401a; }
+.design-medunit .doctor-pillar h3 { margin: 10px 0 4px; font: 400 20px/1.25 Georgia, serif; color: var(--ink); }
+.design-medunit .doctor-pillar p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.design-medunit .doctor-pillar a { color: var(--accent); text-underline-offset: 3px; }
+.design-medunit .doctor-pillar:nth-child(2) .topic-ico { color: #2f6b52; }
+.design-medunit .doctor-pillar:nth-child(3) .topic-ico { color: #a46a12; }
+.design-medunit .doctor-pillar:nth-child(4) { background: linear-gradient(135deg, #1b2747, #2b3770); border-color: transparent; }
+.design-medunit .doctor-pillar:nth-child(4) h3 { color: #fff; }
+.design-medunit .doctor-pillar:nth-child(4) p { color: #d5deec; }
+.design-medunit .doctor-pillar:nth-child(4) .topic-ico { background: #ffffff1c; border-color: #ffffff33; color: #d3dbff; }
+.design-medunit .doctor-profile { grid-template-columns: minmax(0, 1.9fr) minmax(250px, 1fr); }
+@media (max-width: 760px) { .design-medunit .doctor-pillars { grid-template-columns: minmax(0, 1fr); } }
