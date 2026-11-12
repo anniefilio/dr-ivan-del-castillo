@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
   <defs>
-    <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#f6f8f7"/><stop offset="1" stop-color="#dbe8e4"/></linearGradient>
-    <linearGradient id="bone" x2=".28" y2="1"><stop stop-color="#e3edef"/><stop offset=".58" stop-color="#a9c0ca"/><stop offset="1" stop-color="#6e919e"/></linearGradient>
-    <linearGradient id="accent" x2="0" y2="1"><stop stop-color="#9ec1b3"/><stop offset="1" stop-color="#528577"/></linearGradient>
-    <g id="vertebra"><path d="M-49-14Q-34-28 9-24Q45-24 53-10L50 11Q40 28-5 25Q-42 25-51 12Z" fill="url(#bone)"/><path d="M-41 10Q0 27 43 10" fill="none" stroke="#476b7a" stroke-opacity=".27" stroke-width="2" stroke-linecap="round"/></g>
-  </defs>
+    <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#f8f8f5"/><stop offset="1" stop-color="#e8f0f4"/></linearGradient>
+    <linearGradient id="bone" x2=".28" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#a9c4d4"/><stop offset="1" stop-color="#4b6373"/></linearGradient>
+    <linearGradient id="accent" x2="0" y2="1"><stop stop-color="#a9c4d4"/><stop offset="1" stop-color="#789387"/></linearGradient>
+    <g id="vertebra"><path d="M-49-14Q-34-28 9-24Q45-24 53-10L50 11Q40 28-5 25Q-42 25-51 12Z" fill="url(#bone)"/><path d="M-41 10Q0 27 43 10" fill="none" stroke="#123451" stroke-opacity=".27" stroke-width="2" stroke-linecap="round"/></g>
+  </defs><style>@keyframes cg-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}@keyframes cg-v{0%,100%{translate:-2px 0}50%{translate:2px 0}}.cg-spine{transform-box:fill-box;transform-origin:50% 100%;animation:cg-sway 6s ease-in-out infinite}.cg-spine use{animation:cg-v 6s ease-in-out infinite}.cg-spine use:nth-of-type(2){animation-delay:-.3s}.cg-spine use:nth-of-type(3){animation-delay:-.6s}.cg-spine use:nth-of-type(4){animation-delay:-.9s}.cg-spine use:nth-of-type(5){animation-delay:-1.2s}.cg-spine use:nth-of-type(6){animation-delay:-1.5s}.cg-spine use:nth-of-type(7){animation-delay:-1.8s}@media (prefers-reduced-motion:reduce){.cg-spine,.cg-spine use{animation:none}}</style>
   <rect width="640" height="400" fill="url(#surface)"/>
-  <ellipse cx="320" cy="367" rx="122" ry="11" fill="#527b83" opacity=".08"/>
-  <path d="M300 52C251 122 306 210 331 322" fill="none" stroke="#91b4aa" stroke-width="23" stroke-linecap="round"/><use href="#vertebra" transform="translate(302 79) rotate(-17) scale(0.55)"/><use href="#vertebra" transform="translate(294 109) rotate(-10) scale(0.59)"/><use href="#vertebra" transform="translate(293 141) rotate(-4) scale(0.63)"/><use href="#vertebra" transform="translate(298 175) rotate(3) scale(0.69)"/><use href="#vertebra" transform="translate(309 211) rotate(9) scale(0.75)"/><use href="#vertebra" transform="translate(322 251) rotate(11) scale(0.83)"/><use href="#vertebra" transform="translate(332 295) rotate(8) scale(0.92)"/><path d="M299 325Q331 307 371 321Q355 348 337 364Q316 359 299 325Z" fill="url(#bone)"/>
-</svg>
+  <ellipse cx="320" cy="367" rx="122" ry="11" fill="#123451" opacity=".08"/>
+  <g class="cg-spine"><path d="M300 52C251 122 306 210 331 322" fill="none" stroke="#a9c4d4" stroke-width="23" stroke-linecap="round"/><use href="#vertebra" transform="translate(302 79) rotate(-17) scale(0.55)"/><use href="#vertebra" transform="translate(294 109) rotate(-10) scale(0.59)"/><use href="#vertebra" transform="translate(293 141) rotate(-4) scale(0.63)"/><use href="#vertebra" transform="translate(298 175) rotate(3) scale(0.69)"/><use href="#vertebra" transform="translate(309 211) rotate(9) scale(0.75)"/><use href="#vertebra" transform="translate(322 251) rotate(11) scale(0.83)"/><use href="#vertebra" transform="translate(332 295) rotate(8) scale(0.92)"/><path d="M299 325Q331 307 371 321Q355 348 337 364Q316 359 299 325Z" fill="url(#bone)"/>
+</g></svg>

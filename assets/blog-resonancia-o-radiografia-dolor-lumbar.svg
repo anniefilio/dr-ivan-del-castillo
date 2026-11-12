@@ -5,7 +5,7 @@
     <linearGradient id="green" x2="0" y2="1"><stop stop-color="#91bbad"/><stop offset="1" stop-color="#4b8175"/></linearGradient>
   </defs>
   <rect width="640" height="400" fill="url(#background)"/>
-  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#ffffff" opacity=".6"/>
 <defs>
   <path id="spine" d="M65 41q20-9 46 0l-2 14q-23 7-46-2zm-4 31q24-8 49 0l1 15q-26 7-51-1zm1 32q26-7 53 1l2 15q-26 8-54 1zm6 32q27-6 54 1l3 16q-25 10-54 3zm7 33q26-7 55 0l3 16q-28 9-54 2z"/>
 </defs>

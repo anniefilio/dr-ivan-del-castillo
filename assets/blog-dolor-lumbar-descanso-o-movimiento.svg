@@ -19,7 +19,7 @@
     </g>
   </defs>
   <rect width="640" height="400" fill="url(#background)"/>
-  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#ffffff" opacity=".6"/>
   <ellipse cx="319" cy="293" rx="180" ry="16" fill="#48786e" opacity=".12"/>
   <use href="#shoe" transform="translate(222 105) rotate(9 150 70) scale(.88)"/>
   <use href="#shoe" transform="translate(143 164) rotate(-7 150 70)"/>

@@ -5,7 +5,7 @@
     <linearGradient id="green" x2="0" y2="1"><stop stop-color="#91bbad"/><stop offset="1" stop-color="#4b8175"/></linearGradient>
   </defs>
   <rect width="640" height="400" fill="url(#background)"/>
-  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#ffffff" opacity=".6"/>
 <g transform="translate(151 100) rotate(-9 80 100)">
   <rect width="162" height="199" rx="23" fill="#244b62"/>
   <rect x="12" y="12" width="138" height="175" rx="16" fill="#376478"/>

@@ -5,7 +5,7 @@
     <linearGradient id="green" x2="0" y2="1"><stop stop-color="#91bbad"/><stop offset="1" stop-color="#4b8175"/></linearGradient>
   </defs>
   <rect width="640" height="400" fill="url(#background)"/>
-  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#ffffff" opacity=".6"/>
 <g transform="translate(320 199)" stroke="#7a9ba8" stroke-width="3" stroke-linejoin="round">
   <path d="M-84-104q77-21 164 0l12 44q-80 21-176 2-11-16 0-46zm-6 151q92-24 180-3l-1 52q-86 26-177 2-12-22-2-51z" fill="url(#paper)"/>
   <path d="M-83-27q75-13 168 11l-2 28q-83 8-165 21-8-24-1-60z" fill="url(#green)" stroke="#4f8075"/>

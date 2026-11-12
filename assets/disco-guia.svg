@@ -15,7 +15,7 @@
     </linearGradient>
   </defs>
   <rect width="640" height="400" fill="url(#background)"/>
-  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#f8fbfa" opacity=".6"/>
+  <ellipse cx="320" cy="200" rx="204" ry="169" fill="#ffffff" opacity=".6"/>
   <g transform="translate(315 201) rotate(-8)" stroke-linejoin="round">
     <path d="M61-92c35-2 60 12 88 7l22-13 10 14-25 20c-21 17-52 6-76 12l-29 15zM61 77c35-2 60 12 88 7l22-13 10 14-25 20c-21 17-52 6-76 12l-29 15z" fill="#b3cbd3" stroke="#7c9da9" stroke-width="3"/>
     <path d="M-123-112q74-21 153-4c20 4 36 13 42 28l-6 42q-88 24-187 5c-12-10-14-51-2-71zM-123 48q76-19 155-3c22 4 35 14 41 28l-7 42q-90 25-187 5c-12-10-14-52-2-72z" fill="url(#bone)" stroke="#7c9da9" stroke-width="3"/>

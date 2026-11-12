@@ -3,7 +3,7 @@
 .design-medunit .booking-result[hidden] { display: none !important; }
 .design-medunit .contact-calendar { align-self: start; }
 .design-medunit .booking-caption { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 16px; font-weight: 600; }
-.design-medunit .booking-pending { background: #eef0f9; color: #43459c; padding: 3px 9px; border-radius: 6px; font-size: 14px; }
+.design-medunit .booking-pending { background: #e8f0f4; color: #245779; padding: 3px 9px; border-radius: 6px; font-size: 14px; }
 .design-medunit .booking-location { margin: 4px 0 12px; color: var(--muted); font-size: 14px; }
 .design-medunit .booking-month-nav { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding-block: 8px; border-top: 1px solid var(--line); }
 .design-medunit .booking-month-nav h3 { margin: 0; font: 600 16px/1.4 'DM Sans', Arial, sans-serif; text-transform: capitalize; text-align: center; letter-spacing: 0; }
@@ -16,7 +16,7 @@
 .design-medunit .booking-days button[aria-current="date"] { border-color: var(--line); }
 .design-medunit .booking-days button[aria-pressed="true"],
 .design-medunit .booking-slots button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
-.design-medunit .booking-days button:not(:disabled):not([aria-pressed="true"]):hover { background: #eef0f9; }
+.design-medunit .booking-days button:not(:disabled):not([aria-pressed="true"]):hover { background: #e8f0f4; }
 .design-medunit .booking-days button:disabled { color: #a5adbb; cursor: default; }
 .design-medunit .booking-availability { margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
 .design-medunit .booking-availability h3,
@@ -63,7 +63,7 @@
 .design-medunit .booking-request.booking-request-top {
  display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; max-width: none;
  margin: 0; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff;
- box-shadow: 0 10px 24px #19254012;
+ box-shadow: 0 10px 24px #12345112;
 }
 .design-medunit .booking-request-top h2 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: clamp(21px, 2.2vw, 24px); }
 .design-medunit .booking-request-top h2 .ico { color: var(--accent); }
@@ -100,4 +100,13 @@
 @media (max-width: 620px) {
  .design-medunit .booking-request-top input,
  .design-medunit .booking-request-top select { font-size: 16px; }
+}
+
+/* Preview: request form in two columns on wide screens. */
+@media (min-width: 761px) {
+ .design-medunit .booking-request.booking-request-top { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; align-items: end; }
+ .design-medunit .booking-request-top > h2,
+ .design-medunit .booking-request-top > .booking-request-day,
+ .design-medunit .booking-request-top > p:last-child { grid-column: 1 / -1; }
+ .design-medunit .booking-request-top > .button { grid-column: 2; }
 }
