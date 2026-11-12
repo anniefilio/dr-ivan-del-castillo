@@ -481,3 +481,22 @@ document.querySelectorAll('[data-spine-qa]').forEach(box => {
  show(0);
  new ResizeObserver(() => current >= 0 && place(verts[current])).observe(box);
 });
+
+// Header dropdowns: the label is a link to its own page; the submenu opens on hover on wide
+// screens, and with the arrow beside the label on touch screens and phones.
+{
+ const wideNav = window.matchMedia('(min-width: 1101px)');
+ document.querySelectorAll('#navigation .care-menu').forEach(menu => {
+  let closeTimer;
+  menu.addEventListener('mouseenter', () => {
+   if (!wideNav.matches) return;
+   window.clearTimeout(closeTimer);
+   document.querySelectorAll('#navigation .care-menu').forEach(other => { if (other !== menu) other.open = false; });
+   menu.open = true;
+  });
+  menu.addEventListener('mouseleave', () => {
+   if (!wideNav.matches) return;
+   closeTimer = window.setTimeout(() => { menu.open = false; }, 200);
+  });
+ });
+}
