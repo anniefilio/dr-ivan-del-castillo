@@ -2486,3 +2486,73 @@ html{scroll-padding-top:112px}
  .design-medunit .notice.notice-alert { padding: 12px 14px; }
  .design-medunit .notice.notice-alert p { font-size: 14px; line-height: 1.5; margin: 4px 0 0; }
 }
+
+/* ===== Móvil, segunda ronda: footer mínimo, opiniones compactas y perfil del Dr. en carruseles ===== */
+@media (max-width: 800px) {
+ .design-medunit .site-foot .foot-main { position: relative; display: block; padding: 14px 0 4px; }
+ .design-medunit .site-foot .foot-brand { padding-bottom: 6px; }
+ .design-medunit .site-foot .foot-col:first-of-type { display: none; }
+ .design-medunit .site-foot .foot-col { border: 0; }
+ .design-medunit .site-foot .foot-col summary { display: none; }
+ .design-medunit .site-foot .foot-col nav { display: flex; flex-wrap: wrap; gap: 0 14px; padding: 0; position: static; background: none; border: 0; }
+ .design-medunit .site-foot .foot-bottom { align-items: center; }
+ .design-medunit .site-foot nav.foot-legal { display: contents; }
+ .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { font-size: 12px; }
+ .design-medunit .site-foot .foot-col nav a { min-height: 30px; font-size: 13px; }
+ .design-medunit .site-foot .foot-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; padding: 2px 0 0; border: 0; }
+ .design-medunit .site-foot .foot-contact .foot-phone { font-size: 16px; min-height: 32px; }
+ .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { min-height: 32px; font-size: 12.5px; }
+ .design-medunit .site-foot .foot-contact .foot-social { position: absolute; top: 14px; right: 0; margin: 0; gap: 6px; }
+ .design-medunit .site-foot .foot-social a { width: 32px; height: 32px; }
+ .design-medunit .site-foot .foot-social a svg { width: 15px; height: 15px; }
+ .design-medunit .site-foot .foot-bottom { padding: 4px 60px calc(8px + env(safe-area-inset-bottom, 0px)) 0; gap: 0 10px; }
+ .design-medunit .site-foot .foot-bottom p,
+ .design-medunit .site-foot .foot-bottom .foot-legal a { min-height: 26px; font-size: 11.5px; }
+ .design-medunit .site-foot nav.foot-legal { gap: 0 10px; }
+ .design-medunit .site-foot .foot-bottom .foot-powered { width: 96px; height: 21px; margin: 2px 0 0; }
+ .design-medunit .site-foot .foot-bottom .foot-powered img { width: 142px; margin: -11px 0 0 -23px; }
+
+ .design-medunit .patient-reviews { padding: 12px 14px !important; gap: 8px !important; margin-block: 12px 18px !important; }
+ .design-medunit .patient-reviews h2 { font-size: 19px !important; margin: 0 0 4px; }
+ .design-medunit .patient-reviews .reviews-mark { width: 24px; height: 24px; }
+ .design-medunit .patient-reviews .review-platforms { display: none; }
+ .design-medunit .patient-reviews .rating-summary { margin: 0; gap: 8px; }
+ .design-medunit .patient-reviews .rating-score { font-size: 28px; }
+ .design-medunit .patient-reviews .review-card { padding: 8px 10px; }
+ .design-medunit .patient-reviews .review-card blockquote p { font-size: 15px; }
+ .design-medunit .patient-reviews .review-controls { margin-top: 2px; }
+
+ .design-medunit .page-head:not(.has-hero) { padding: 16px 18px 14px; }
+ .design-medunit .page-head:not(.has-hero) h1 { font-size: 26px; line-height: 1.15; margin: 6px 0 4px; }
+ .design-medunit .page-head:not(.has-hero) .lead { font-size: 14px; margin: 0; }
+ .design-medunit .page-head > .breadcrumbs { min-height: 0; }
+ .design-medunit .doctor-profile.spaced { padding-block: 18px 10px; }
+ .design-medunit .doctor-profile-copy h2 { font-size: 26px; margin-bottom: 6px; }
+ .design-medunit .doctor-lead { font-size: 14.5px; line-height: 1.55; }
+ .design-medunit .doctor-pillars,
+ .design-medunit .team-list { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -20px; padding: 2px 20px 6px; scroll-padding-inline: 20px; }
+ .design-medunit .doctor-pillars::-webkit-scrollbar,
+ .design-medunit .team-list::-webkit-scrollbar { display: none; }
+ .design-medunit .doctor-pillar { flex: 0 0 82%; scroll-snap-align: start; padding: 12px 14px; }
+ .design-medunit .doctor-pillar .topic-ico { width: 32px; height: 32px; }
+ .design-medunit .doctor-pillar h3 { font-size: 17px; margin: 6px 0 4px; }
+ .design-medunit .doctor-pillar p { font-size: 13px; line-height: 1.5; }
+ .design-medunit .doctor-education { padding: 12px 14px; }
+ .design-medunit .doctor-education h3 { font-size: 18px; margin-bottom: 6px; }
+ .design-medunit .doctor-education ul { gap: 4px; }
+ .design-medunit .doctor-education li { font-size: 13.5px; padding: 6px 10px; }
+ .design-medunit .cred-mosaic-section { padding-block: 4px 16px; }
+ .design-medunit .cred-mosaic-head { margin-bottom: 8px; }
+ .design-medunit .cred-mosaic-head h2 { font-size: 21px; }
+ .design-medunit .cred-mosaic-head p { font-size: 12.5px; }
+ .design-medunit .cred-mosaic { height: min(56vw, 220px); gap: 6px; }
+ .design-medunit .team-list + * { margin-top: 0; }
+ .design-medunit .collection-title { font-size: 21px; margin-bottom: 8px; }
+ .design-medunit .team-card { flex: 0 0 82%; scroll-snap-align: start; grid-template-columns: 52px minmax(0, 1fr); padding: 12px; gap: 8px 10px; }
+ .design-medunit .team-card + .team-card { margin-top: 0; }
+ .design-medunit .team-card img { width: 52px; height: 52px; }
+ .design-medunit .team-card strong { font-size: 16px; }
+ .design-medunit .team-card-copy > span { font-size: 12.5px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+ .design-medunit .team-spec { font-size: 10px; }
+ .design-medunit .team-card-go { min-height: 36px; padding: 6px 12px; font-size: 13px; }
+}

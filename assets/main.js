@@ -79,10 +79,10 @@ document.addEventListener('click', event => {
 }
 
 const footerMobile = window.matchMedia('(max-width: 800px)');
-// Footer columns are always open on wide screens and collapse into accordions on phones.
+// Footer columns stay open; on phones the CSS shows Recursos as one compact row of links.
 const syncFooter = () => document.querySelectorAll('.foot-col').forEach(group => {
- group.open = !footerMobile.matches;
- group.querySelector('summary').tabIndex = footerMobile.matches ? 0 : -1;
+ group.open = true;
+ group.querySelector('summary').tabIndex = -1;
 });
 syncFooter();
 footerMobile.addEventListener('change', syncFooter);
