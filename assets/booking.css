@@ -45,3 +45,16 @@
  .design-medunit .booking-month-nav button { padding-inline: 3px; }
  .design-medunit .booking-days, .design-medunit .booking-weekdays { gap: 1px; }
 }
+
+/* Vertical request form under the calendar, used until direct booking is enabled. */
+.design-medunit .booking-request { display: none; }
+.design-medunit .native-booking:has(.booking-pending:not([hidden])) .booking-request {
+ display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; max-width: none;
+ margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
+}
+.design-medunit .booking-request h3 { margin: 0; font: 600 16px/1.4 'DM Sans', Arial, sans-serif; letter-spacing: 0; }
+.design-medunit .booking-request label { display: grid; gap: 4px; margin: 0; font-size: 15px; font-weight: 600; }
+.design-medunit .booking-request input,
+.design-medunit .booking-request select { margin-top: 0; }
+.design-medunit .booking-request .button { justify-self: stretch; width: 100%; min-height: 48px; justify-content: center; }
+.design-medunit .booking-request p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.45; }

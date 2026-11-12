@@ -342,11 +342,16 @@ if (appointmentForm) {
   const name = nameInput.value.trim();
   const phone = phoneInput.value.trim();
   const schedule = appointmentForm.querySelector('#cita-horario').value;
+  // On Contacto the form sits under the calendar and sends the day chosen there.
+  const dayText = appointmentForm.matches('[data-booking-date-source]')
+   ? (document.querySelector('[data-booking-date]')?.textContent || '').trim()
+   : '';
+  const day = dayText ? dayText.charAt(0).toLowerCase() + dayText.slice(1) : '';
   const message = [
    `Hola, soy ${name}.`,
    'Quisiera solicitar una primera consulta con el Dr. Iván del Castillo.',
    `Mi teléfono de contacto es ${phone}.`,
-   schedule ? `De preferencia ${schedule}.` : '',
+   day ? `Me gustaría el ${day}${schedule ? `, ${schedule}` : ''}.` : (schedule ? `De preferencia ${schedule}.` : ''),
    '¿Qué horarios tienen disponibles?'
   ].filter(Boolean).join(' ');
   const whatsapp = new URL(appointmentForm.dataset.whatsapp);

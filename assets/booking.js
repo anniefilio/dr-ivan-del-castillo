@@ -60,7 +60,7 @@
   clearSelection(); slots = []; slotList.replaceChildren();
   dateTitle.textContent = longDate(selectedDay);
   if (!endpoint) {
-   setStatus('La reserva en línea estará disponible próximamente. Por ahora, solicita tu cita por WhatsApp.'); return;
+   setStatus('Elige el día que prefieras y envía tu solicitud. El consultorio te confirmará el horario.'); return;
   }
   setStatus('Consultando horarios disponibles…'); slotList.setAttribute('aria-busy', 'true');
   const timeout = window.setTimeout(() => controller.abort(), 12000);
