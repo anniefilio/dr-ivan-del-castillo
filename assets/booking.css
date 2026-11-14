@@ -110,3 +110,9 @@
  .design-medunit .booking-request-top > p:last-child { grid-column: 1 / -1; }
  .design-medunit .booking-request-top > .button { grid-column: 2; }
 }
+/* Agenda de Doctoralia (widget oficial) */
+.doctoralia-intro{margin:0 0 14px;color:#245779;font-size:15px;line-height:1.5}
+.doctoralia-widget{background:#f8f8f5;border:1px solid #e8f0f4;border-radius:18px;padding:12px;min-height:420px;display:flex;justify-content:center}
+.doctoralia-widget iframe{width:100%!important;max-width:100%;border:0}
+.doctoralia-widget .zl-url{align-self:center;color:#123451;font-weight:600}
+@media (max-width:600px){.doctoralia-widget{padding:0;border:0;background:none;min-height:380px}}
