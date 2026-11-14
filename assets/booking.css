@@ -116,3 +116,11 @@
 .doctoralia-widget iframe{width:100%!important;max-width:100%;border:0}
 .doctoralia-widget .zl-url{align-self:center;color:#123451;font-weight:600}
 @media (max-width:600px){.doctoralia-widget{padding:0;border:0;background:none;min-height:380px}}
+/* Celular: la agenda va justo después del título, antes del formulario */
+@media (max-width:800px){
+ .design-medunit .contact-intro-grid{display:flex;flex-direction:column;gap:16px}
+ .design-medunit .contact-intro-copy{display:contents}
+ .design-medunit .contact-intro-copy>*{order:0}
+ .design-medunit .contact-calendar{order:1;width:100%}
+ .design-medunit .contact-intro-copy>.contact-details{order:2;margin-top:0}
+}
