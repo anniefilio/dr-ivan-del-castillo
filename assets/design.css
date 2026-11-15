@@ -2556,3 +2556,10 @@ html{scroll-padding-top:112px}
  .design-medunit .team-spec { font-size: 10px; }
  .design-medunit .team-card-go { min-height: 36px; padding: 6px 12px; font-size: 13px; }
 }
+/* Móvil: con 4 redes, los íconos van en la fila del teléfono para no tapar el nombre */
+@media (max-width: 800px) {
+ .design-medunit .site-foot .foot-contact .foot-social { position: static; order: 2; margin: 0 0 0 auto; gap: 6px; }
+ .design-medunit .site-foot .foot-contact .foot-phone { order: 1; }
+ .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { order: 3; flex-basis: 100%; }
+ .design-medunit .site-foot .foot-social a { width: 34px; height: 34px; min-width: 34px; min-height: 34px; flex: 0 0 34px; }
+}
