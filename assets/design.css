@@ -2652,3 +2652,7 @@ html{scroll-padding-top:112px}
 .design-medunit .academic-drop > summary .collection-title { flex: 1 1 auto; }
 .design-medunit .academic-recent-section > .academic-drop { padding: 10px 13px; border-left: 4px solid var(--accent); border-radius: 0 15px 15px 0; background: #E8F0F4; }
 @media (max-width: 600px) { .design-medunit .opinion-links a { font-size: 15px; line-height: 1.45; } }
+/* Académico: títulos de sección más ligeros y limpios */
+.design-medunit .academic-page .collection-title { font-size: clamp(21px, 2vw, 25px); letter-spacing: 0; line-height: 1.25; }
+.design-medunit .academic-drop > summary .collection-title { font-size: clamp(19px, 1.8vw, 22px); }
+.design-medunit .opinion-links a { font-weight: 500; }
