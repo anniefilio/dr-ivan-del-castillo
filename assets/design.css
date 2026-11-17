@@ -2581,8 +2581,17 @@ html{scroll-padding-top:112px}
 .design-medunit .academic-page .academic-list .academic-copy p { margin: 0; font-size: 14px; }
 .design-medunit .academic-page .academic-list .academic-copy .textlink { min-height: 32px; font-size: 14px; }
 .design-medunit .academic-page .academic-list .academic-entry[hidden] { display: none; }
-.design-medunit .amcico-journal-cover { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-block: 18px; text-align: center; }
-.design-medunit .amcico-journal-cover img { display: block; width: 200px; max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 14px #102e4820; }
+.design-medunit .academic-sources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.design-medunit .academic-sources .amcico-journal { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.design-medunit .amcico-journal-info { min-width: 0; }
+.design-medunit .amcico-journal-info .textlink { display: inline-block; margin-top: 12px; }
+.design-medunit .amcico-journal-cover { display: flex; flex: 0 0 140px; flex-direction: column; align-items: center; gap: 8px; margin: 0; text-align: center; font-size: 13px; }
+@media (max-width: 620px) {
+  .design-medunit .academic-sources { grid-template-columns: minmax(0, 1fr); }
+  .design-medunit .academic-sources .amcico-journal { gap: 14px; }
+  .design-medunit .amcico-journal-cover { flex-basis: 100px; font-size: 12px; }
+}
+.design-medunit .amcico-journal-cover img { display: block; width: 140px; max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 14px #102e4820; }
 .design-medunit .amcico-journal-cover span { text-decoration: underline; text-underline-offset: 3px; }
 .design-medunit .academic-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; padding: 0 18px; border: 1px solid var(--accent); border-radius: 999px; background: #fff; color: var(--accent); font: inherit; font-size: 15px; cursor: pointer; }
 .design-medunit .academic-more:hover { background: var(--soft); }
@@ -2617,3 +2626,8 @@ html{scroll-padding-top:112px}
 @media (max-width: 620px) {
   .design-medunit .academic-page .academic-records .academic-entry { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+/* Fuentes: tarjetas compactas y revista AMCICO en una fila propia. */
+.design-medunit .academic-page .academic-sources > .card { min-height: 0; height: auto; }
+.design-medunit .academic-page .academic-sources > .amcico-journal { flex-direction: row; align-items: center; text-align: left; }
+.design-medunit .academic-page .amcico-journal-info { flex: 1; }
