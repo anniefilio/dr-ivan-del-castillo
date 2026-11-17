@@ -2581,6 +2581,9 @@ html{scroll-padding-top:112px}
 .design-medunit .academic-page .academic-list .academic-copy p { margin: 0; font-size: 14px; }
 .design-medunit .academic-page .academic-list .academic-copy .textlink { min-height: 32px; font-size: 14px; }
 .design-medunit .academic-page .academic-list .academic-entry[hidden] { display: none; }
+.design-medunit .amcico-journal-cover { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-block: 18px; text-align: center; }
+.design-medunit .amcico-journal-cover img { display: block; width: 200px; max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 14px #102e4820; }
+.design-medunit .amcico-journal-cover span { text-decoration: underline; text-underline-offset: 3px; }
 .design-medunit .academic-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; padding: 0 18px; border: 1px solid var(--accent); border-radius: 999px; background: #fff; color: var(--accent); font: inherit; font-size: 15px; cursor: pointer; }
 .design-medunit .academic-more:hover { background: var(--soft); }
 @media (max-width: 620px) {
