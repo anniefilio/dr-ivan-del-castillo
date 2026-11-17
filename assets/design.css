@@ -2564,9 +2564,9 @@ html{scroll-padding-top:112px}
  .design-medunit .site-foot .foot-social a { width: 34px; height: 34px; min-width: 34px; min-height: 34px; flex: 0 0 34px; }
 }
 
-/* Publicaciones recientes: lista compacta que crece sin ocupar tanto espacio */
-.design-medunit .academic-recent { gap: 0; margin-top: 4px; border-top: 1px solid var(--line); }
-.design-medunit .academic-recent .academic-entry {
+/* Académico: listas compactas (publicaciones del Dr., congresos y publicaciones recientes) */
+.design-medunit .academic-page .academic-list { gap: 0; margin-top: 4px; border-top: 1px solid var(--line); }
+.design-medunit .academic-page .academic-list .academic-entry {
   grid-template-columns: 150px minmax(0, 1fr);
   gap: 4px 20px;
   padding: 12px 0;
@@ -2575,16 +2575,42 @@ html{scroll-padding-top:112px}
   border-radius: 0;
   background: transparent;
 }
-.design-medunit .academic-recent .academic-meta { font-size: 14px; line-height: 1.4; gap: 0; padding-top: 2px; }
-.design-medunit .academic-recent .academic-copy { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; }
-.design-medunit .academic-recent .academic-copy h3 { flex-basis: 100%; max-width: none; margin: 0 0 2px; font-size: 18px; line-height: 1.35; }
-.design-medunit .academic-recent .academic-copy p { margin: 0; font-size: 14px; }
-.design-medunit .academic-recent .academic-copy .textlink { min-height: 32px; font-size: 14px; }
-.design-medunit .academic-recent .academic-entry[hidden] { display: none; }
+.design-medunit .academic-page .academic-list .academic-meta { font-size: 14px; line-height: 1.4; gap: 0; padding-top: 2px; }
+.design-medunit .academic-page .academic-list .academic-copy { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; }
+.design-medunit .academic-page .academic-list .academic-copy h3 { flex-basis: 100%; max-width: none; margin: 0 0 2px; font-size: 18px; line-height: 1.35; }
+.design-medunit .academic-page .academic-list .academic-copy p { margin: 0; font-size: 14px; }
+.design-medunit .academic-page .academic-list .academic-copy .textlink { min-height: 32px; font-size: 14px; }
+.design-medunit .academic-page .academic-list .academic-entry[hidden] { display: none; }
 .design-medunit .academic-more { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; padding: 0 18px; border: 1px solid var(--accent); border-radius: 999px; background: #fff; color: var(--accent); font: inherit; font-size: 15px; cursor: pointer; }
 .design-medunit .academic-more:hover { background: var(--soft); }
 @media (max-width: 620px) {
-  .design-medunit .academic-recent .academic-entry { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 0; }
-  .design-medunit .academic-recent .academic-meta { flex-direction: row; flex-wrap: wrap; gap: 0 6px; font-size: 13px; }
-  .design-medunit .academic-recent .academic-copy h3 { font-size: 17px; }
+  .design-medunit .academic-page .academic-list .academic-entry { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 0; }
+  .design-medunit .academic-page .academic-list .academic-meta { flex-direction: row; flex-wrap: wrap; gap: 0 6px; font-size: 13px; }
+  .design-medunit .academic-page .academic-list .academic-copy h3 { font-size: 17px; }
+}
+.design-medunit .academic-page .academic-records .academic-entry { padding: 12px 0; grid-template-columns: 200px minmax(0, 1fr); }
+.design-medunit .academic-page .academic-records .academic-meta { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0 8px; }
+.design-medunit .academic-page .academic-records .academic-meta .eyebrow { font-size: 12px; }
+.design-medunit .academic-page .academic-records .academic-year { font-size: 18px; }
+.design-medunit .academic-page .academic-records .academic-copy p { flex-basis: 100%; line-height: 1.45; }
+.design-medunit .academic-page .academic-records .academic-copy p + p { margin-top: 0; }
+.design-medunit .academic-page .academic-section .collection-title { margin-bottom: 8px; }
+
+/* Footer: redes junto a "Contacto" y "Agendar consulta" bajo el nombre del doctor */
+.design-medunit .foot-contact-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 10px; }
+.design-medunit .foot-contact-head .foot-title { margin: 0; }
+.design-medunit .foot-contact-head .foot-social { margin: 0; gap: 8px; }
+.design-medunit .foot-contact-head .foot-social a { width: 34px; height: 34px; }
+.design-medunit .foot-contact-head .foot-social a svg { width: 16px; height: 16px; }
+.design-medunit .site-foot .foot-book { display: inline-flex; align-items: center; min-height: 38px; margin: 0 0 12px; padding: 0 16px; border: 1px solid #ffffff8c; border-radius: 999px; color: #fff; font-size: 14px; font-weight: 600; transition: background-color .18s ease, color .18s ease; }
+.design-medunit .site-foot .foot-book:hover { background: #fff; color: #123451; }
+.design-medunit .foot-brand { display: flex; flex-direction: column; align-items: flex-start; }
+@media (max-width: 800px) {
+  .design-medunit .foot-contact-head { display: contents; }
+  .design-medunit .site-foot .foot-contact .foot-title { display: none; }
+  .design-medunit .site-foot .foot-brand { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; }
+  .design-medunit .site-foot .foot-book { margin: 0; min-height: 36px; padding: 0 14px; font-size: 13px; }
+}
+@media (max-width: 620px) {
+  .design-medunit .academic-page .academic-records .academic-entry { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
