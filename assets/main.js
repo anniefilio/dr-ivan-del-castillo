@@ -500,3 +500,26 @@ document.querySelectorAll('[data-spine-qa]').forEach(box => {
   });
  });
 }
+
+// Publicaciones recientes: muestra las 5 más nuevas y deja ver el resto con un botón.
+document.querySelectorAll('.academic-recent').forEach(list => {
+  const items = [...list.querySelectorAll(':scope > .academic-entry')];
+  const visible = 5;
+  if (items.length <= visible) return;
+  const rest = items.slice(visible);
+  rest.forEach(item => { item.hidden = true; });
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'academic-more';
+  button.setAttribute('aria-expanded', 'false');
+  const label = open => open ? 'Ver menos publicaciones' : `Ver todas las publicaciones (${items.length})`;
+  button.textContent = label(false);
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    rest.forEach(item => { item.hidden = !open; });
+    button.setAttribute('aria-expanded', String(open));
+    button.textContent = label(open);
+    if (!open) list.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  });
+  list.after(button);
+});
