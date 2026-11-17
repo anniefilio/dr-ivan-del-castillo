@@ -2626,3 +2626,7 @@ html{scroll-padding-top:112px}
 @media (max-width: 620px) {
  .design-medunit .academic-page .academic-sources { grid-template-columns: repeat(3, minmax(240px, 1fr)); overflow-x: auto; padding-bottom: 10px; }
 }
+
+.design-medunit .opinion-heading { min-width: 0; }
+.design-medunit .medical-opinion > summary .opinion-article-title { margin: 6px 0 0; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; font-weight: 400; line-height: 1.5; }
+.design-medunit .academic-page .academic-list .academic-copy .article-opinion-link { flex-basis: 100%; width: fit-content; margin-top: 6px; }

@@ -523,3 +523,11 @@ document.querySelectorAll('.academic-recent').forEach(list => {
   });
   list.after(button);
 });
+
+// Abre la opinion correspondiente antes de navegar al enlace interno.
+document.querySelectorAll(".article-opinion-link").forEach(link => {
+ link.addEventListener("click", () => {
+  const opinion = document.getElementById(link.hash.slice(1));
+  if (opinion?.matches("details.medical-opinion")) opinion.open = true;
+ });
+});
