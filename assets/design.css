@@ -2631,3 +2631,13 @@ html{scroll-padding-top:112px}
 .design-medunit .academic-page .academic-sources > .card { min-height: 0; height: auto; }
 .design-medunit .academic-page .academic-sources > .amcico-journal { flex-direction: row; align-items: center; text-align: left; }
 .design-medunit .academic-page .amcico-journal-info { flex: 1; }
+
+/* Portada AMCICO grande, con enlace debajo y sin tarjetas de altura fija. */
+.design-medunit .academic-page .academic-sources > .amcico-journal { align-items: center; gap: 24px; }
+.design-medunit .academic-page .amcico-journal-cover { flex: 0 0 220px; width: 220px; gap: 10px; }
+.design-medunit .academic-page .amcico-journal-cover img { width: 220px; max-width: 100%; height: auto; }
+.design-medunit .academic-page .amcico-journal-cover span { display: block; width: 100%; margin: 0; line-height: 1.4; }
+@media (max-width: 620px) {
+ .design-medunit .academic-page .academic-sources > .amcico-journal { flex-direction: column; align-items: flex-start; gap: 16px; }
+ .design-medunit .academic-page .amcico-journal-cover { flex: 0 0 auto; align-self: center; width: min(220px, 100%); }
+}
