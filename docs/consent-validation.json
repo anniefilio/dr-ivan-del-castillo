@@ -1,0 +1,20 @@
+{
+  "published": "2026-11-17",
+  "domain": "https://drcolumnavertebral.com/",
+  "gtm": "GTM-MQMHWNXK",
+  "gtm_version": "2",
+  "ga4": "G-F9YPDKJ64X",
+  "script_sha256": "33a6e65e17995a77e64f1a4b9e30d1840974e36a4d11d5e9559928cb8f32e6c8",
+  "published_script_matches_tested_source": true,
+  "legal_dates_verified": true,
+  "legacy_unconditional_gtm_absent": true,
+  "retention_months": 14,
+  "ui_verified": [
+    "banner visible",
+    "reject",
+    "reopen preferences",
+    "accept",
+    "withdraw consent"
+  ],
+  "tests_passed": 10
+}

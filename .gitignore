@@ -1,1 +1,26 @@
 /borradores/
+
+# Paquetes generados y carpetas locales de trabajo
+*.zip
+/wordpress/
+/.claude/
+
+# Cachés y archivos temporales
+.DS_Store
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+*~
+
+# Videos y exportaciones locales: no guardar material de pacientes
+*.[mM][pP]4
+*.[mM][oO][vV]
+
+# Copia PNG sin uso; la página utiliza brain-spine-eurospine.jpg
+/assets/brain-spine-eurospine.png
+
+# Paquetes generados y archivos temporales
+*.temp
+*.swp
+*.swo

@@ -1,0 +1,476 @@
+{
+  "summary": {
+    "sitemap": "https://drcolumnavertebral.com/sitemap.xml",
+    "total": 77,
+    "blog_articles": 16,
+    "condition_pages": 9,
+    "treatment_pages": 9,
+    "academic_articles": 16,
+    "robots_reference_ok": true,
+    "errors": []
+  },
+  "pages": [
+    {
+      "url": "https://drcolumnavertebral.com/",
+      "lastmod": "2026-11-17T22:31:31+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/",
+      "lastmod": "2026-11-17T22:31:31+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/",
+      "lastmod": "2026-11-17T22:31:31+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/contacto/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/criterios-editoriales/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/doctor/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/perfil-profesional/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/primera-consulta/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/privacidad/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/rehabilitacion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/segunda-opinion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/videos/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/casos-complejos-y-segunda-opinion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/deformidades-y-alineacion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/desgaste-y-canal-estrecho/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/dolor-mecanico-y-muscular/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/fracturas-y-traumatismos/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/atencion/hernias-y-nervios/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/dolor-cuello-mano-dormida/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/dolor-espalda-ciatica/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/dolor-lumbar-descanso-o-movimiento/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/estenosis-lumbar/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/fractura-vertebral-caida-osteoporosis/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/hernia-de-disco/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/minima-invasion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/preparar-segunda-opinion/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/primera-consulta/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/regreso-a-casa-cirugia-columna/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/resonancia-o-radiografia-dolor-lumbar/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/alif-xlif/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/cirugia-de-revision/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/cuando-considerar-cirugia/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/curvaturas-y-fracturas/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/descompresion/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/discectomia/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/fusion-vertebral/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/minima-invasion/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/procedimientos/recuperacion/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/datos-personales/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/terminos/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/uso-aceptable/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/degeneracion-discal/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/dolor-despues-de-cirugia-de-columna/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/escoliosis/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/espondilolistesis/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/blog/mielopatia-cervical/",
+      "lastmod": "2026-11-17T22:31:32+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/degeneracion-discal/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/dolor-cervical-y-lumbar/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/dolor-despues-de-cirugia/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/escoliosis-y-otras-deformidades/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/espondilolistesis-e-inestabilidad/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/estenosis-cervical-y-lumbar/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/fracturas-y-traumatismos/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/hernia-de-disco-ciatica-y-radiculopatia/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/columna/mielopatia-y-compresion-nerviosa/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/doctor/equipo/dr-jose-augusto-ruiz-gurria/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/doctor/equipo/dra-carmen-maria-chavez-pina/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/doctor/equipo/dra-jimena-guerra-villarreal/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/calidad-osea-cervical/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/complicaciones-cervical/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/discos-fracturas/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/doble-compresion/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/edad-cervical/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/escoliosis-nf1/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/fijacion-cervical/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/fractura-odontoides/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/fusion-deformidad/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/glp1-columna/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/ia-resonancias/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/implantes-cervicales/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/infecciones-columna/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/navegacion-lumbar/",
+      "lastmod": "2026-11-17T22:31:33+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/opioides-lumbar/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    },
+    {
+      "url": "https://drcolumnavertebral.com/noticias/vancomicina-lumbar/",
+      "lastmod": "2026-11-17T22:31:34+00:00",
+      "status": 200,
+      "errors": []
+    }
+  ]
+}
