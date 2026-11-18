@@ -1,0 +1,6 @@
+project_id = "agenda-dr-ivan"
+
+# La agenda es pública para pacientes sin cuenta. La función aplica validación,
+# límites y protección del contrato. La base de datos permanece privada.
+[functions.agenda]
+verify_jwt = false
