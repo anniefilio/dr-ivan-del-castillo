@@ -531,3 +531,12 @@ document.querySelectorAll(".article-opinion-link").forEach(link => {
   if (opinion?.matches("details.medical-opinion")) opinion.open = true;
  });
 });
+
+// Evita que dos testimonios se escuchen al mismo tiempo.
+document.querySelectorAll('.patient-story video').forEach(video => {
+  video.addEventListener('play', () => {
+    document.querySelectorAll('.patient-story video').forEach(other => {
+      if (other !== video) other.pause();
+    });
+  });
+});
