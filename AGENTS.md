@@ -34,6 +34,11 @@ Estas reglas valen para cualquier asistente (Codex, Claude u otro) que trabaje e
 5. En WordPress: Apariencia → Temas → Añadir → Subir tema → elegir el ZIP → **Reemplazar el instalado con el subido**.
 6. Apariencia → Importar sitio del doctor → **Sincronizar versión de GitHub** (debe decir "Páginas actualizadas: N").
 7. Barra superior → **Vaciar caché**. Revisa el sitio publicado.
+8. **Guarda el tema en su propio GitHub**: en `~/Proyectos/dr-ivan-del-castillo-wordpress`, commit y push de `wordpress/dr-ivan-del-castillo/` con la versión y el commit del sitio en el mensaje (por ejemplo «Tema 1.5.3: … (GitHub abc1234)»). Si no lo haces, los demás asistentes ven cambios sin guardar y se detienen.
+
+**Plugin de cookies (`integrations/ivan-consent/`)**: sube `Version:` en `ivan-consent.php` y los `?v=` de su CSS/JS, copia el mismo CSS/JS a `assets/`, arma el ZIP y súbelo en Plugins → Añadir → Subir plugin → **Reemplazar el actual con el subido**.
+
+**Al terminar tu turno**, deja ambos repositorios sin cambios tuyos pendientes (`git status` limpio, salvo lo que sea de otro asistente).
 
 El navegador integrado no sube archivos; con la extensión de Chrome sí se puede (máximo 10 MB). Nunca escribas contraseñas: Annie inicia sesión.
 
