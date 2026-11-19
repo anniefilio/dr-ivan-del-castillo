@@ -28,7 +28,7 @@ Lo que ya funciona bien:
 Pendientes detectados:
 
 - **No hay registro de redirecciones.** No existe un lugar donde se anote qué dirección vieja va a cuál nueva. Este protocolo lo crea: [`docs/redirecciones.csv`](redirecciones.csv).
-- **Páginas de ejemplo de WordPress publicadas**: `/hello-world/` y `/sample-page/` responden 200. Deben mandarse a la papelera (darán 404, que es lo correcto). `/?p=1` también lleva a `/hello-world/`.
+- ~~Páginas de ejemplo de WordPress publicadas~~ **Resuelto el 19 de noviembre de 2026**: «Hello world!» y «Sample Page» se mandaron a la papelera (se pueden restaurar). `/hello-world/`, `/sample-page/`, `/?p=1` y `/?page_id=2` ya responden 404.
 - **La página 404 no orienta al paciente**: muestra el menú, pero no ofrece buscar, ir al blog o pedir cita. El tema no tiene `404.php`; usa la plantilla general.
 - **El título del 404 dice «Dr. Ivan Del Castillo»**, sin acento y con mayúscula en «Del». Viene del nombre del sitio en WordPress (Ajustes → Generales).
 - **Mayúsculas**: `/BLOG/hernia-de-disco/` responde 200 en lugar de redirigir a minúsculas. Es contenido duplicado menor.
