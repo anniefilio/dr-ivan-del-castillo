@@ -2702,3 +2702,16 @@ html{scroll-padding-top:112px}
   .design-medunit .medical-opinion > summary > .entry-opinion-title { min-height: 28px; padding: 2px 10px; font-size: 13px; }
   .design-medunit .entry-opinion .opinion-content { font-size: 14px; }
 }
+
+/* Aviso médico plegable (cerrado por defecto) y llamada a la acción en todas las páginas. */
+.design-medunit .medical-disclaimer { padding: 0; }
+.design-medunit .medical-disclaimer > summary { display: flex; align-items: center; gap: 8px; padding: 12px 16px; margin: 0; cursor: pointer; list-style: none; color: #863f35; font-weight: 700; font-size: 15px; }
+.design-medunit .medical-disclaimer > summary::-webkit-details-marker { display: none; }
+.design-medunit .medical-disclaimer-toggle { margin-left: auto; font-size: 13px; font-weight: 600; color: #245779; text-decoration: underline; text-underline-offset: 3px; }
+.design-medunit .medical-disclaimer-toggle::after { content: "Leer"; }
+.design-medunit .medical-disclaimer[open] .medical-disclaimer-toggle::after { content: "Cerrar"; }
+.design-medunit .medical-disclaimer-body { padding: 0 16px 14px; }
+.design-medunit .medical-disclaimer-body p { margin: 0 0 8px; color: #263743; font-size: 15px; line-height: 1.55; }
+.design-medunit .medical-disclaimer-body p:last-child { margin-bottom: 0; }
+.design-medunit .page-cta { margin-top: 28px; margin-bottom: 28px; }
+.design-medunit .page-cta .post-cta { margin: 0; }

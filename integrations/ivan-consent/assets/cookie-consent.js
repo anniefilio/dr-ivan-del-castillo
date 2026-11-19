@@ -94,7 +94,7 @@
     var privacyLink = document.querySelector('a[href*="/privacidad/"]');
     var privacy = privacyLink ? privacyLink.getAttribute('href') : '/privacidad/';
     banner.innerHTML = '<div class="ivan-cookie-copy"><h2 id="ivan-cookie-title">Cookies y analítica</h2>' +
-      '<p>Con tu permiso usamos cookies de Google Analytics, gestionadas mediante Google Tag Manager, para medir las visitas y mejorar el sitio. Puedes aceptar o rechazar la analítica y cambiar tu decisión en “Preferencias de cookies”. ' +
+      '<p>Con tu permiso usamos Google Analytics para medir visitas y mejorar el sitio. Puedes cambiarlo en “Preferencias de cookies”. ' +
       '<a class="ivan-cookie-privacy">Aviso de privacidad</a></p></div>' +
       '<div class="ivan-cookie-actions"><button type="button" data-cookie-action="accept">Aceptar</button>' +
       '<button type="button" data-cookie-action="reject">Rechazar</button></div>';
