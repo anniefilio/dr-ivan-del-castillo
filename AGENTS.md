@@ -41,9 +41,18 @@ El navegador integrado no sube archivos; con la extensión de Chrome sí se pued
 
 - Colores de marca solamente: #123451, #245779, #E8F0F4, #789387, #F8F8F5. Nada morado.
 - Los enlaces internos se abren en la misma pestaña. No uses `/#`, ni flechas en botones o enlaces.
-- El blog va sin desplegables. Todo contenido médico lleva aviso médico y "Revisado por el Dr. Iván del Castillo Vergara".
+- Todas las páginas llevan favicon y el bloque de llamada a la acción «¿Quieres revisar tu caso con el Dr. Iván?» con el botón «Solicitar primera consulta».
+- Todo contenido médico lleva «Revisado por el Dr. Iván del Castillo Vergara» y el aviso médico como desplegable (cerrado por defecto). Fuera del aviso médico, el blog va sin desplegables.
+
+## Blog (temas diarios)
+
+- Annie da el tema del día; de cada tema salen **4 blogs distintos** (enfoques diferentes, sin repetir contenido).
+- **Obligatorio en cada blog: al menos una tabla comparativa** (por ejemplo, diagnóstico diferencial de mielopatía frente a otras causas de debilidad; opciones de tratamiento; síntomas de alarma frente a síntomas comunes).
+- Cortos y resumidos: frases simples, para pacientes, sin relleno.
+- Cada blog cierra con el bloque de llamada a la acción y lleva el aviso médico desplegable.
 - Académico: cada artículo de «Publicaciones recientes y opinión del Dr.» lleva su opinión plegable justo debajo (`details.medical-opinion.entry-opinion`) y su página propia en `noticias/<slug>/`. Copia el formato de las tarjetas existentes; ya no hay caja separada de opiniones.
-- Solo se escriben opiniones de artículos con importancia para pacientes y relevancia científica. Nada de reportes de caso, editoriales, notas técnicas ni declaraciones gremiales.
+- Se eligen **uno o dos artículos al día**, solo los realmente relevantes para pacientes y con peso científico. Nada de reportes de caso, editoriales, notas técnicas ni declaraciones gremiales.
+- La opinión del Dr. **no lleva tablas**: solo un resumen breve de lo que dice el artículo y qué significa para el paciente.
 - Cada página lleva la clase de su `<main>` (por ejemplo `academic-page`); el tema la conserva en WordPress.
 - Analytics (G-F9YPDKJ64X) se carga solo desde Google Tag Manager y solo si la persona acepta las cookies. No lo instales por separado en el código.
 - Videos de YouTube (canal @dr.ivandelcastillo): siempre "No es contenido para niños" y sin restricción de edad. Los testimonios sin consentimiento firmado van como Ocultos.
