@@ -122,13 +122,26 @@ Además:
 - El sitemap (`/sitemap.xml`) no debe incluir direcciones de origen de redirecciones; ver [`docs/SITEMAP.md`](SITEMAP.md).
 - En Search Console, usa «Inspeccionar URL» en la dirección nueva y pide indexación si es una página importante.
 
-## 8. Página 404 recomendada
+## 8. Anuncio de la página 404
 
-Cuando se haga `404.php` en el tema, debe tener:
+Hoy, en el sitio publicado, la página 404 solo muestra «Página no encontrada», «Volver al inicio» y el recuadro «¿Quieres revisar tu caso con el Dr. Iván?». No le explica al paciente qué pasó. El anuncio aprobado es este (ya está en `404.html`, la vista previa):
 
-- Título claro: «No encontramos esta página».
-- Una línea que explique que la dirección pudo cambiar.
-- Enlaces a: Inicio, Padecimientos de columna, Blog, Contacto / Agendar cita.
-- El aviso de urgencias que ya usa el sitio.
-- `noindex` y código **404** real (nunca 200).
-- Colores de marca, sin flechas en los botones, enlaces internos en la misma pestaña.
+> **No encontramos esta página**
+>
+> Es posible que la dirección haya cambiado o que el enlace tenga un error. Revisa la dirección o elige una de estas secciones.
+>
+> - Inicio (`/`)
+> - Padecimientos de columna (`/columna/`)
+> - Blog (`/blog/`)
+> - Contacto y citas (`/contacto/`)
+>
+> Si llegaste aquí desde un enlace del sitio, escríbenos al 55 7533 9867 para corregirlo.
+
+Debajo se mantienen el recuadro de primera consulta y el aviso «Cuándo acudir a urgencias».
+
+En WordPress va en el bloque `else` de `index.php` del tema (o en un `404.php` propio). Reglas:
+
+- Código **404** real (nunca 200) y `noindex`.
+- Título de la pestaña: «Página no encontrada | Dr. Iván del Castillo» (con acento).
+- Colores de marca, sin flechas en botones ni enlaces, enlaces internos en la misma pestaña.
+- Revisar en computadora y en celular (375 px) sin desbordes.
