@@ -2662,14 +2662,15 @@ html{scroll-padding-top:112px}
 .design-medunit .patient-stories-heading { text-align: center; margin-bottom: 16px; }
 .design-medunit .patient-stories-heading h3 { color: #F8F8F5; font-size: clamp(21px, 2.4vw, 27px); margin: 0 0 6px; }
 .design-medunit .patient-stories-heading p { color: #E8F0F4; margin: 0; font-size: 15px; }
-.design-medunit .patient-stories-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 260px)); justify-content: center; align-items: start; gap: 24px; }
+.design-medunit .patient-stories-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); justify-content: center; align-items: start; gap: 20px; }
 .design-medunit .patient-story { margin: 0; min-width: 0; }
-.design-medunit .patient-story video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 14px; background: #123451; }
+.design-medunit .patient-story video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 12px; background: #123451; }
 .design-medunit .patient-story figcaption { color: #F8F8F5; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; font-size: 14px; line-height: 1.4; margin-top: 9px; }
 .design-medunit .patient-story figcaption span { color: #E8F0F4; white-space: nowrap; }
 .design-medunit .patient-stories-note { color: #E8F0F4; max-width: 600px; margin: 16px auto 0; font-size: 13px; line-height: 1.5; text-align: center; }
 @media (max-width: 620px) {
- .design-medunit .patient-stories-grid { grid-template-columns: minmax(0, 260px); gap: 22px; }
+ .design-medunit .patient-stories-grid { grid-template-columns: repeat(2, minmax(0, 150px)); gap: 12px; }
+ .design-medunit .patient-story figcaption { font-size: 13px; }
  .design-medunit.is-home .patient-stories { padding-top: 16px; }
  .design-medunit .patient-stories-heading p { font-size: 14px; }
 }
