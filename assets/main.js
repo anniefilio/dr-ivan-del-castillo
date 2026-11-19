@@ -541,35 +541,48 @@ document.querySelectorAll('.patient-story video').forEach(video => {
   });
 });
 
-// Testimonios desde YouTube: la página solo muestra la portada; YouTube se carga al dar clic.
+// Testimonios: al dar clic se abren en una ventana grande. YouTube solo se carga en ese momento.
 (function () {
-  function restore(fig) {
-    var frame = fig.querySelector('iframe[data-yt]');
-    if (!frame) return;
-    var btn = fig._ytButton;
-    frame.replaceWith(btn);
-    fig.classList.remove('is-playing');
-  }
-  document.querySelectorAll('.yt-facade').forEach(function (btn) {
+  var buttons = document.querySelectorAll('.yt-facade');
+  if (!buttons.length) return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'story-modal';
+  dlg.setAttribute('aria-label', 'Testimonio en video');
+  dlg.innerHTML = '<div class="story-modal-box"><button type="button" class="story-modal-close">Cerrar</button><div class="story-modal-media"></div><p class="story-modal-title"></p></div>';
+  document.body.appendChild(dlg);
+  var media = dlg.querySelector('.story-modal-media');
+  var title = dlg.querySelector('.story-modal-title');
+  var lastBtn = null;
+  function stop() { media.innerHTML = ''; document.documentElement.classList.remove('story-modal-open'); }
+  function close() { stop(); if (dlg.open) dlg.close(); if (lastBtn) lastBtn.focus(); }
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+  dlg.addEventListener('close', function () { if (!dlg.open) stop(); });
+  dlg.querySelector('.story-modal-close').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+  buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
+      lastBtn = btn;
       var fig = btn.closest('.patient-story');
-      document.querySelectorAll('.patient-story.is-playing').forEach(function (other) { if (other !== fig) restore(other); });
-      document.querySelectorAll('.patient-story video').forEach(function (v) { v.pause(); });
-      var id = btn.getAttribute('data-yt');
-      var frame = document.createElement('iframe');
-      frame.setAttribute('data-yt', id);
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
-      frame.title = btn.getAttribute('aria-label').replace(/^Reproducir en YouTube /, 'Video de YouTube: ');
-      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      frame.allowFullscreen = true;
-      frame.loading = 'eager';
-      fig._ytButton = btn;
-      btn.replaceWith(frame);
-      fig.classList.add('is-playing');
-      frame.focus();
+      var cap = fig && fig.querySelector('figcaption');
+      title.textContent = cap ? cap.firstChild.textContent.trim() : '';
+      stop();
+      var id = btn.getAttribute('data-yt'), src = btn.getAttribute('data-video'), el;
+      if (id) {
+        el = document.createElement('iframe');
+        el.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+        el.title = 'Video de YouTube: ' + title.textContent;
+        el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        el.allowFullscreen = true;
+      } else if (src) {
+        el = document.createElement('video');
+        el.src = src; el.controls = true; el.autoplay = true; el.playsInline = true;
+        var img = btn.querySelector('img'); if (img) el.poster = img.src;
+      }
+      if (!el) return;
+      media.appendChild(el);
+      document.documentElement.classList.add('story-modal-open');
+      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+      dlg.querySelector('.story-modal-close').focus();
     });
-  });
-  document.querySelectorAll('.patient-story video').forEach(function (v) {
-    v.addEventListener('play', function () { document.querySelectorAll('.patient-story.is-playing').forEach(restore); });
   });
 })();
