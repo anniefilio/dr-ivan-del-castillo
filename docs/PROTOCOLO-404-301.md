@@ -31,9 +31,10 @@ Pendientes detectados:
 - ~~Páginas de ejemplo de WordPress publicadas~~ **Resuelto el 19 de noviembre de 2026**: «Hello world!» y «Sample Page» se mandaron a la papelera (se pueden restaurar). `/hello-world/`, `/sample-page/`, `/?p=1` y `/?page_id=2` ya responden 404.
 - ~~La página 404 no orienta al paciente~~ **Resuelto en el tema 1.5.3** (ver sección 8).
 - ~~El título del 404 sin acento~~ **Resuelto en el tema 1.5.3**: «Página no encontrada | Dr. Iván del Castillo». El nombre del sitio en Ajustes → Generales sigue como «Dr. Ivan Del Castillo» (se ve en el administrador).
+- ~~Feeds de comentarios~~ **Resuelto en el tema 1.5.5**: `/comments/feed/` y `/<página>/feed/` responden 404 directo (el sitio no usa comentarios). Search Console los marcaba como «Rastreada: actualmente sin indexar»; no hace falta desindexarlos, Google los suelta solo. El feed principal `/feed/` sigue activo.
 - **Mayúsculas**: `/BLOG/hernia-de-disco/` responde 200 en lugar de redirigir a minúsculas. Es contenido duplicado menor.
 - **Cloudflare guarda los 404 por 31 días** (`cache-control: max-age=2678400`). Si se crea una página o una redirección en una dirección que ya dio 404, hay que **vaciar la caché** o seguirá viéndose el 404.
-- `404.html` del repositorio es una copia vieja de Contacto para la vista previa de GitHub Pages; **no se usa en WordPress**.
+- `404.html` del repositorio es la vista previa de GitHub Pages; **no se usa en WordPress** (allá la página de error sale de `index.php` del tema).
 
 ## 3. Cuándo hace falta una redirección 301
 
