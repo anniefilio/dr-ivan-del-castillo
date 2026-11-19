@@ -2724,3 +2724,15 @@ html{scroll-padding-top:112px}
 .design-medunit .yt-facade:hover .yt-play, .design-medunit .yt-facade:focus-visible .yt-play { background: #245779; }
 .design-medunit .yt-facade:focus-visible { outline: 3px solid #E8F0F4; outline-offset: 2px; }
 .design-medunit .patient-story iframe { display: block; width: 100%; aspect-ratio: 9 / 16; height: auto; border: 0; border-radius: 12px; background: #000; }
+
+/* Tablas comparativas del blog (colores de marca). */
+.design-medunit .prose .compare-table { margin-block: 14px; border: 1px solid #c5d4dc; border-radius: 12px; }
+.design-medunit .prose .compare-table table { min-width: 620px; font-size: 14px; }
+.design-medunit .prose .compare-table caption { padding: 10px 12px 0; color: #123451; }
+.design-medunit .prose .compare-table th, .design-medunit .prose .compare-table td { border: 0; border-top: 1px solid #E8F0F4; padding: 9px 12px; }
+.design-medunit .prose .compare-table thead th { background: #E8F0F4; color: #123451; border-top: 0; }
+.design-medunit .prose .compare-table tbody th { color: #123451; font-weight: 700; background: #F8F8F5; white-space: nowrap; }
+.design-medunit .prose .compare-table td:nth-child(2) { background: #f3f7f9; }
+.design-medunit .prose .compare-table tbody th, .design-medunit .prose .compare-table thead th:first-child { position: sticky; left: 0; z-index: 1; }
+.design-medunit .prose .compare-table thead th:first-child { background: #E8F0F4; }
+@media (max-width: 620px) { .design-medunit .prose .compare-table tbody th { white-space: normal; min-width: 96px; box-shadow: 1px 0 0 #E8F0F4; } }
