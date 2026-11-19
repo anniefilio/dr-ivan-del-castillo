@@ -540,3 +540,36 @@ document.querySelectorAll('.patient-story video').forEach(video => {
     });
   });
 });
+
+// Testimonios desde YouTube: la página solo muestra la portada; YouTube se carga al dar clic.
+(function () {
+  function restore(fig) {
+    var frame = fig.querySelector('iframe[data-yt]');
+    if (!frame) return;
+    var btn = fig._ytButton;
+    frame.replaceWith(btn);
+    fig.classList.remove('is-playing');
+  }
+  document.querySelectorAll('.yt-facade').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var fig = btn.closest('.patient-story');
+      document.querySelectorAll('.patient-story.is-playing').forEach(function (other) { if (other !== fig) restore(other); });
+      document.querySelectorAll('.patient-story video').forEach(function (v) { v.pause(); });
+      var id = btn.getAttribute('data-yt');
+      var frame = document.createElement('iframe');
+      frame.setAttribute('data-yt', id);
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+      frame.title = btn.getAttribute('aria-label').replace(/^Reproducir en YouTube /, 'Video de YouTube: ');
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.allowFullscreen = true;
+      frame.loading = 'eager';
+      fig._ytButton = btn;
+      btn.replaceWith(frame);
+      fig.classList.add('is-playing');
+      frame.focus();
+    });
+  });
+  document.querySelectorAll('.patient-story video').forEach(function (v) {
+    v.addEventListener('play', function () { document.querySelectorAll('.patient-story.is-playing').forEach(restore); });
+  });
+})();
