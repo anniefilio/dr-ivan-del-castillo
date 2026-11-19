@@ -29,8 +29,8 @@ Pendientes detectados:
 
 - **No hay registro de redirecciones.** No existe un lugar donde se anote qué dirección vieja va a cuál nueva. Este protocolo lo crea: [`docs/redirecciones.csv`](redirecciones.csv).
 - ~~Páginas de ejemplo de WordPress publicadas~~ **Resuelto el 19 de noviembre de 2026**: «Hello world!» y «Sample Page» se mandaron a la papelera (se pueden restaurar). `/hello-world/`, `/sample-page/`, `/?p=1` y `/?page_id=2` ya responden 404.
-- **La página 404 no orienta al paciente**: muestra el menú, pero no ofrece buscar, ir al blog o pedir cita. El tema no tiene `404.php`; usa la plantilla general.
-- **El título del 404 dice «Dr. Ivan Del Castillo»**, sin acento y con mayúscula en «Del». Viene del nombre del sitio en WordPress (Ajustes → Generales).
+- ~~La página 404 no orienta al paciente~~ **Resuelto en el tema 1.5.3** (ver sección 8).
+- ~~El título del 404 sin acento~~ **Resuelto en el tema 1.5.3**: «Página no encontrada | Dr. Iván del Castillo». El nombre del sitio en Ajustes → Generales sigue como «Dr. Ivan Del Castillo» (se ve en el administrador).
 - **Mayúsculas**: `/BLOG/hernia-de-disco/` responde 200 en lugar de redirigir a minúsculas. Es contenido duplicado menor.
 - **Cloudflare guarda los 404 por 31 días** (`cache-control: max-age=2678400`). Si se crea una página o una redirección en una dirección que ya dio 404, hay que **vaciar la caché** o seguirá viéndose el 404.
 - `404.html` del repositorio es una copia vieja de Contacto para la vista previa de GitHub Pages; **no se usa en WordPress**.
@@ -124,7 +124,7 @@ Además:
 
 ## 8. Anuncio de la página 404
 
-Hoy, en el sitio publicado, la página 404 solo muestra «Página no encontrada», «Volver al inicio» y el recuadro «¿Quieres revisar tu caso con el Dr. Iván?». No le explica al paciente qué pasó. El anuncio aprobado es este (ya está en `404.html`, la vista previa):
+Publicado el 19 de noviembre de 2026 en el tema 1.5.3 (`index.php`, bloque `else`; título y `noindex` en `functions.php`). Verificado: código 404, `noindex, follow`, título con acento y sin desbordes a 375 px. El anuncio es este (también en `404.html`, la vista previa):
 
 > **No encontramos esta página**
 >
