@@ -2675,3 +2675,14 @@ html{scroll-padding-top:112px}
  .design-medunit.is-home .patient-stories { padding-bottom: 16px; }
  .design-medunit .patient-stories-heading p { font-size: 14px; }
 }
+
+/* Académico: la opinión del Dr. plegable dentro de cada artículo */
+.design-medunit .academic-page .academic-list .academic-copy .entry-opinion { flex-basis: 100%; width: 100%; margin-top: 10px; box-sizing: border-box; max-width: 100%; min-width: 0; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 2px 14px; background: #F8F8F5; }
+.design-medunit .entry-opinion > summary { min-height: 44px; }
+.design-medunit .medical-opinion > summary > .entry-opinion-title { flex: 1 1 auto; min-width: 0; flex-shrink: 1; white-space: normal; overflow-wrap: break-word; font-weight: 600; color: #123451; font-size: 15px; line-height: 1.4; text-decoration: none !important; }
+.design-medunit .entry-opinion > summary > span:last-child { color: #245779; }
+.design-medunit .entry-opinion .opinion-content h2 { font-size: 18px; margin: 16px 0 6px; }
+.design-medunit .entry-opinion .opinion-content p, .design-medunit .entry-opinion .opinion-content li { max-width: none; }
+.design-medunit .entry-opinion-note { flex-basis: 100%; margin-top: 6px; color: var(--muted); }
+.design-medunit .academic-recent-section .medical-disclaimer { margin-top: 14px; }
+.design-medunit .medical-opinion[open] > summary > .entry-opinion-title { display: block; }
