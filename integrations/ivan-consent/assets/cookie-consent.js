@@ -52,7 +52,7 @@
     if (allowedHost) domains.push('drcolumnavertebral.com', '.drcolumnavertebral.com');
     document.cookie.split(';').forEach(function (item) {
       var name = item.split('=')[0].trim();
-      if (!/^(_ga($|_)|_gid$|_gat($|_))/.test(name)) return;
+      if (!/^(_ga($|_)|_gid$|_gat($|_)|_cl(ck|sk|tk)$)/.test(name)) return;
       domains.forEach(function (domain) {
         document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax' + (domain ? '; domain=' + domain : '') + (window.location.protocol === 'https:' ? '; Secure' : '');
       });
@@ -94,7 +94,7 @@
     var privacyLink = document.querySelector('a[href*="/privacidad/"]');
     var privacy = privacyLink ? privacyLink.getAttribute('href') : '/privacidad/';
     banner.innerHTML = '<div class="ivan-cookie-copy"><h2 id="ivan-cookie-title">Cookies y analítica</h2>' +
-      '<p>Con tu permiso usamos Google Analytics para medir visitas y mejorar el sitio. Puedes cambiarlo en “Preferencias de cookies”. ' +
+      '<p>Con tu permiso usamos Google Analytics y Microsoft Clarity para medir visitas y mejorar el sitio. Puedes cambiarlo en “Preferencias de cookies”. ' +
       '<a class="ivan-cookie-privacy">Aviso de privacidad</a></p></div>' +
       '<div class="ivan-cookie-actions"><button type="button" data-cookie-action="accept">Aceptar</button>' +
       '<button type="button" data-cookie-action="reject">Rechazar</button></div>';

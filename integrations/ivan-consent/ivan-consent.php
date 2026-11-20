@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Iván — Cookies y privacidad
  * Description: Publicación conjunta de textos legales y Consent Mode v2 básico; Analytics exclusivamente desde GTM.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Requires PHP: 7.4
  */
 if (!defined('ABSPATH')) { exit; }
@@ -51,7 +51,7 @@ add_action('wp_head', function () {
     $base = plugin_dir_url(__FILE__) . 'assets/';
     echo '<link rel="stylesheet" href="' . esc_url($base . 'cookie-consent.css?v=3') . '">';
     // Synchronous: establishes denied defaults before any Google library.
-    echo '<script src="' . esc_url($base . 'cookie-consent.js?v=2') . '"></script>';
+    echo '<script src="' . esc_url($base . 'cookie-consent.js?v=3') . '"></script>';
 }, -100);
 
 add_action('template_redirect', function () {
