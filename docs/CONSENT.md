@@ -23,3 +23,7 @@ Los archivos ZIP se generan desde el código fuente, pero no se guardan en GitHu
 ## Microsoft Clarity — plugin 1.0.3 (19 de noviembre de 2026)
 
 GTM versión pública 3 incluye la etiqueta «Clarity» (HTML personalizado, proyecto `zg7219747v`) en «Contenedor cargado». Como GTM solo entra tras aceptar, Clarity también depende del consentimiento. Annie decidió mantenerla. El banner ahora nombra «Google Analytics y Microsoft Clarity»; rechazar borra también las cookies propias de Clarity (`_clck`, `_clsk`, `_cltk`) y, si ya estaba cargada, recarga para retirarla. El aviso de privacidad (secciones 6 y 7, fecha 19 de noviembre de 2026) menciona a Microsoft Clarity, sus mapas de calor y grabaciones, y su conservación de 30 días. El texto vive en `privacidad/index.html` (lo publica la sincronización del tema) y se copió igual en `legal.json` para que una reinstalación no regrese el texto anterior. Script con `?v=3`.
+
+## Google Ads en el aviso de privacidad (22 de noviembre de 2026)
+
+Google Ads (cuenta 377-756-7239) quedó vinculado con GA4 sin publicidad personalizada; importa como conversiones solo `appointment_click`, `phone_click` y `whatsapp_click`. El aviso de privacidad (secciones 6 y 7) lo menciona. El aviso de cookies no cambia: GTM sigue entrando solo con consentimiento y `ad_storage` sigue denegado.
