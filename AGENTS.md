@@ -30,7 +30,7 @@ Estas reglas valen para cualquier asistente (Codex, Claude u otro) que trabaje e
    rsync -a --delete $T/ ~/Proyectos/dr-ivan-del-castillo-wordpress/wordpress/source-github/; rm -rf $T
    ```
 3. En `~/Proyectos/dr-ivan-del-castillo-wordpress`: sube `Version:` en `wordpress/dr-ivan-del-castillo/style.css` (siempre mayor que la publicada) y pon el commit corto en el texto "Sincroniza las N páginas de GitHub …" de `functions.php`.
-4. Corre `python3 scripts/preparar-wordpress.py` y luego `python3 scripts/verificar-wordpress.py`. Debe decir "OK: N páginas" (hoy son 84; si agregas o quitas páginas, ajusta el número en `scripts/verificar-wordpress.py` y en `functions.php`). Genera `wordpress/dr-ivan-del-castillo.zip`.
+4. Corre `python3 scripts/preparar-wordpress.py` y luego `python3 scripts/verificar-wordpress.py`. Debe decir "OK: N páginas" (hoy son 89; si agregas o quitas páginas, ajusta el número en `scripts/verificar-wordpress.py` y en `functions.php`). Genera `wordpress/dr-ivan-del-castillo.zip`.
 5. En WordPress: Apariencia → Temas → Añadir → Subir tema → elegir el ZIP → **Reemplazar el instalado con el subido**.
 6. Apariencia → Importar sitio del doctor → **Sincronizar versión de GitHub** (debe decir "Páginas actualizadas: N").
 7. Barra superior → **Vaciar caché**. Revisa el sitio publicado.
