@@ -27,10 +27,10 @@ Lo que ya funciona bien:
 
 Pendientes detectados:
 
-- **No hay registro de redirecciones.** No existe un lugar donde se anote qué dirección vieja va a cuál nueva. Este protocolo lo crea: [`docs/redirecciones.csv`](redirecciones.csv).
+- ~~No hay registro de redirecciones~~ **Resuelto**: existe `docs/redirecciones.csv` y Redirection está instalado. No existe un lugar donde se anote qué dirección vieja va a cuál nueva. Este protocolo lo crea: [`docs/redirecciones.csv`](redirecciones.csv).
 - ~~Páginas de ejemplo de WordPress publicadas~~ **Resuelto el 19 de noviembre de 2026**: «Hello world!» y «Sample Page» se mandaron a la papelera (se pueden restaurar). `/hello-world/`, `/sample-page/`, `/?p=1` y `/?page_id=2` ya responden 404.
 - ~~La página 404 no orienta al paciente~~ **Resuelto en el tema 1.5.3** (ver sección 8).
-- ~~El título del 404 sin acento~~ **Resuelto en el tema 1.5.3**: «Página no encontrada | Dr. Iván del Castillo». El nombre del sitio en Ajustes → Generales sigue como «Dr. Ivan Del Castillo» (se ve en el administrador).
+- ~~El título del 404 sin acento~~ **Resuelto en el tema 1.5.3**: «Página no encontrada | Dr. Iván del Castillo». El nombre del sitio en Ajustes → Generales se corrigió a «Dr. Iván del Castillo» el 22 de noviembre de 2026.
 - ~~Feeds de comentarios~~ **Resuelto en el tema 1.5.5**: `/comments/feed/` y `/<página>/feed/` responden 404 directo (el sitio no usa comentarios). Search Console los marcaba como «Rastreada: actualmente sin indexar»; no hace falta desindexarlos, Google los suelta solo. El feed principal `/feed/` sigue activo.
 - ~~Mayúsculas~~ **Resuelto en el tema 1.5.8**: cualquier ruta de página con mayúsculas (`/BLOG/hernia-de-disco/`) responde 301 a su versión en minúsculas, conservando la consulta. Archivos (con punto) y `/wp-…` no se tocan.
 - **Cloudflare guarda los 404 por 31 días** (`cache-control: max-age=2678400`). Si se crea una página o una redirección en una dirección que ya dio 404, hay que **vaciar la caché** o seguirá viéndose el 404.
@@ -70,7 +70,7 @@ No hace falta redirección cuando:
 
 ## 5. Dónde se aplican las redirecciones en WordPress
 
-Método aprobado: el plugin **Redirection** (de John Godley, gratuito), porque además registra los 404 que reciben visitas.
+Método aprobado: el plugin **Redirection** (de John Godley, gratuito; instalado el 22 de noviembre de 2026, versión 5.10.1, con registro de 404 y vigilancia de cambios de enlaces, sin guardar IP), porque además registra los 404 que reciben visitas.
 
 - Herramientas → Redirection → Añadir nueva: URL de origen, URL de destino, tipo **301**.
 - El archivo `docs/redirecciones.csv` se puede importar en Redirection → Importar/Exportar, para no teclear una por una.
