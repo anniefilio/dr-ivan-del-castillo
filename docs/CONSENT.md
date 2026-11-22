@@ -27,3 +27,5 @@ GTM versión pública 3 incluye la etiqueta «Clarity» (HTML personalizado, pro
 ## Google Ads en el aviso de privacidad (22 de noviembre de 2026)
 
 Google Ads (cuenta 377-756-7239) quedó vinculado con GA4 sin publicidad personalizada; importa como conversiones solo `appointment_click`, `phone_click` y `whatsapp_click`. El aviso de privacidad (secciones 6 y 7) lo menciona. El aviso de cookies no cambia: GTM sigue entrando solo con consentimiento y `ad_storage` sigue denegado.
+
+GTM versión pública 4 (22 de noviembre de 2026): se quitaron `page_referrer` y `page_location` fijos de las dos etiquetas GA4. El sitio no pone datos personales en sus direcciones (los mensajes van solo en el enlace a WhatsApp), así que GA4 ya recibe la URL y el referente reales para conocer la fuente de las visitas y atribuir Google Ads.
