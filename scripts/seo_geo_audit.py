@@ -265,6 +265,8 @@ def audit_html(url, status, html, headers):
     cit, nsec = citability(p.blocks)
     canon = p.meta.get("link:canonical", "")
     robots = p.meta.get("robots", "")
+    x_robots = next((value for key, value in headers.items()
+                     if key.lower() == "x-robots-tag"), "")
     issues = []
     tl = len(p.title.strip())
     dl = len(p.meta.get("description", ""))
@@ -280,7 +282,7 @@ def audit_html(url, status, html, headers):
         issues.append(f"{len(h1)} H1")
     if canon.rstrip("/") != url.rstrip("/"):
         issues.append(f"canonical distinto: {canon}")
-    if "noindex" in robots:
+    if re.search(r"\b(?:noindex|none)\b", robots + " " + x_robots, re.IGNORECASE):
         issues.append("noindex")
     if ld_err:
         issues.append("JSON-LD inválido")
@@ -316,7 +318,7 @@ def audit_html(url, status, html, headers):
         "url": url, "status": status, "tipo": typ, "main_class": p.main_class,
         "title": p.title.strip(), "description": p.meta.get("description", ""),
         "h1": h1[0] if h1 else "", "canonical": canon, "robots": robots,
-        "x_robots": headers.get("X-Robots-Tag", ""),
+        "x_robots": x_robots,
         "schema": sorted(set(types)), "schema_ids": sorted(set(ids)),
         "palabras": words, "enlaces_internos": len(internal),
         "tablas": len(p.tables), "tablas_con_caption_o_thead": tables_ok,

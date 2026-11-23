@@ -9,6 +9,8 @@ import json
 import sys
 from collections import Counter
 from pathlib import Path
+import re
+from urllib.parse import urlsplit
 
 MEDICAL = {"Artículo", "Patología", "Procedimiento", "Opinión académica"}
 SCHEMA_ESPERADO = {
@@ -22,7 +24,7 @@ SCHEMA_ESPERADO = {
 
 
 def ruta(u):
-    return "/" + u.split("://", 1)[1].split("/", 1)[1]
+    return urlsplit(u).path or "/"
 
 
 def esc(s):
@@ -33,9 +35,17 @@ def estado(ok, aviso=False):
     return "OK" if ok else ("Revisar" if aviso else "Falta")
 
 
+def indexable(p):
+    directives = " ".join((p.get("robots", ""), p.get("x_robots", "")))
+    return p["status"] == 200 and not re.search(
+        r"\b(?:noindex|none)\b", directives, re.IGNORECASE
+    )
+
+
 def evaluar(p):
-    seo_ok = p["status"] == 200 and p["title"] and p["description"] and p["h1"] and "noindex" not in p["robots"]
-    seo_aviso = any(x.startswith(("title largo", "description de")) for x in p["problemas"])
+    seo_ok = indexable(p) and p["title"] and p["description"] and p["h1"]
+    seo_aviso = any(x.startswith(("title largo", "description de", "canonical distinto"))
+                    for x in p["problemas"])
     falta = SCHEMA_ESPERADO.get(p["tipo"], set()) - set(p["schema"])
     med = p["tipo"] in MEDICAL
     eeat = (p["revisado"] and p["aviso_medico"]) if med else True
@@ -43,7 +53,7 @@ def evaluar(p):
     geo = p["citabilidad"]
     prioridad = "Alta" if (med and (not eeat or falta)) else "Media" if (med and (not tablas or geo < 50)) else "Baja"
     return {
-        "SEO": "Revisar" if seo_aviso else estado(seo_ok),
+        "SEO": estado(seo_ok and not seo_aviso, aviso=seo_ok),
         "GEO": f"{geo}",
         "Schema": "OK" if not falta else "Falta " + ", ".join(sorted(falta)),
         "E-E-A-T": estado(eeat) if med else "No aplica",
@@ -76,7 +86,7 @@ def main(src, outdir):
     rows = ["| URL | Tipo | H1 | Title | Largo title | Largo description | Canonical | Indexable | Palabras | Tablas | Preguntas frecuentes | Fuentes |", "|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for p in d:
         canon = "OK" if p["canonical"].rstrip("/") == p["url"].rstrip("/") else esc(p["canonical"])
-        idx = "No" if "noindex" in p["robots"] else "Sí"
+        idx = "Sí" if indexable(p) else "No"
         rows.append(f"| {ruta(p['url'])} | {p['tipo']} | {esc(p['h1'])} | {esc(p['title'])} | {len(p['title'])} | {len(p['description'])} | {canon} | {idx} | {p['palabras']} | {p['tablas']} | {'Sí' if p['faq'] else 'No'} | {'Sí' if p['fuentes'] else 'No'} |")
     (out / "matriz-contenido.md").write_text(
         "# Matriz de contenido\n\nInventario de URLs publicadas, generado por `scripts/seo_geo_report.py`. "
