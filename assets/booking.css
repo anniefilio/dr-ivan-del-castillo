@@ -134,3 +134,4 @@
 .gcal-booking iframe{display:block;width:100%;height:760px;border:0}
 .gcal-note{margin:12px 0 0;color:#245779;font-size:13px;line-height:1.5}
 @media (max-width:600px){.gcal-booking iframe{height:820px}}
+.contact-calendar.gcal-wide{grid-column:1 / -1}
