@@ -586,3 +586,23 @@ document.querySelectorAll('.patient-story video').forEach(video => {
     });
   });
 })();
+
+// Agenda de Google Calendar en Contacto: el iframe se carga solo al dar clic.
+(function () {
+  document.querySelectorAll('.gcal-booking').forEach(function (box) {
+    var btn = box.querySelector('.gcal-open');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var src = box.getAttribute('data-gcal-src') || '';
+      if (!/^https:\/\/calendar\.google\.com\//.test(src)) { box.insertAdjacentHTML('beforeend', '<p class="gcal-privacy">La agenda no está disponible en este momento. Escríbenos por WhatsApp.</p>'); btn.disabled = true; return; }
+      // En celular, la agenda de Google se abre completa en otra pestaña: dentro de la página queda muy angosta.
+      if (window.matchMedia('(max-width: 700px)').matches) { window.open(src.replace(/[?&]gv=true/, ''), '_blank', 'noopener'); return; }
+      var f = document.createElement('iframe');
+      f.src = src; f.title = 'Agenda en línea del Dr. Iván del Castillo (Google Calendar)';
+      f.loading = 'lazy'; f.setAttribute('frameborder', '0');
+      box.innerHTML = ''; box.appendChild(f); box.classList.add('is-open');
+      // En computadora, la agenda abierta ocupa todo el ancho para que Google muestre su vista completa.
+      var sec = box.closest('.contact-calendar'); if (sec) { sec.classList.add('gcal-wide'); sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+})();
