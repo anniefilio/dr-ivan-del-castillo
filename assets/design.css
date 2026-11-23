@@ -2758,24 +2758,20 @@ html.story-modal-open { overflow: hidden; }
 @media (max-width:700px){.gcal-embed iframe{height:1180px}}
 
 .appointment-page .appointment-calendar {
-  width: min(860px, calc(100% - 32px));
+  width: min(540px, calc(100% - 32px));
   margin: 28px auto;
 }
-.appointment-page .appointment-calendar h1 { margin-bottom: 6px; }
-.appointment-page .appointment-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 540px);
-  gap: 24px;
-  align-items: start;
+.appointment-page .appointment-calendar h1 {
+  margin-bottom: 6px;
+  font-size: clamp(32px, 5vw, 48px);
 }
-.appointment-page .appointment-location,
-.appointment-page .appointment-schedule { overflow-wrap: anywhere; }
-.appointment-page .appointment-location h2 { margin: 0 0 8px; font-size: 20px; }
-.appointment-page .appointment-location p,
-.appointment-page .appointment-schedule > p:first-child { margin: 0 0 12px; }
 .appointment-page .gcal-embed iframe { height: 420px; }
+.appointment-page .appointment-cta { margin-top: 16px; }
+.appointment-page .appointment-cta .button {
+  display: table;
+  margin-top: 10px;
+}
 @media (max-width: 780px) {
   .appointment-page .appointment-calendar { margin-block: 16px; }
-  .appointment-page .appointment-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .appointment-page .gcal-embed iframe { height: clamp(340px, 60svh, 420px); }
 }
