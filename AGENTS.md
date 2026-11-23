@@ -60,6 +60,7 @@ El navegador integrado no sube archivos; con la extensión de Chrome sí se pued
 - La opinión del Dr. **no lleva tablas**: solo un resumen breve de lo que dice el artículo y qué significa para el paciente.
 - Si cambias o retiras una dirección ya publicada, sigue `docs/PROTOCOLO-404-301.md`: anótala en `docs/redirecciones.csv`, 301 a la equivalente o 404 si no la hay, y vacía la caché.
 - Cada página lleva la clase de su `<main>` (por ejemplo `academic-page`); el tema la conserva en WordPress.
+- Cada página nueva (blog, opinión, padecimiento) lleva su JSON-LD (`MedicalWebPage` o `BlogPosting` con `reviewedBy`) y `BreadcrumbList`. Para auditar SEO/GEO sigue `docs/seo-geo/medical-seo-geo.md` (`python3 scripts/seo_geo_audit.py`).
 - Analytics (G-F9YPDKJ64X) se carga solo desde Google Tag Manager y solo si la persona acepta las cookies. No lo instales por separado en el código.
 - Videos de YouTube (canal @dr.ivandelcastillo): siempre "No es contenido para niños" y sin restricción de edad. Los testimonios sin consentimiento firmado van como Ocultos.
 - En Google Analytics y Tag Manager, Annie quiere hacer los cambios ella misma para aprender: revisa y da feedback, sin cambiar nada salvo que lo pida.
