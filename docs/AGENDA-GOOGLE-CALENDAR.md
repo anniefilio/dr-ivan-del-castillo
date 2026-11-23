@@ -2,19 +2,9 @@
 
 Estado: demo en la rama `demo-agenda-google`. **No se publica hasta tener el VoBo de Annie.**
 
-## Configuración de la agenda (cuenta de Google del doctor)
+## Decisión (23 de noviembre de 2026)
 
-| Dato | Valor |
-| --- | --- |
-| Nombre | Primera consulta con el Dr. Iván del Castillo |
-| Días y horario | Lunes a viernes, de 11:00 a 20:00 |
-| Duración | 30 minutos |
-| Tiempo entre citas | 15 minutos |
-| Anticipación | Mínimo 24 horas; hasta 30 días |
-| Lugar | Hospital Ángeles Metropolitano, Tlacotalpan 59, Torre Platino, consultorio 1202, Roma Sur, CDMX |
-| Datos que se piden | Nombre, correo y teléfono |
-
-Con un Gmail gratuito la agenda no revisa los otros eventos del calendario: el horario debe ser solo el libre para consultas.
+Se usa la agenda de citas que el doctor ya tiene («Ivan del Castillo») **tal como está**: Annie decidió no cambiarle horario, duración ni formulario. El horario de consultas del doctor es de lunes a viernes, de 11:00 a 20:00 (consultorio 1202, Torre Platino).
 
 ## Lo que ya existe en la cuenta del doctor (revisado el 23 de noviembre de 2026)
 
