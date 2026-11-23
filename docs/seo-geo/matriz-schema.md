@@ -1,6 +1,6 @@
 # Matriz de datos estructurados (Schema.org)
 
-Conteo de páginas por tipo: BreadcrumbList (64), Person (59), Organization (49), WebSite (49), MedicalWebPage (40), BlogPosting (21), WebPage (17), MedicalCondition (9), PostalAddress (6), MedicalProcedure (6), Physician (5), ContactPoint (2), MedicalClinic (2), Periodical (1), PublicationIssue (1), PublicationVolume (1), ScholarlyArticle (1), ProfilePage (1).
+Conteo de páginas por tipo: BreadcrumbList (70), Person (59), Organization (49), WebSite (49), MedicalWebPage (46), BlogPosting (21), WebPage (17), MedicalCondition (9), PostalAddress (6), MedicalProcedure (6), Physician (5), ContactPoint (2), MedicalClinic (2), Periodical (1), PublicationIssue (1), PublicationVolume (1), ScholarlyArticle (1), ProfilePage (1).
 
 | URL | Tipo | Tipos Schema.org encontrados | Faltan (según el tipo de página) |
 |---|---|---|---|
@@ -34,7 +34,7 @@ Conteo de páginas por tipo: BreadcrumbList (64), Person (59), Organization (49)
 | /terminos/ | Legal / editorial | WebPage | — |
 | /uso-aceptable/ | Legal / editorial | WebPage | — |
 | /noticias/calidad-osea-cervical/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
-| /noticias/cementacion-vertebral/ | Opinión académica | Ninguno | MedicalWebPage |
+| /noticias/cementacion-vertebral/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/complicaciones-cervical/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/discos-fracturas/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/doble-compresion/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
@@ -47,13 +47,13 @@ Conteo de páginas por tipo: BreadcrumbList (64), Person (59), Organization (49)
 | /noticias/ia-resonancias/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/implantes-cervicales/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/infecciones-columna/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
-| /noticias/infiltracion-espera/ | Opinión académica | Ninguno | MedicalWebPage |
+| /noticias/infiltracion-espera/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/navegacion-lumbar/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
-| /noticias/opioides-aclaraciones/ | Opinión académica | Ninguno | MedicalWebPage |
+| /noticias/opioides-aclaraciones/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/opioides-lumbar/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
-| /noticias/opioides-mielopatia/ | Opinión académica | Ninguno | MedicalWebPage |
-| /noticias/plasma-rico-plaquetas/ | Opinión académica | Ninguno | MedicalWebPage |
-| /noticias/tabaquismo-cirugia-lumbar/ | Opinión académica | Ninguno | MedicalWebPage |
+| /noticias/opioides-mielopatia/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
+| /noticias/plasma-rico-plaquetas/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
+| /noticias/tabaquismo-cirugia-lumbar/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /noticias/vancomicina-lumbar/ | Opinión académica | BreadcrumbList, MedicalWebPage | — |
 | /columna/degeneracion-discal/ | Patología | BreadcrumbList, MedicalCondition, MedicalWebPage, Organization, Person, WebSite | — |
 | /columna/dolor-cervical-y-lumbar/ | Patología | BreadcrumbList, MedicalCondition, MedicalWebPage, Organization, Person, WebSite | — |

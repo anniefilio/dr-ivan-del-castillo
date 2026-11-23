@@ -1,6 +1,6 @@
 # Reporte SEO/GEO por URL
 
-Generado por `scripts/seo_geo_report.py` con 88 páginas del sitemap de WordPress. Prioridad: 6 alta, 34 media, 48 baja.
+Generado por `scripts/seo_geo_report.py` con 88 páginas del sitemap de WordPress. Prioridad: 0 alta, 40 media, 48 baja.
 
 La columna GEO es la citabilidad interna (0 a 100, promedio de las 5 mejores secciones). Es una métrica de diagnóstico propia, no una medición de Google, ChatGPT ni otro buscador.
 
@@ -36,7 +36,7 @@ La columna GEO es la citabilidad interna (0 a 100, promedio de las 5 mejores sec
 | /terminos/ | Legal / editorial | Revisar | 53 | OK | No aplica | No aplica | Baja |
 | /uso-aceptable/ | Legal / editorial | OK | 40 | OK | No aplica | No aplica | Baja |
 | /noticias/calidad-osea-cervical/ | Opinión académica | Revisar | 56 | OK | OK | No aplica | Media |
-| /noticias/cementacion-vertebral/ | Opinión académica | Revisar | 58 | Falta MedicalWebPage | OK | No aplica | Alta |
+| /noticias/cementacion-vertebral/ | Opinión académica | Revisar | 58 | OK | OK | No aplica | Media |
 | /noticias/complicaciones-cervical/ | Opinión académica | Revisar | 60 | OK | OK | No aplica | Media |
 | /noticias/discos-fracturas/ | Opinión académica | Revisar | 60 | OK | OK | No aplica | Media |
 | /noticias/doble-compresion/ | Opinión académica | Revisar | 54 | OK | OK | No aplica | Media |
@@ -49,13 +49,13 @@ La columna GEO es la citabilidad interna (0 a 100, promedio de las 5 mejores sec
 | /noticias/ia-resonancias/ | Opinión académica | Revisar | 50 | OK | OK | No aplica | Media |
 | /noticias/implantes-cervicales/ | Opinión académica | Revisar | 53 | OK | OK | No aplica | Media |
 | /noticias/infecciones-columna/ | Opinión académica | Revisar | 54 | OK | OK | No aplica | Media |
-| /noticias/infiltracion-espera/ | Opinión académica | Revisar | 58 | Falta MedicalWebPage | OK | No aplica | Alta |
+| /noticias/infiltracion-espera/ | Opinión académica | Revisar | 58 | OK | OK | No aplica | Media |
 | /noticias/navegacion-lumbar/ | Opinión académica | Revisar | 56 | OK | OK | No aplica | Media |
-| /noticias/opioides-aclaraciones/ | Opinión académica | Revisar | 59 | Falta MedicalWebPage | OK | No aplica | Alta |
+| /noticias/opioides-aclaraciones/ | Opinión académica | Revisar | 59 | OK | OK | No aplica | Media |
 | /noticias/opioides-lumbar/ | Opinión académica | Revisar | 55 | OK | OK | No aplica | Media |
-| /noticias/opioides-mielopatia/ | Opinión académica | Revisar | 63 | Falta MedicalWebPage | OK | No aplica | Alta |
-| /noticias/plasma-rico-plaquetas/ | Opinión académica | Revisar | 60 | Falta MedicalWebPage | OK | No aplica | Alta |
-| /noticias/tabaquismo-cirugia-lumbar/ | Opinión académica | Revisar | 53 | Falta MedicalWebPage | OK | No aplica | Alta |
+| /noticias/opioides-mielopatia/ | Opinión académica | Revisar | 63 | OK | OK | No aplica | Media |
+| /noticias/plasma-rico-plaquetas/ | Opinión académica | Revisar | 60 | OK | OK | No aplica | Media |
+| /noticias/tabaquismo-cirugia-lumbar/ | Opinión académica | Revisar | 53 | OK | OK | No aplica | Media |
 | /noticias/vancomicina-lumbar/ | Opinión académica | Revisar | 49 | OK | OK | No aplica | Media |
 | /columna/degeneracion-discal/ | Patología | Revisar | 60 | OK | OK | 0 | Media |
 | /columna/dolor-cervical-y-lumbar/ | Patología | Revisar | 55 | OK | OK | 0 | Media |

@@ -29,7 +29,7 @@ Datos obtenidos con `scripts/seo_geo_audit.py` sobre las 88 URLs del sitemap. El
 | Imágenes | Ninguna sin `alt`. |
 | Enlaces internos | Ninguno en pestaña nueva y ninguno con `/#`. |
 | Open Graph / Twitter | **Faltaban en las 88** (el tema no los imprimía). Corregido en el tema 1.5.12. |
-| Title largo (más de 65 caracteres) | 47 páginas. 22 son opiniones, porque llevan «\| Opinión del Dr. Iván del Castillo» (104 a 133 caracteres). Google los corta, pero no los penaliza. |
+| Title largo (más de 65 caracteres) | 46 páginas. 22 son opiniones, porque llevan «\| Opinión del Dr. Iván del Castillo» (104 a 133 caracteres). Google los corta, pero no los penaliza. |
 | Description fuera de rango | 18 páginas. Los 9 padecimientos tienen de 187 a 271 caracteres, los 3 perfiles del equipo de 197 a 318, y `/terminos/` solo 54. |
 | Bloque de llamada a la acción | Falta en `/contacto/` y `/primera-consulta/`. Son las páginas de destino del botón, así que parece intencional. Annie debe confirmarlo, porque AGENTS.md pide el bloque en todas las páginas. |
 
