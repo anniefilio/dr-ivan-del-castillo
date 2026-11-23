@@ -135,3 +135,12 @@
 .gcal-note{margin:12px 0 0;color:#245779;font-size:13px;line-height:1.5}
 @media (max-width:600px){.gcal-booking iframe{height:820px}}
 .contact-calendar.gcal-wide{grid-column:1 / -1}
+/* Agenda abierta (como el calendario de Doctoralia): va a todo el ancho, debajo del título */
+.design-medunit .contact-intro-grid{display:flex;flex-direction:column;gap:16px}
+.design-medunit .contact-intro-copy{display:contents}
+.design-medunit .contact-intro-copy>*{order:0}
+.design-medunit .contact-calendar{order:1;width:100%}
+.design-medunit .contact-intro-copy>.contact-details{order:2;margin-top:0}
+.gcal-booking.is-open{border:0;box-shadow:none;border-radius:12px}
+.gcal-booking.is-open iframe{height:720px}
+@media (max-width:700px){.design-medunit .contact-calendar{padding:12px 8px}.gcal-booking.is-open iframe{height:1180px}}
