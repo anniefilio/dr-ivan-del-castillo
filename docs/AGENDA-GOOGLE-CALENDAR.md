@@ -21,7 +21,7 @@ La agenda de Google Calendar del doctor («Ivan del Castillo», cuenta del docto
 
 ## Cómo funciona en el sitio
 
-- La agenda se muestra abierta en Contacto (como el calendario de Doctoralia), a todo el ancho, debajo del título. Desde el 23 de noviembre de 2026 ya no hay formulario de solicitud por WhatsApp en Contacto.
+- La agenda se muestra abierta (como el calendario de Doctoralia) en Inicio («Prepara tu visita»), Primera consulta y Contacto. Desde el 23 de noviembre de 2026 ya no hay formulario de solicitud por WhatsApp en esas páginas. En Inicio y Primera consulta usa `.gcal-embed` (assets/design.css).
 - El enlace está en `data-gcal-src` de `contacto/index.html`. El código está en `assets/main.js` y el estilo en `assets/booking.css`.
 - Privacidad (sección 6) y `integrations/ivan-consent/legal.json` mencionan Google Calendar.
 - Lo que pasa dentro de la agenda de Google no se mide en Analytics; las reservas se ven en el calendario del doctor.

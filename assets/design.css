@@ -2751,3 +2751,8 @@ html{scroll-padding-top:112px}
 .story-modal-close { position: absolute; top: 8px; right: 16px; padding: 8px 16px; border: 1px solid #E8F0F4; border-radius: 999px; background: #F8F8F5; color: #123451; font: 600 14px/1 system-ui, sans-serif; cursor: pointer; }
 .story-modal-close:hover { background: #E8F0F4; }
 html.story-modal-open { overflow: hidden; }
+/* Agenda de Google Calendar en Inicio y Primera consulta */
+.gcal-embed{margin-top:14px;border:1px solid #E8F0F4;border-radius:12px;overflow:hidden;background:#fff}
+.gcal-embed iframe{display:block;width:100%;height:720px;border:0}
+.gcal-embed-note{margin:10px 0 0;color:#245779;font-size:13px;line-height:1.5}
+@media (max-width:700px){.gcal-embed iframe{height:1180px}}
