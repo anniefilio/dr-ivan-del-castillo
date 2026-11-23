@@ -2758,12 +2758,13 @@ html.story-modal-open { overflow: hidden; }
 @media (max-width:700px){.gcal-embed iframe{height:1180px}}
 
 .appointment-page .appointment-calendar {
-  width: min(760px, calc(100% - 32px));
+  width: min(540px, calc(100% - 32px));
   margin: 28px auto;
 }
 .appointment-page .appointment-calendar h1 { margin-bottom: 6px; }
-.appointment-page .gcal-embed iframe { height: 600px; }
+.appointment-page .appointment-location { margin: 0 0 12px; font-size: 15px; }
+.appointment-page .gcal-embed iframe { height: 420px; }
 @media (max-width: 700px) {
   .appointment-page .appointment-calendar { margin-block: 16px; }
-  .appointment-page .gcal-embed iframe { height: clamp(420px, 70svh, 600px); }
+  .appointment-page .gcal-embed iframe { height: clamp(340px, 60svh, 420px); }
 }
