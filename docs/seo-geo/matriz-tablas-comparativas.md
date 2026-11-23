@@ -28,17 +28,17 @@ Estados posibles: **Publicada** · **Propuesta: requiere aprobación del Dr.** �
 
 | URL | Palabra clave | Comparación propuesta | Fuente sugerida | Prioridad | Estado |
 |---|---|---|---|---|---|
-| /columna/hernia-de-disco-ciatica-y-radiculopatia/ | hernia de disco | Protrusión frente a extrusión del disco (qué es, qué se ve en la resonancia, relación con síntomas) | Nomenclatura NASS/ASSR/ASNR 2.0 | Alta | Propuesta: requiere aprobación del Dr. |
-| /columna/hernia-de-disco-ciatica-y-radiculopatia/ | hernia cervical | Hernia lumbar frente a cervical (síntomas, señales de alarma, estudios) | AAOS OrthoInfo, NHS | Alta | Propuesta: requiere aprobación del Dr. |
-| /columna/estenosis-cervical-y-lumbar/ | estenosis espinal | Estenosis espinal frente a hernia de disco (edad típica, cómo empieza el dolor, qué lo alivia) | AAOS OrthoInfo, NASS | Alta | Propuesta: requiere aprobación del Dr. |
-| /columna/dolor-cervical-y-lumbar/ | dolor lumbar | Dolor cervical frente a lumbar: causas frecuentes y señales de alarma | NICE NG59, NHS | Media | Propuesta: requiere aprobación del Dr. |
-| /columna/degeneracion-discal/ | enfermedad degenerativa del disco | Cambios por edad frente a enfermedad que da síntomas | AAOS OrthoInfo | Media | Propuesta: requiere aprobación del Dr. |
-| /columna/espondilolistesis-e-inestabilidad/ | inestabilidad lumbosacra | Estable frente a inestable (qué muestran las radiografías dinámicas) | AAOS OrthoInfo | Media (aparece en Search Console) | Propuesta: requiere aprobación del Dr. |
-| /columna/escoliosis-y-otras-deformidades/ | columna curva | Postura frente a escoliosis estructural | SRS, AAOS | Media (aparece en Search Console) | Propuesta: requiere aprobación del Dr. |
-| /procedimientos/cuando-considerar-cirugia/ | tratamientos de columna | Fisioterapia frente a infiltraciones frente a cirugía (objetivo, cuándo se considera, límites) | NICE NG59, NASS | Alta | Propuesta: requiere aprobación del Dr. |
-| /procedimientos/discectomia/ | microdiscectomía | Discectomía cervical frente a lumbar | AAOS, NHS | Media | Propuesta: requiere aprobación del Dr. |
-| /procedimientos/recuperacion/ | recuperación de cirugía de columna | Recuperación según el procedimiento. Solo actividades y etapas, **sin inventar semanas**: los tiempos los da el Dr. | Protocolos del Dr. | Media | Propuesta: el Dr. debe dar los tiempos |
-| /procedimientos/minima-invasion/ | cirugía endoscópica de columna | Endoscópica frente a microdiscectomía | NASS | Baja | Requiere confirmar que el Dr. ofrece cirugía endoscópica |
-| /procedimientos/fusion-vertebral/ | fusión vertebral | Fusión por vía anterior, lateral o posterior (ALIF, XLIF, TLIF) | AAOS | Baja | Propuesta: requiere aprobación del Dr. |
+| /columna/hernia-de-disco-ciatica-y-radiculopatia/ | hernia de disco | Protrusión frente a extrusión del disco (qué es, qué se ve en la resonancia, relación con síntomas) | Nomenclatura NASS/ASSR/ASNR 2.0 | Alta | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/hernia-de-disco-ciatica-y-radiculopatia/ | hernia cervical | Hernia lumbar frente a cervical (síntomas, señales de alarma, estudios) | AAOS OrthoInfo, NHS | Alta | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/estenosis-cervical-y-lumbar/ | estenosis espinal | Estenosis espinal frente a hernia de disco (edad típica, cómo empieza el dolor, qué lo alivia) | AAOS OrthoInfo, NASS | Alta | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/dolor-cervical-y-lumbar/ | dolor lumbar | Dolor cervical frente a lumbar: causas frecuentes y señales de alarma | NICE NG59, NHS | Media | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/degeneracion-discal/ | enfermedad degenerativa del disco | Cambios por edad frente a enfermedad que da síntomas | AAOS OrthoInfo | Media | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/espondilolistesis-e-inestabilidad/ | inestabilidad lumbosacra | Estable frente a inestable (qué muestran las radiografías dinámicas) | AAOS OrthoInfo | Media (aparece en Search Console) | Borrador en revisión del Dr. (23 nov 2026) |
+| /columna/escoliosis-y-otras-deformidades/ | columna curva | Postura frente a escoliosis estructural | SRS, AAOS | Media (aparece en Search Console) | Borrador en revisión del Dr. (23 nov 2026) |
+| /procedimientos/cuando-considerar-cirugia/ | tratamientos de columna | Fisioterapia frente a infiltraciones frente a cirugía (objetivo, cuándo se considera, límites) | NICE NG59, NASS | Alta | Borrador en revisión del Dr. (23 nov 2026) |
+| /procedimientos/discectomia/ | microdiscectomía | Discectomía cervical frente a lumbar | AAOS, NHS | Media | Borrador en revisión del Dr. (23 nov 2026) |
+| /procedimientos/recuperacion/ | recuperación de cirugía de columna | Recuperación según el procedimiento. Solo actividades y etapas, **sin inventar semanas**: los tiempos los da el Dr. | Protocolos del Dr. | Media | Borrador en revisión del Dr.: faltan los tiempos |
+| /procedimientos/minima-invasion/ | cirugía endoscópica de columna | Endoscópica frente a microdiscectomía | NASS | Baja | Borrador en revisión del Dr.: confirmar si ofrece endoscopia |
+| /procedimientos/fusion-vertebral/ | fusión vertebral | Fusión por vía anterior, lateral o posterior (ALIF, XLIF, TLIF) | AAOS | Baja | Borrador en revisión del Dr. (23 nov 2026) |
 
 Ya cubiertas en el blog (no hace falta repetirlas): conservador frente a cirugía, abierta frente a mínima invasión, dolor muscular frente a radicular y ciática frente a dolor lumbar común.
