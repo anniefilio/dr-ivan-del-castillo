@@ -2770,3 +2770,22 @@ html.story-modal-open { overflow: hidden; }
   .appointment-page .appointment-calendar { margin-block: 16px; }
   .appointment-page .gcal-embed iframe { height: clamp(500px, 78svh, 620px); }
 }
+
+@media (max-width: 780px) {
+  .design-medunit .appointment-page + .site-foot .foot-main {
+    padding-block: 8px 2px;
+  }
+  .design-medunit .appointment-page + .site-foot .foot-brand {
+    padding-bottom: 2px;
+  }
+  .design-medunit .appointment-page + .site-foot .foot-book {
+    display: none;
+  }
+  .design-medunit .appointment-page + .site-foot .foot-col nav {
+    column-gap: 10px;
+  }
+  .design-medunit .appointment-page + .site-foot .foot-bottom {
+    padding-block: 2px calc(6px + env(safe-area-inset-bottom, 0px));
+    column-gap: 8px;
+  }
+}
