@@ -2833,3 +2833,20 @@ html.story-modal-open { overflow: hidden; }
 /* Segunda opinión: el paso 1 lleva a Agendar cita */
 .design-medunit .so-steps .so-step-link{color:#fff;text-decoration:underline;text-decoration-color:#ffffff80;text-underline-offset:4px}
 .design-medunit .so-steps .so-step-link:hover,.design-medunit .so-steps .so-step-link:focus-visible{text-decoration-color:#fff}
+/* Pie móvil todavía más compacto: menos alto en iconos, enlaces legales y crédito */
+@media (max-width: 780px) {
+  .design-medunit .site-foot .foot-main { gap: 0 8px; padding-block: 4px 0; }
+  .design-medunit .site-foot .foot-logo { margin-bottom: 4px; }
+  .design-medunit .site-foot .foot-logo img { width: 30px; height: 26px; padding: 2px; }
+  .design-medunit .site-foot .foot-contact .foot-social { gap: 6px; }
+  .design-medunit .site-foot .foot-contact .foot-social a { width: 28px; height: 28px; min-width: 28px; min-height: 28px; flex: 0 0 28px; }
+  .design-medunit .site-foot .foot-contact .foot-social a svg { width: 14px; height: 14px; }
+  .design-medunit .site-foot .foot-col nav a { font-size: 13px; min-height: 26px; line-height: 26px; padding-block: 0; }
+  .design-medunit .site-foot .foot-contact > a:not(.foot-phone) { font-size: 12px; line-height: 1.3; margin-bottom: 4px; padding-block: 2px; }
+  .design-medunit .site-foot .foot-contact .foot-phone { min-height: 0; padding-block: 4px; }
+  .design-medunit .site-foot .foot-bottom { gap: 0 10px; padding-block: 4px calc(4px + env(safe-area-inset-bottom, 0px)); }
+  .design-medunit .site-foot .foot-bottom p,
+  .design-medunit .site-foot .foot-bottom .foot-legal a { font-size: 11px; min-height: 24px; line-height: 24px; padding-block: 0; }
+  .design-medunit .site-foot .foot-bottom .foot-powered { width: 80px; height: 24px; min-height: 0; padding: 0; margin: 0; }
+  .design-medunit .site-foot .foot-bottom .foot-powered img { width: 118px; margin: -6px 0 0 -19px; }
+}
