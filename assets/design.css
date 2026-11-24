@@ -2772,60 +2772,60 @@ html.story-modal-open { overflow: hidden; }
 }
 
 @media (max-width: 780px) {
-  .design-medunit .appointment-page + .site-foot .foot-main {
+  .design-medunit .site-foot .foot-main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 2px 8px;
     padding-block: 6px 2px;
   }
-  .design-medunit .appointment-page + .site-foot :is(.foot-brand, .foot-contact) {
+  .design-medunit .site-foot :is(.foot-brand, .foot-contact) {
     display: contents;
   }
-  .design-medunit .appointment-page + .site-foot .foot-logo {
+  .design-medunit .site-foot .foot-logo {
     grid-row: 1;
     grid-column: 1;
     min-width: 0;
     gap: 6px;
   }
-  .design-medunit .appointment-page + .site-foot .foot-logo span {
+  .design-medunit .site-foot .foot-logo span {
     font-size: 12px;
     line-height: 1.15;
   }
-  .design-medunit .appointment-page + .site-foot .foot-logo small,
-  .design-medunit .appointment-page + .site-foot .foot-book {
+  .design-medunit .site-foot .foot-logo small,
+  .design-medunit .site-foot .foot-book {
     display: none;
   }
-  .design-medunit .appointment-page + .site-foot .foot-contact .foot-phone {
+  .design-medunit .site-foot .foot-contact .foot-phone {
     grid-row: 1;
     grid-column: 2;
     font-size: 13px;
     white-space: nowrap;
   }
-  .design-medunit .appointment-page + .site-foot .foot-contact .foot-social {
+  .design-medunit .site-foot .foot-contact .foot-social {
     grid-row: 2;
     grid-column: 1 / -1;
     margin: 0;
   }
-  .design-medunit .appointment-page + .site-foot .foot-col {
+  .design-medunit .site-foot .foot-col {
     grid-row: 3;
     grid-column: 1 / -1;
   }
-  .design-medunit .appointment-page + .site-foot .foot-col nav {
+  .design-medunit .site-foot .foot-col nav {
     column-gap: 10px;
   }
-  .design-medunit .appointment-page + .site-foot .foot-contact > a:not(.foot-phone) {
+  .design-medunit .site-foot .foot-contact > a:not(.foot-phone) {
     grid-row: 4;
     grid-column: 1 / -1;
     min-height: 0;
     line-height: 1.25;
   }
-  .design-medunit .appointment-page + .site-foot .foot-bottom {
+  .design-medunit .site-foot .foot-bottom {
     padding-block: 2px calc(6px + env(safe-area-inset-bottom, 0px));
     column-gap: 8px;
   }
-  .design-medunit .appointment-page + .site-foot .foot-bottom p,
-  .design-medunit .appointment-page + .site-foot .foot-bottom .foot-legal a {
+  .design-medunit .site-foot .foot-bottom p,
+  .design-medunit .site-foot .foot-bottom .foot-legal a {
     min-height: 22px;
     line-height: 1.2;
   }
