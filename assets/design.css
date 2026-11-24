@@ -2830,3 +2830,6 @@ html.story-modal-open { overflow: hidden; }
     line-height: 1.2;
   }
 }
+/* Segunda opinión: el paso 1 lleva a Agendar cita */
+.design-medunit .so-steps .so-step-link{color:#fff;text-decoration:underline;text-decoration-color:#ffffff80;text-underline-offset:4px}
+.design-medunit .so-steps .so-step-link:hover,.design-medunit .so-steps .so-step-link:focus-visible{text-decoration-color:#fff}
